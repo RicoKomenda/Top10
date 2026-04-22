@@ -1,35 +1,35 @@
-# A10:2025 Mishandling of Exceptional Conditions ![icon](../assets/TOP_10_Icons_Final_Mishandling_of_Exceptional_Conditions.png){: style="height:80px;width:80px" align="right"}
+# A10:2025 – Fehlerhafte Behandlung von Ausnahmezuständen ![icon](../assets/TOP_10_Icons_Final_Mishandling_of_Exceptional_Conditions.png){: style="height:80px;width:80px" align="right"}
 
 
-## Background. 
+## Hintergrund.
 
-Mishandling of Exceptional Conditions is a new category for 2025. This category contains 24 CWEs and focuses on improper error handling, logical errors, failing open, and other related scenarios stemming from abnormal conditions and systems may encounter. This category has some CWEs that were previously associated with poor code quality. That was too general for us; in our opinion, this more specific category provides better guidance.
+Fehlerhafte Behandlung von Ausnahmezuständen ist eine neue Kategorie für 2025. Diese Kategorie enthält 24 CWEs und konzentriert sich auf fehlerhafte Fehlerbehandlung, logische Fehler, „Failing Open" sowie andere verwandte Szenarien, die aus abnormalen Zuständen resultieren, mit denen Systeme konfrontiert werden können. Einige der enthaltenen CWEs waren zuvor der schlechten Codequalität zugeordnet. Das war uns zu allgemein; nach unserer Einschätzung bietet diese spezifischere Kategorie eine bessere Orientierung.
 
-Notable CWEs included in this category: *CWE-209 Generation of Error Message Containing Sensitive Information, CWE-234 Failure to Handle Missing Parameter, CWE-274 Improper Handling of Insufficient Privileges, CWE-476 NULL Pointer Dereference,* and *CWE-636 Not Failing Securely ('Failing Open')*.
+Bemerkenswerte CWEs in dieser Kategorie: *CWE-209 Generation of Error Message Containing Sensitive Information, CWE-234 Failure to Handle Missing Parameter, CWE-274 Improper Handling of Insufficient Privileges, CWE-476 NULL Pointer Dereference* und *CWE-636 Not Failing Securely ('Failing Open')*.
 
 
-## Score table.
+## Beurteilungskriterien.
 
 
 <table>
   <tr>
-   <td>CWEs Mapped 
+   <td>Zugeordnete CWEs
    </td>
-   <td>Max Incidence Rate
+   <td>Max. Häufigkeit
    </td>
-   <td>Avg Incidence Rate
+   <td>Durchschn. Häufigkeit
    </td>
-   <td>Max Coverage
+   <td>Max. Abdeckung
    </td>
-   <td>Avg Coverage
+   <td>Durchschn. Abdeckung
    </td>
-   <td>Avg Weighted Exploit
+   <td>Durchschn. gewichtete Ausnutzbarkeit
    </td>
-   <td>Avg Weighted Impact
+   <td>Durchschn. gewichtete Auswirkung
    </td>
-   <td>Total Occurrences
+   <td>Gesamtanzahl
    </td>
-   <td>Total CVEs
+   <td>Summe CVEs
    </td>
   </tr>
   <tr>
@@ -56,52 +56,50 @@ Notable CWEs included in this category: *CWE-209 Generation of Error Message Con
 
 
 
-## Description. 
+## Beschreibung.
 
-Mishandling exceptional conditions in software happens when programs fail to prevent, detect, and respond to unusual and unpredictable situations, which leads to crashes, unexpected behavior, and sometimes vulnerabilities. This can involve one or more of the following 3 failings; the application doesn’t prevent an unusual situation from happening, it doesn’t identify the situation as it is happening, and/or it responds poorly or not at all to the situation afterwards.
-
- 
-
-Exceptional conditions can be caused by missing, poor, or incomplete input validation, or late, high level error handling instead at the functions where they occur, or unexpected environmental states such as memory, privilege, or network issues, inconsistent exception handling, or exceptions that are not handled at all, allowing the system to fall into an unknown and unpredictable state. Any time an application is unsure of its next instruction, an exceptional condition has been mishandled. Hard-to-find errors and exceptions can threaten the security of the whole application for a long time.
+Fehlerhafte Behandlung von Ausnahmezuständen in Software tritt auf, wenn Programme außergewöhnliche und unvorhersehbare Situationen weder verhindern, erkennen noch darauf reagieren – was zu Abstürzen, unerwartetem Verhalten und mitunter zu Sicherheitslücken führt. Dies kann einen oder mehrere der folgenden drei Mängel umfassen: Die Anwendung verhindert eine ungewöhnliche Situation nicht, sie erkennt sie nicht, während sie eintritt, und/oder sie reagiert anschließend unzureichend oder gar nicht darauf.
 
  
 
-Many different security vulnerabilities can happen when we mishandle exceptional conditions,
-
-such as logic bugs, overflows, race conditions, fraudulent transactions, or issues with memory, state, resource, timing, authentication, and authorization. These types of vulnerabilities can negatively affect the confidentiality, availability, and/or integrity of a system or it’s data. Attackers manipulate an application's flawed error handling to strike this vulnerability. 
-
-
-## How to prevent. 
-
-In order to handle an exceptional condition properly we must plan for such situations (expect the worst). We must ‘catch’ every possible system error directly at the place where they occur and then handle it (which means do something meaningful to solve the problem and ensure we recover from the issue). As part of the handling, we should include throwing an error (to inform the user in an understandable way), logging of the event, as well as issuing an alert if we feel that is justified. We should also have a global exception handler in place in case there is ever something we have missed. Ideally, we would also have monitoring and/or observability tooling or functionality that watches for repeated errors or patterns that indicate an on-going attack, that could issue a response, defense, or blocking of some kind. This can help us block and respond to scripts and bots that focus on our error handling weaknesses.
+Ausnahmezustände können durch fehlende, mangelhafte oder unvollständige Eingabevalidierung entstehen, durch späte oder übergeordnete Fehlerbehandlung anstatt dort, wo die Fehler auftreten, durch unerwartete Umgebungszustände wie Speicher-, Berechtigungs- oder Netzwerkprobleme, inkonsistente Ausnahmebehandlung oder vollständig unbehandelte Ausnahmen, die das System in einen unbekannten und unvorhersehbaren Zustand versetzen. Jedes Mal, wenn eine Anwendung über ihre nächste Anweisung unsicher ist, wurde ein Ausnahmezustand fehlerhaft behandelt. Schwer auffindbare Fehler und Ausnahmen können die Sicherheit der gesamten Anwendung über lange Zeit gefährden.
 
  
 
-Catching and handling exceptional conditions ensures that the underlying infrastructure of our programs are not left to deal with unpredictable situations. If you are part way through a transaction of any kind, it is extremely important that you roll back every part of the transaction and start again (also known as failing closed). Attempting to recover a transaction part way through is often where we create unrecoverable mistakes.
+Bei fehlerhafter Behandlung von Ausnahmezuständen können vielfältige Sicherheitslücken entstehen, wie logische Fehler, Überläufe, Race Conditions, betrügerische Transaktionen oder Probleme mit Speicher, Zustand, Ressourcen, Timing, Authentifizierung und Autorisierung. Diese Schwachstellen können die Vertraulichkeit, Verfügbarkeit und/oder Integrität eines Systems oder seiner Daten beeinträchtigen. Angreifer nutzen die fehlerhafte Fehlerbehandlung einer Anwendung aus, um diese Schwachstelle auszunutzen.
+
+
+## Prävention und Gegenmaßnahmen.
+
+Um Ausnahmezustände korrekt zu behandeln, müssen wir solche Situationen einplanen (vom Schlimmsten ausgehen). Wir müssen jeden möglichen Systemfehler direkt an der Stelle abfangen, an der er auftritt, und ihn dann behandeln (d. h. etwas Sinnvolles tun, um das Problem zu lösen und die Wiederherstellung sicherzustellen). Als Teil der Behandlung sollten wir einen Fehler werfen (um den Benutzer verständlich zu informieren), das Ereignis protokollieren sowie bei Bedarf einen Alarm auslösen. Wir sollten außerdem einen globalen Exception-Handler einrichten, für den Fall, dass uns etwas entgangen ist. Idealerweise verfügen wir zusätzlich über Monitoring- und/oder Observability-Werkzeuge, die auf wiederholte Fehler oder Muster hinweisen, die auf einen laufenden Angriff hindeuten, und eine Reaktion, Abwehr oder Blockierung auslösen können. Dies hilft uns, Skripte und Bots zu blockieren und darauf zu reagieren, die unsere Schwachstellen in der Fehlerbehandlung ausnutzen.
 
  
 
-Whenever possible, add rate limiting, resource quotas, throttling, and other limits wherever possible, to prevent exceptional conditions in the first place. Nothing in information technology should be limitless, as this leads to a lack of application resilience, denial of service, successful brute force attacks, and extraordinary cloud bills. 
-
-Consider whether identical repeated errors, above a certain rate, should only be outputted as statistics showing how often they have occurred and in what time frame. This information should be appended to the original message so as not to interfere with automated logging and monitoring, see [A09:2025 Security Logging & Alerting Failures](A09_2025-Security_Logging_and_Alerting_Failures.md).
-
-On top of this, we would want to include strict input validation (with sanitization or escaping for potentially hazardous characters that we must accept), and *centralized* error handling, logging, monitoring, and alerting, and a global exception handler. One application should not multiple functions for handling exceptional conditions, it should be performed in one place, the same way each time. We should also create project security requirements for all the advice in this section, perform threat modelling and/or secure design review activities in the design phase of our projects, perform code review or static analysis, as well as execute stress, performance, and penetration testing of the final system.
+Das Abfangen und Behandeln von Ausnahmezuständen stellt sicher, dass die zugrunde liegende Infrastruktur unserer Programme nicht mit unvorhersehbaren Situationen allein gelassen wird. Befindet man sich mitten in einer Transaktion jeglicher Art, ist es äußerst wichtig, die gesamte Transaktion zurückzusetzen und neu zu beginnen (auch bekannt als „Failing Closed"). Der Versuch, eine Transaktion mittendrin wiederherzustellen, ist oft der Punkt, an dem unwiederherstellbare Fehler entstehen.
 
  
 
-If possible, your entire organization should handle exceptional conditions in the same way, as it makes it easier to review and audit code for errors in this important security control.
+Wo immer möglich sollten Rate Limiting, Ressourcenkontingente, Throttling und andere Begrenzungen eingesetzt werden, um Ausnahmezustände von vornherein zu verhindern. Nichts in der Informationstechnologie sollte unbegrenzt sein, da dies zu mangelnder Anwendungsresilienz, Denial-of-Service, erfolgreichen Brute-Force-Angriffen und enormen Cloud-Kosten führt.
+
+Es sollte überlegt werden, ob identische, sich wiederholende Fehler ab einer bestimmten Rate nur noch als Statistik ausgegeben werden sollten, die anzeigt, wie oft und in welchem Zeitraum sie aufgetreten sind. Diese Information sollte an die ursprüngliche Meldung angehängt werden, um automatisiertes Logging und Monitoring nicht zu beeinträchtigen, siehe [A09:2025 Security Logging & Alerting Failures](A09_2025-Security_Logging_and_Alerting_Failures.md).
+
+Darüber hinaus sollten wir strikte Eingabevalidierung (mit Bereinigung oder Escaping potenziell gefährlicher Zeichen, die wir akzeptieren müssen) sowie *zentralisierte* Fehlerbehandlung, Logging, Monitoring und Alerting mit einem globalen Exception-Handler einsetzen. Eine Anwendung sollte nicht mehrere Funktionen zur Behandlung von Ausnahmezuständen haben – dies sollte einheitlich an einer Stelle erfolgen. Wir sollten zudem Sicherheitsanforderungen für alle Empfehlungen dieses Abschnitts definieren, Bedrohungsmodellierung und/oder sichere Design-Reviews in der Entwurfsphase durchführen, Code-Reviews oder statische Analysen vornehmen sowie Stress-, Performance- und Penetrationstests am fertigen System ausführen.
+
+ 
+
+Wenn möglich, sollte die gesamte Organisation Ausnahmezustände einheitlich behandeln, da dies die Überprüfung und Auditierung des Codes auf Fehler in dieser wichtigen Sicherheitsmaßnahme erleichtert.
 
 
-## Example attack scenarios. 
+## Beispielhafte Angriffsszenarien.
 
-**Scenario #1:** Resource exhaustion via mishandling of exceptional conditions (Denial of Service) could be caused if the application catches exceptions when files are uploaded, but doesn’t properly release resources after. Each new exception leaves resources locked or otherwise unavailable, until all resources are used up.
+**Szenario #1:** Ressourcenerschöpfung durch fehlerhafte Behandlung von Ausnahmezuständen (Denial of Service) kann auftreten, wenn die Anwendung beim Datei-Upload Ausnahmen abfängt, die Ressourcen danach jedoch nicht ordnungsgemäß freigibt. Jede neue Ausnahme hinterlässt gesperrte oder anderweitig nicht verfügbare Ressourcen, bis alle Ressourcen verbraucht sind.
 
-**Scenario #2:** Sensitive data exposure via improper handling or database errors that reveals the full system error to the user. The attacker continues to force errors in order to use the sensitive system information to create a better SQL injection attack. The sensitive data in the user error messages are reconnaissance.
+**Szenario #2:** Offenlegung sensibler Daten durch fehlerhafte Behandlung von Datenbankfehlern, die den vollständigen Systemfehler an den Benutzer weitergeben. Der Angreifer erzwingt weiterhin Fehler, um die sensiblen Systeminformationen für einen gezielteren SQL-Injection-Angriff zu nutzen. Die sensiblen Daten in den Fehlermeldungen dienen dabei als Aufklärung.
 
-**Scenario #3:** State corruption in financial transactions could be caused by an attacker interrupting a multi-step transaction via network disruptions. Imagine the transaction order was: debit user account, credit destination account, log transaction. If the system doesn’t properly roll back the entire transaction (fail closed) when there is an error part way through, the attacker could potentially drain the user’s account, or possibly a race condition that allows the attacker to send money to the destination multiple times.
+**Szenario #3:** Zustandskorruption bei Finanztransaktionen kann durch einen Angreifer verursacht werden, der eine mehrstufige Transaktion durch Netzwerkunterbrechungen stört. Angenommen, die Transaktionsreihenfolge lautet: Nutzerkonto belasten, Zielkonto gutschreiben, Transaktion protokollieren. Wenn das System bei einem Fehler mittendrin die gesamte Transaktion nicht ordnungsgemäß zurücksetzt (Failing Closed), könnte der Angreifer das Konto des Nutzers leeren oder über eine Race Condition Geld mehrfach an das Zielkonto senden.
 
 
-## References.
+## Referenzen.
 
 OWASP MASVS‑RESILIENCE
 
@@ -121,7 +119,7 @@ OWASP MASVS‑RESILIENCE
 
 * [Example of real-world mishandling of an exceptional condition](https://www.firstreference.com/blog/human-error-and-internal-control-failures-cause-us62m-fine/) 
 
-## List of Mapped CWEs
+## Liste der zugeordneten CWEs
 * [CWE-209	Generation of Error Message Containing Sensitive Information](https://cwe.mitre.org/data/definitions/209.html)
 * [CWE-215	Insertion of Sensitive Information Into Debugging Code](https://cwe.mitre.org/data/definitions/215.html)
 * [CWE-234	Failure to Handle Missing Parameter](https://cwe.mitre.org/data/definitions/234.html)
