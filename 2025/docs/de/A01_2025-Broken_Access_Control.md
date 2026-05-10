@@ -1,4 +1,4 @@
-#  A01:2025 Broken Access Control <img src="../assets/TOP_10_Icons_Final_Broken_Access_Control.png" style="height:80px;width:80px; float:right;" alt="icon">
+#  A01:2025 Mangelhafte Zugriffskontrolle <img src="../assets/TOP_10_Icons_Final_Broken_Access_Control.png" style="height:80px;width:80px; float:right;" alt="icon">
 
 
 
