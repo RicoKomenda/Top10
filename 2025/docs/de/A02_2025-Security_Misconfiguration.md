@@ -58,18 +58,17 @@ Eine sicherheitsrelevante Fehlkonfiguration liegt vor, wenn ein System, eine Anw
 
 ## Beschreibung.
 
-Die Anwendung besitzt möglicherweise Schwachstellen, wenn:
-
-* Mangelhafte Sicherheitshärtung des Anwendungsstacks oder ungeeignet konfigurierte Berechtigungen auf Cloud-Diensten fehlen.
-* Nicht benötigte Features aktiviert oder installiert sind (z. B. unnötige Ports, Dienste, Seiten, Accounts oder Rechte).
+Die Anwendung besitzt möglicherweise Schwachstellen, wenn Folgendes zutrifft:
+* Mangelhafte Sicherheitshärtung des Anwendungsstacks oder ungeeignet konfigurierte Berechtigungen auf Cloud-Diensten.
+* Nicht benötigte Features sind aktiviert oder installiert (z. B. unnötige Ports, Dienste, Seiten, Accounts oder Rechte).
 * Standardkonten und -passwörter sind aktiviert bzw. unverändert.
 * Die Fehlerbehandlung gibt Stack-Traces oder andere interne technische Fehlermeldungen an Anwendende preis.
 * Für aktualisierte Systeme sind die neuesten Sicherheitsfeatures deaktiviert oder nicht sicher konfiguriert.
 * Die Sicherheitseinstellungen in den Anwendungsservern und -frameworks (z. B. Struts, Spring, ASP.NET), Bibliotheken, Datenbanken etc. sind nicht auf sichere Werte gesetzt.
 * Der Server sendet keine Sicherheits-Header oder -Direktiven, bzw. diese sind nicht sicher konfiguriert.
-* Die Software ist veraltet oder verwundbar (siehe [A06:2021 – Unsichere oder veraltete Komponenten](https://owasp.org/Top10/de/A06_2021-Vulnerable_and_Outdated_Components/)).
+* Die Software ist veraltet oder verwundbar (siehe [A06:2025-Unsichere oder veraltete Komponenten](A06_2025-Vulnerable_and_Outdated_Components.md)).
 
-Ohne einen abgestimmten und reproduzierbaren Härtungsprozess zur sicheren Konfiguration sind Systeme einem höheren Risiko ausgesetzt!
+Ohne einen abgestimmten und reproduzierbaren Prozess zur sicheren Konfiguration sind Systeme einem höheren Risiko ausgesetzt!
 
 
 ## Prävention und Gegenmaßnahmen.
