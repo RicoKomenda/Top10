@@ -1,33 +1,33 @@
-# A06:2025 Insecure Design ![icon](../assets/TOP_10_Icons_Final_Insecure_Design.png){: style="height:80px;width:80px" align="right"}
+# A06:2025 Unsicheres Design ![icon](../assets/TOP_10_Icons_Final_Insecure_Design.png){: style=”height:80px;width:80px” align=”right”}
 
 
-## Background. 
+## Hintergrund.
 
-Insecure Design slides two spots from #4 to #6 in the ranking as **[A02:2025-Security Misconfiguration](A02_2025-Security_Misconfiguration.md)** and **[A03:2025-Software Supply Chain Failures](A03_2025-Software_Supply_Chain_Failures.md)** leapfrog it. This category was introduced in 2021, and we have seen noticeable improvements in the industry related to threat modeling and a greater emphasis on secure design. This category focuses on risks related to design and architectural flaws, with a call for more use of threat modeling, secure design patterns, and reference architectures. This includes flaws in the business logic of an application, e.g. the lack of defining unwanted or unexpected state changes inside an application.  As a community, we need to move beyond "shift-left" in the coding space, to pre-code activities such as requirements writing and application design, that are critical for the principles of Secure by Design (e.g. see **[Establish a Modern AppSec Program: Planning and Design Phase](0x03_2025-Establishing_a_Modern_Application_Security_Program.md)**). Notable Common Weakness Enumerations (CWEs) include *CWE-256: Unprotected Storage of Credentials, CWE-269 Improper Privilege Management, CWE-434 Unrestricted Upload of File with Dangerous Type, CWE-501: Trust Boundary Violation, and CWE-522: Insufficiently Protected Credentials.*
+Unsicheres Design rutscht zwei Plätze von #4 auf #6 im Ranking ab, da **[A02:2025-Security Misconfiguration](A02_2025-Security_Misconfiguration.md)** und **[A03:2025-Software Supply Chain Failures](A03_2025-Software_Supply_Chain_Failures.md)** es überholt haben. Diese Kategorie wurde 2021 eingeführt, und wir haben beachtliche Verbesserungen in der Branche im Zusammenhang mit Bedrohungsmodellierung und einer stärkeren Gewichtung auf sicheres Design beobachtet. Diese Kategorie konzentriert sich auf Risiken im Zusammenhang mit Design- und Architekturfehlern, mit einem Aufruf zu häufigerem Gebrauch von Bedrohungsmodellierung, sicheren Designmustern und Referenzarchitekturen. Dies umfasst Fehler in der Geschäftslogik einer Anwendung, z. B. das Fehlen der Definition unerwünschter oder unerwarteter Zustandsänderungen innerhalb einer Anwendung. Als Community müssen wir über “Shift-Left” im Coding-Bereich hinausgehen und uns auf Aktivitäten vor dem Coding konzentrieren, wie das Verfassen von Anforderungen und das Anwendungsdesign, die für die Prinzipien von Secure by Design entscheidend sind (siehe z. B. **[Establish a Modern AppSec Program: Planning and Design Phase](0x03_2025-Establishing_a_Modern_Application_Security_Program.md)**)
 
 
-## Score table.
+## Punktetabelle.
 
 
 <table>
   <tr>
-   <td>CWEs Mapped 
+   <td>Zugeordnete CWEs
    </td>
-   <td>Max Incidence Rate
+   <td>Maximale Häufigkeit
    </td>
-   <td>Avg Incidence Rate
+   <td>Durchschn. Häufigkeit
    </td>
-   <td>Max Coverage
+   <td>Durchschn. Ausnutzbarkeit (gewichtet)
    </td>
-   <td>Avg Coverage
+   <td>Durchschn. Auswirkungen (gewichtet)
    </td>
-   <td>Avg Weighted Exploit
+   <td>Maximale Abdeckung
    </td>
-   <td>Avg Weighted Impact
+   <td>Durchschnittliche Abdeckung
    </td>
-   <td>Total Occurrences
+   <td>Gesamtanzahl
    </td>
-   <td>Total CVEs
+   <td>CVEs insgesamt
    </td>
   </tr>
   <tr>
@@ -54,61 +54,51 @@ Insecure Design slides two spots from #4 to #6 in the ranking as **[A02:2025-Sec
 
 
 
-## Description. 
+## Beschreibung.
 
-Insecure design is a broad category representing different weaknesses, expressed as “missing or ineffective control design.” Insecure design is not the source for all other Top Ten risk categories. Note that there is a difference between insecure design and insecure implementation. We differentiate between design flaws and implementation defects for a reason, they have different root causes, take place at different times in the development process, and have different remediations. A secure design can still have implementation defects leading to vulnerabilities that may be exploited. An insecure design cannot be fixed by a perfect implementation as needed security controls were never created to defend against specific attacks. One of the factors that contributes to insecure design is the lack of business risk profiling inherent in the software or system being developed, and thus the failure to determine what level of security design is required.
-
-Three key parts of having a secure design are:
-
-* Gathering Requirements and Resource Management
-* Creating a Secure Design
-* Having a Secure Development Lifecycle
+Unsicheres Design ist eine umfassende Kategorie, die verschiedene Schwachstellen umfasst und als „fehlendes oder ineffektives Design von Schutzmechanismen” beschrieben wird. Unsicheres Anwendungsdesign ist nicht die Ursache für alle anderen Top-10-Risikokategorien. Es gilt zu beachten, dass es einen Unterschied zwischen unsicherem Design und unsicherer Implementierung gibt. Designfehler und Implementierungsfehler unterscheiden sich aus gutem Grund, da sie unterschiedliche Ursachen haben, zu unterschiedlichen Zeitpunkten im Entwicklungsprozess stattfinden und unterschiedliche Abhilfemaßnahmen erfordern. Ein sicheres Design kann immer noch Implementierungsfehler enthalten, die zu ausnutzbaren Schwachstellen führen. Ein unsicheres Design lässt sich nicht durch eine perfekte Implementierung beheben, da die notwendigen Sicherheitskontrollen von vornherein nicht zur Abwehr bestimmter Angriffe vorgesehen waren. Ein Faktor, der zu einem unsicheren Design beiträgt, ist das Fehlen eines Geschäftsrisikoprofils, das der entwickelten Software oder dem System zugrunde liegt, was dazu führt, dass das erforderliche Maß an Sicherheitsdesign nicht bestimmt wird.
 
 
-### Requirements and Resource Management
+### Anforderungs- und Ressourcenmanagement
 
-Collect and negotiate the business requirements for an application with the business, including the protection requirements concerning confidentiality, integrity, availability, and authenticity of all data assets and the expected business logic. Take into account how exposed your application will be and if you need segregation of tenants (beyond those needed for access control). Compile the technical requirements, including functional and non-functional security requirements. Plan and negotiate the budget covering all design, build, testing, and operation, including security activities.
-
-
-### Secure Design
-
-Secure design is a culture and methodology that constantly evaluates threats and ensures that code is robustly designed and tested to prevent known attack methods. Threat modeling should be integrated into refinement sessions (or similar activities); look for changes in data flows and access control or other security controls. In the  story development, determine the correct flow and failure states, ensure they are well understood and agreed upon by the responsible and impacted parties. Analyze assumptions and conditions for expected and failure flows to ensure they remain accurate and desirable. Determine how to validate the assumptions and enforce conditions needed for proper behaviors. Ensure the results are documented in the  story. Learn from mistakes and offer positive incentives to promote improvements. Secure design is neither an add-on nor a tool that you can add to software.
+Legen Sie zusammen mit den Geschäftseinheiten die fachlichen Anforderungen an die Anwendung fest, einschließlich des Schutzbedarfs hinsichtlich Vertraulichkeit, Integrität, Verfügbarkeit und Authentizität aller Datenbestände, sowie die vorgesehene Geschäftslogik. Berücksichtigen Sie, wie exponiert Ihre Anwendung sein wird und ob sie eine Mandantentrennung benötigt (zusätzlich zu der, die für die Zugriffskontrolle notwendig ist). Stellen Sie die technischen Anforderungen zusammen, einschließlich funktionaler und nicht funktionaler Sicherheitsanforderungen. Planen Sie das Budget für alle Design-, Entwicklungs-, Test- und Betriebsaktivitäten, unter Berücksichtigung der Sicherheit.
 
 
-### Secure Development Lifecycle
+### Sicheres Design
 
-Secure software requires a secure development lifecycle, a secure design pattern, a paved road methodology, a secure component library, appropriate tooling, threat modeling, and incident post-mortems that are used to improve the process. Reach out to your security specialists at the beginning of a software project, throughout the project, and for ongoing software maintenance. Consider leveraging the [OWASP Software Assurance Maturity Model (SAMM)](https://owaspsamm.org/) to help structure your secure software development efforts.
-
-Often self-responsibility of developers is underappreciated. Foster a culture of awareness, responsibility and proactive risk mitigation. Regular exchanges about security (e.g. during threat modeling sessions) can generate a mindset for including security in all important design decisions.  
+Sicheres Design ist sowohl eine Denkweise als auch eine Vorgehensweise, die kontinuierlich Bedrohungen analysiert und sicherstellt, dass der Code robust entwickelt und getestet wird, um bekannte Angriffsmethoden zu verhindern. Die Bedrohungsmodellierung sollte in Backlog Refinement Terminen oder vergleichbaren Aktivitäten integriert werden. Dabei sollten Änderungen im Datenfluss, in der Zugriffskontrolle und anderen Sicherheitsmaßnahmen überprüft werden. Bestimmen Sie in der Story-Entwicklung den korrekten Ablauf und die Fehlerzustände, stellen Sie sicher, dass diese von den verantwortlichen und betroffenen Parteien gut verstanden und vereinbart werden. Analysieren Sie Annahmen und Bedingungen für erwartete sowie fehlgeschlagene Prozesse, um sicherzustellen, dass diese angemessen und die erwünschten sind. Bestimmen Sie, wie Annahmen überprüft und Bedingungen erzwungen werden können, die für das korrekte Verhalten erforderlich sind. Stellen Sie sicher, dass die Ergebnisse in der Story dokumentiert sind. Lernen Sie aus Fehlern und bieten Sie positive Anreize, um kontinuierliche Verbesserungen voranzutreiben. Sicheres Design ist weder ein Add-on noch ein Werkzeug, das Sie einer Anwendung hinzufügen können.
 
 
-## How to prevent. 
+### Sicherer Entwicklungslebenszyklus
+
+Sichere Software erfordert einen sicheren Entwicklungslebenszyklus, ein sicheres Designmuster, eine Paved-Road-Methodik, eine sichere Komponentenbibliothek, geeignete Werkzeuge, Bedrohungsmodellierung und Incident-Post-Mortems, die zur Verbesserung des Prozesses genutzt werden. Kontaktieren Sie Ihre Sicherheitsspezialistinnen und -spezialisten zu Beginn eines Softwareprojekts, während des gesamten Projekts und für die laufende Softwarewartung. Erwägen Sie die Nutzung des [OWASP Software Assurance Maturity Model (SAMM)](https://owaspsamm.org/), um Ihre Bemühungen zur sicheren Softwareentwicklung zu strukturieren.
+
+Oft wird die Eigenverantwortung von Entwicklerinnen und Entwicklern nicht ausreichend gewürdigt. Fördern Sie eine Kultur des Bewusstseins, der Verantwortung und der proaktiven Risikominderung. Regelmäßiger Austausch über Sicherheit (z. B. während Bedrohungsmodellierungs-Sitzungen) kann eine Denkweise erzeugen, die Sicherheit in alle wichtigen Designentscheidungen einbezieht.
 
 
+## Prävention und Gegenmaßnahmen.
 
-* Establish and use a secure development lifecycle with AppSec professionals to help evaluate and design security and privacy-related controls
-* Establish and use a library of secure design patterns or paved-road components
-* Use threat modeling for critical parts of the application such as authentication, access control, business logic, and key flows
-* Use threat modeling as an educational tool to generate a security mindset
-* Integrate security language and controls into user stories
-* Integrate plausibility checks at each tier of your application (from frontend to backend)
-* Write unit and integration tests to validate that all critical flows are resistant to the threat model. Compile use-cases *and* misuse-cases for each tier of your application.
-* Segregate tier layers on the system and network layers, depending on the exposure and protection needs
-* Segregate tenants robustly by design throughout all tiers
-
-
-## Example attack scenarios. 
-
-**Scenario #1:** A credential recovery workflow might include “questions and answers,” which is prohibited by NIST 800-63b, the OWASP ASVS, and the OWASP Top 10. Questions and answers cannot be trusted as evidence of identity, as more than one person can know the answers. Such functionality should be removed and replaced with a more secure design.
-
-**Scenario #2:** A cinema chain allows group booking discounts and has a maximum of fifteen attendees before requiring a deposit. Attackers could threat model this flow and test if they can find an attack vector in the business logic of the application, e.g. booking six hundred seats and all cinemas at once in a few requests, causing a massive loss of income.
-
-**Scenario #3:** A retail chain’s e-commerce website does not have protection against bots run by scalpers buying high-end video cards to resell on auction websites. This creates terrible publicity for the video card makers and retail chain owners, and enduring bad blood with enthusiasts who cannot obtain these cards at any price. Careful anti-bot design and domain logic rules, such as purchases made within a few seconds of availability, might identify inauthentic purchases and reject such transactions.
+* Entwickeln und nutzen Sie einen sicheren Entwicklungslebenszyklus mit Unterstützung durch AppSec-Expertinnen und -Experten bei der Bewertung und Gestaltung von Sicherheits- und Datenschutzkontrollen.
+* Erstellen und verwenden Sie eine Bibliothek mit sicheren Entwurfsmustern und bewährten, erprobten Komponenten.
+* Verwenden Sie Bedrohungsmodellierung für kritische Bereiche wie Authentifizierung, Zugriffskontrolle, Geschäftslogik und wichtige Abläufe.
+* Verwenden Sie Bedrohungsmodellierung als Schulungswerkzeug, um ein Sicherheitsbewusstsein zu schaffen
+* Integrieren Sie Sicherheitsvorgaben und -kontrollen in den User Stories.
+* Implementieren Sie Plausibilitätsprüfungen auf allen Ebenen Ihrer Anwendung, vom Frontend bis zum Backend.
+* Schreiben Sie Unit- und Integrationstests, um zu validieren, dass alle kritischen Abläufe resistent gegen das Bedrohungsmodell sind. Stellen Sie Anwendungs- und Missbrauchsfälle für jede Ebene Ihrer Anwendung zusammen.
+* Trennen Sie die Ebenen basierend auf Gefährdungs- und Schutzbedarf auf System- und Netzwerkebene.
+* Stellen Sie sicher, dass die Trennung der Mandanten konsequent auf allen Ebenen erfolgt.
 
 
-## References.
+## Beispielhafte Angriffsszenarien.
+
+**Szenario Nr. 1:** Ein Workflow zur Wiederherstellung von Anmeldeinformationen kann „Fragen und Antworten” enthalten, was jedoch gemäß NIST 800-63b, dem OWASP ASVS und den OWASP Top 10 nicht zulässig ist. Fragen und Antworten können nicht als vertrauenswürdiger Identitätsnachweis betrachtet werden, als mehr als eine Person die Antworten kennen kann. Diese Funktionalität sollte entfernt und durch ein sichereres Design ersetzt werden.
+
+**Szenario Nr. 2:** Eine Kinokette bietet Gruppenbuchungsrabatte an und verlangt erst bei mehr als fünfzehn Besucherinnen und Besuchern eine Anzahlung. Angreifende könnten dieses System ausnutzen und testen, ob sie einen Angriffsvektor in der Geschäftslogik der Anwendung finden könne, z.B. indem sie versuchen, mit wenigen Anfragen sechshundert Sitzplätze in allen Kinos gleichzeitig zu reservieren, was zu erheblichen Einnahmeverlusten führen könnte.
+
+**Szenario Nr. 3:** Die E-Commerce-Website einer Einzelhandelskette ist nicht vor Bots geschützt, die von Scalpern betrieben werden, die High-End-Grafikkarten kaufen, um sie auf Auktionsplattformen weiterzuverkaufen. Dies sorgt für schreckliche Publicity bei den Grafikkartenherstellern und Besitzerinnen und Besitzern von Einzelhandelsketten und sorgt für anhaltende Frustration bei Enthusiastinnen und Enthusiasten, die diese Karten nicht erwerben können. Sorgfältiges Anti-Bot-Design sowie Automatismen, die z. B. Käufe ablehnen, die innerhalb weniger Sekunden nach Verfügbarkeit getätigt werden, können helfen, unechte Käufe zu identifizieren und solche Transaktionen zu verhindern.
 
 
+## Referenzen.
 
 * [OWASP Cheat Sheet: Secure Design Principles](https://cheatsheetseries.owasp.org/cheatsheets/Secure_Product_Design_Cheat_Sheet.html)
 * [OWASP SAMM: Design | Secure Architecture](https://owaspsamm.org/model/design/secure-architecture/)
@@ -118,7 +108,7 @@ Often self-responsibility of developers is underappreciated. Foster a culture of
 * [Awesome Threat Modeling](https://github.com/hysnsec/awesome-threat-modelling)
 
 
-## List of Mapped CWEs
+## Liste der zugeordneten CWEs
 
 * [CWE-73 External Control of File Name or Path](https://cwe.mitre.org/data/definitions/73.html)
 
@@ -140,7 +130,7 @@ Often self-responsibility of developers is underappreciated. Foster a culture of
 
 * [CWE-316 Cleartext Storage of Sensitive Information in Memory](https://cwe.mitre.org/data/definitions/316.html)
 
-* [CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')](https://cwe.mitre.org/data/definitions/362.html)
+* [CWE-362 Concurrent Execution using Shared Resource with Improper Synchronization (‘Race Condition’)](https://cwe.mitre.org/data/definitions/362.html)
 
 * [CWE-382 J2EE Bad Practices: Use of System.exit()](https://cwe.mitre.org/data/definitions/382.html)
 
@@ -150,7 +140,7 @@ Often self-responsibility of developers is underappreciated. Foster a culture of
 
 * [CWE-436 Interpretation Conflict](https://cwe.mitre.org/data/definitions/436.html)
 
-* [CWE-444 Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling')](https://cwe.mitre.org/data/definitions/444.html)
+* [CWE-444 Inconsistent Interpretation of HTTP Requests (‘HTTP Request Smuggling’)](https://cwe.mitre.org/data/definitions/444.html)
 
 * [CWE-451 User Interface (UI) Misrepresentation of Critical Information](https://cwe.mitre.org/data/definitions/451.html)
 
