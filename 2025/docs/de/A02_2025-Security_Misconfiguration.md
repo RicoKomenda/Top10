@@ -1,33 +1,35 @@
-# A02:2025 Security Misconfiguration ![icon](../assets/TOP_10_Icons_Final_Security_Misconfiguration.png){: style="height:80px;width:80px" align="right"}
+# A02:2025 Sicherheitsrelevante Fehlkonfiguration ![icon](../assets/TOP_10_Icons_Final_Security_Misconfiguration.png){: style="height:80px;width:80px" align="right"}
 
 
-## Background. 
+## Hintergrund.
 
-Moving up from #5 in the previous edition, 100% of the applications tested were found to have some form of misconfiguration, with an average incidence rate of 3.00%, and over 719k occurrences of a Common Weakness Enumeration (CWE) in this risk category. With more shifts into highly configurable software, it's not surprising to see this category moving up. Notable CWEs included are *CWE-16 Configuration* and *CWE-611 Improper Restriction of XML External Entity Reference (XXE)*.
+Die Kategorie rückt auf von Platz 5 in der vorherigen Ausgabe: 100 % der Anwendungen wurden auf irgendeine Form von Fehlkonfiguration getestet, mit einer durchschnittlichen Inzidenzrate von 3 % und über 719.000 Vorkommen einer Common Weakness Enumeration (CWE) in dieser Risikokategorie. Angesichts der zunehmenden Verlagerung hin zu hoch konfigurierbarer Software ist es nicht verwunderlich, dass diese Kategorie aufsteigt. Bemerkenswerte enthaltene CWEs sind *CWE-16 Configuration* und *CWE-611 Unproper Restriction of XML External Entity Reference (XXE)*.
+
+Eine sicherheitsrelevante Fehlkonfiguration liegt vor, wenn ein System, eine Anwendung oder ein Cloud-Dienst aus sicherheitstechnischer Sicht falsch eingerichtet ist, wodurch Schwachstellen entstehen.
 
 
-## Score table.
+## Punktetabelle.
 
 
 <table>
   <tr>
-   <td>CWEs Mapped 
+   <td>Zugeordnete CWEs
    </td>
-   <td>Max Incidence Rate
+   <td>Maximale Häufigkeit
    </td>
-   <td>Avg Incidence Rate
+   <td>Durchschn. Häufigkeit
    </td>
-   <td>Max Coverage
+   <td>Durchschn. Ausnutzbarkeit (gewichtet)
    </td>
-   <td>Avg Coverage
+   <td>Durchschn. Auswirkungen (gewichtet)
    </td>
-   <td>Avg Weighted Exploit
+   <td>Maximale Abdeckung
    </td>
-   <td>Avg Weighted Impact
+   <td>Durchschnittliche Abdeckung
    </td>
-   <td>Total Occurrences
+   <td>Gesamtanzahl
    </td>
-   <td>Total CVEs
+   <td>CVEs insgesamt
    </td>
   </tr>
   <tr>
@@ -54,55 +56,42 @@ Moving up from #5 in the previous edition, 100% of the applications tested were 
 
 
 
-## Description. 
+## Beschreibung.
 
-Security misconfiguration is when a system, application, or cloud service is set up incorrectly from a security perspective, creating vulnerabilities.
+Die Anwendung besitzt möglicherweise Schwachstellen, wenn Folgendes zutrifft:
+* Mangelhafte Sicherheitshärtung des Anwendungsstacks oder ungeeignet konfigurierte Berechtigungen auf Cloud-Diensten.
+* Nicht benötigte Features sind aktiviert oder installiert (z. B. unnötige Ports, Dienste, Seiten, Accounts oder Rechte).
+* Standardkonten und -passwörter sind aktiviert bzw. unverändert.
+* Die Fehlerbehandlung gibt Stack-Traces oder andere interne technische Fehlermeldungen an Anwendende preis.
+* Für aktualisierte Systeme sind die neuesten Sicherheitsfeatures deaktiviert oder nicht sicher konfiguriert.
+* Die Sicherheitseinstellungen in den Anwendungsservern und -frameworks (z. B. Struts, Spring, ASP.NET), Bibliotheken, Datenbanken etc. sind nicht auf sichere Werte gesetzt.
+* Der Server sendet keine Sicherheits-Header oder -Direktiven, bzw. diese sind nicht sicher konfiguriert.
+* Die Software ist veraltet oder verwundbar (siehe [A06:2025-Unsichere oder veraltete Komponenten](A06_2025-Vulnerable_and_Outdated_Components.md)).
 
-The application might be vulnerable if:
-
-
-
-* It is missing appropriate security hardening across any part of the application stack or improperly configured permissions on cloud services.
-* Unnecessary features are enabled or installed (e.g., unnecessary ports, services, pages, accounts, testing frameworks, or privileges).
-* Default accounts and their passwords are still enabled and unchanged.
-* A lack of central configuration for intercepting excessive error messages. Error handling reveals stack traces or other overly informative error messages to users.
-* For upgraded systems, the latest security features are disabled or not configured securely.
-* Excessive prioritization of backward compatibility leading to insecure configuration.
-* The security settings in the application servers, application frameworks (e.g., Struts, Spring, ASP.NET), libraries, databases, etc., are not set to secure values.
-* The server does not send security headers or directives, or they are not set to secure values.
-
-Without a concerted, repeatable application security configuration hardening process, systems are at a higher risk.
+Ohne einen abgestimmten und reproduzierbaren Prozess zur sicheren Konfiguration sind Systeme einem höheren Risiko ausgesetzt!
 
 
-## How to prevent. 
+## Prävention und Gegenmaßnahmen.
 
-Secure installation processes should be implemented, including:
+Es sollten sichere Installationsprozesse implementiert werden, darunter:
 
-
-
-* A repeatable hardening process enabling the fast and easy deployment of another environment that is appropriately locked down. Development, QA, and production environments should all be configured identically, with different credentials used in each environment. This process should be automated to minimize the effort required to set up a new secure environment.
-* A minimal platform without any unnecessary features, components, documentation, or samples. Remove or do not install unused features and frameworks.
-* A task to review and update the configurations appropriate to all security notes, updates, and patches as part of the patch management process (see [A03 Software Supply Chain Failures](A03_2025-Software_Supply_Chain_Failures.md)). Review cloud storage permissions (e.g., S3 bucket permissions).
-* A segmented application architecture provides effective and secure separation between components or tenants, with segmentation, containerization, or cloud security groups (ACLs).
-* Sending security directives to clients, e.g., Security Headers.
-* An automated process to verify the effectiveness of the configurations and settings in all environments.
-* Proactively add a central configuration to intercept excessive error messages as a backup.
-* If these verifications are not automated, they should be manually verified annually at a minimum.
-* Use identity federation, short-lived credentials, or role-based access mechanisms provided by the underlying platform instead of embedding static keys or secrets in code, configuration files, or pipelines.
+* Ein wiederholbarer Härtungsprozess, welcher die schnelle und einfache Bereitstellung zusätzlicher Umgebungen, die entsprechend abgesichert sind, ermöglicht. Entwicklungs-, Qualitätssicherungs- und Produktionsumgebungen sollten alle identisch konfiguriert sein, wobei in jeder Umgebung unterschiedliche Anmeldeinformationen verwendet werden sollten. Dieser Prozess sollte automatisiert werden, um den Aufwand für die Einrichtung einer neuen sicheren Umgebung zu minimieren.
+* Eine minimale Plattform ohne unnötige Funktionen, Komponenten, Dokumentation oder Beispiele: Entfernen Sie Funktionen und Frameworks die Sie nicht verwenden oder installieren Sie diese erst gar nicht.
+* Überprüfen und Aktualisieren der Konfigurationen, die für alle Sicherheitshinweise, Updates und Patches im Rahmen des Patch-Verwaltungsprozesses geeignet sind (siehe [A03:2025 – Software Supply Chain Failures](A03_2025-Software_Supply_Chain_Failures.md)). Überprüfen Sie die Cloud-Speicherberechtigungen (z. B. S3-Bucket-Berechtigungen).
 
 
-## Example attack scenarios. 
+## Beispielhafte Angriffsszenarien.
 
-**Scenario #1:** The application server comes with sample applications not removed from the production server. These sample applications have known security flaws that attackers use to compromise the server. Suppose one of these applications is the admin console, and default accounts weren't changed. In that case, the attacker logs in with the default password and takes over.
+**Szenario Nr. 1:** Der Anwendungsserver wird mit Beispielanwendungen geliefert, die nicht vom Produktionsserver entfernt wurden. Diese Beispielanwendungen weisen bekannte Sicherheitslücken auf, die die Angreifenden nutzen, um den Server zu gefährden. Angenommen, eine dieser Anwendungen ist die Admin-Konsole und die Standardkonten wurden nicht geändert. In diesem Fall meldet sich die angreifende Person mit einem Standardkennwort an und übernimmt die Kontrolle.
 
-**Scenario #2:** Directory listing is not disabled on the server. An attacker discovers they can simply list directories. The attacker finds and downloads the compiled Java classes, which they decompile and reverse engineer to view the code. The attacker then finds a severe access control flaw in the application.
+**Szenario Nr. 2:** Die Directory Listings wurden nicht auf dem Server deaktiviert. Angreifende entdecken, dass Verzeichnisse einfach aufgelistet werden können. Die angreifende Person findet die kompilierten Java-Klassen und lädt sie herunter, dekompiliert sie und betreibt Reverse Engineering, um den Code anzuzeigen. Dies ermöglicht das Findet eines schwerwiegenden Fehlers in der Zugriffskontrolle in der Anwendung.
 
-**Scenario #3:** The application server's configuration allows detailed error messages, such as stack traces to be returned to users. This potentially exposes sensitive information or underlying flaws, such as component versions that are known to be vulnerable.
+**Szenario Nr. 3:** Die Konfiguration des Anwendungsservers ermöglicht die Rückgabe detaillierter Fehlermeldungen an Anwendende, wie z. B. Stack-Traces. Dadurch werden möglicherweise vertrauliche Informationen oder zugrunde liegende Fehler wie Komponentenversionen offengelegt, die als angreifbar bekannt sind.
 
-**Scenario #4:** A cloud service provider (CSP) defaults to having sharing permissions open to the Internet. This allows sensitive data stored within cloud storage to be accessed.
+**Szenario Nr. 4:** Ein Cloud-Dienstanbieter (CSP) gewährt standardmäßig Freigabeberechtigungen zum Internet und ermöglicht dadurch Zugriff auf sensible Daten in der Cloud.
 
 
-## References.
+## Referenzen.
 
 * [OWASP Testing Guide: Configuration Management](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/README)
 * [OWASP Testing Guide: Testing for Error Codes](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/01-Testing_For_Improper_Error_Handling)
@@ -112,7 +101,8 @@ Secure installation processes should be implemented, including:
 * [Amazon S3 Bucket Discovery and Enumeration](https://blog.websecurify.com/2017/10/aws-s3-bucket-discovery.html)
 * ScienceDirect: Security Misconfiguration
 
-## List of Mapped CWEs
+
+## Liste der zugeordneten CWEs
 
 * [CWE-5 J2EE Misconfiguration: Data Transmission Without Encryption](https://cwe.mitre.org/data/definitions/5.html)
 
