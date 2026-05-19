@@ -64,7 +64,7 @@ Dies ist eine Umbenennung des Themas „Denial of Service" aus dem Jahr 2021. Di
 
 Diese Kategorie stellt eine systemische Schwäche darin dar, wie Anwendungen auf Belastungen, Ausfälle und Grenzfälle reagieren, von denen sie sich nicht erholen können. Wenn eine Anwendung unerwartete Zustände, Ressourcenengpässe und andere ungünstige Ereignisse nicht ordnungsgemäß behandelt, übersteht oder sich davon erholt, kann dies leicht zu Verfügbarkeitsproblemen führen (tritt am häufigsten auf), aber auch zu Datenschädigung, Offenlegung sensibler Daten, Kaskadenausfällen und/oder der Umgehung von Sicherheitskontrollen.
 
-Darüber hinaus können [X02:2025 Speicherverwaltungsfehler](#x022025-speichervewaltungsfehler) ebenfalls zum Ausfall der Anwendung oder sogar des gesamten Systems führen.
+Darüber hinaus können [X02:2025 Speicherverwaltungsfehler](#x022025-speicherverwaltungsfehler) ebenfalls zum Ausfall der Anwendung oder sogar des gesamten Systems führen.
 
 
 ### Prävention und Gegenmaßnahmen.
