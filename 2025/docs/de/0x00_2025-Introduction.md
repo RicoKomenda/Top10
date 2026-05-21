@@ -104,11 +104,11 @@ Die folgenden Organisationen (sowie mehrere anonyme Spender) haben freundlicherw
 * Tanya Janca - X: [@shehackspurple](https://x.com/shehackspurple)
 * Torsten Gigler - Mastodon: [@torsten_gigler@infosec.exchange](https://infosec.exchange/@torsten_gigler)
 
-## Hauptautoren
-* Tobias Heide - Mastodon [@tobiasheide@muenster.im](https://muenster.im/@tobiasheide)
-* Rico Komenda
-* Martina Kraus
-* Lilith Pendzich
+## Deutsche Übersetzung
+* Tobias Heide - [LinkedIn](https://www.linkedin.com/in/tobias-heide/)
+* Rico Komenda - [LinkedIn](https://www.linkedin.com/in/ricokomenda)
+* Martina Kraus - [LinkedIn](https://www.linkedin.com/in/martina-kraus-398493108/)
+* Lilith Pendzich - [LinkedIn](https://www.linkedin.com/in/lilithp)
 
 ## Fehler melden und Pull Requests stellen
 
