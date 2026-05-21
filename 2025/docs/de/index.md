@@ -1,40 +1,38 @@
 # OWASP Top 10:2025
 
-Welcome to the OWASP Top 10:2025 Release.
+Willkommen bei den OWASP Top 10:2025.
 
-The OWASP Top 10 is a standard awareness document for developers and web application security. It represents a broad consensus about the most critical security risks to web applications.
+Die OWASP Top 10 ist ein Standarddokument zur Sensibilisierung von Entwicklern für die Sicherheit von Webanwendungen. Sie spiegelt einen breiten Konsens über die kritischsten Sicherheitsrisiken für Webanwendungen wider.
 
-## About This Release
+## Über diese Veröffentlichung
 
-This is the **2025** version of the OWASP Top 10. This version includes updates based on the latest data and security trends.
+Dies ist die **2025**-Version der OWASP Top 10. Diese Version enthält Aktualisierungen auf der Grundlage der neuesten Daten und Sicherheitstrends.
 
-## Main Project Page
-The [main project page](https://github.com/OWASP/www-project-top-ten) has information about older versions and metadata about this project.
+## Hauptseite des Projekts
 
-## Getting Started
+Auf der [Hauptseite des Projekts](https://github.com/OWASP/www-project-top-ten) finden Sie Informationen zu älteren Versionen sowie Metadaten zu diesem Projekt.
 
-Start with the [Introduction](0x00_2025-Introduction.md) to learn about what's new in the 2025 version.
+## Erste Schritte
+
+Beginnen Sie mit der [Einführung](0x00_2025-Introduction.md), um mehr über die Neuerungen in der Version 2025 zu erfahren.
 
 ## Navigation
 
-- [Introduction](0x00_2025-Introduction.md)
-- [About OWASP](0x01_2025-About_OWASP.md)
-- [What are Application Security Risks?](0x02_2025-What_are_Application_Security_Risks.md)
-- [Establishing a Modern Application Security Program](0x03_2025-Establishing_a_Modern_Application_Security_Program.md)
+- [Einführung](0x00_2025-Introduction.md)
+- [Über OWASP](0x01_2025-About_OWASP.md)
+- [Was sind Sicherheitsrisiken für die Anwendungen?](0x02_2025-What_are_Application_Security_Risks.md)
+- [Aufbau eines modernen Programms zur Anwendungssicherheit](0x03_2025-Establishing_a_Modern_Application_Security_Program.md)
 
 ### Top 10:2025 List
 
-1. [A01:2025 - Broken Access Control](A01_2025-Broken_Access_Control.md)
-2. [A02:2025 - Security Misconfiguration](A02_2025-Security_Misconfiguration.md)
-3. [A03:2025 - Software Supply Chain Failures](A03_2025-Software_Supply_Chain_Failures.md)
-4. [A04:2025 - Cryptographic Failures](A04_2025-Cryptographic_Failures.md)
+1. [A01:2025 - Mangelhafte Zugriffskontrolle](A01_2025-Broken_Access_Control.md)
+2. [A02:2025 - Sicherheitsrelevante Fehlkonfiguration](A02_2025-Security_Misconfiguration.md)
+3. [A03:2025 - Schwachstellen in der Software-Lieferkette](A03_2025-Software_Supply_Chain_Failures.md)
+4. [A04:2025 - Fehlerhafter Einsatz von Kryptografie](A04_2025-Cryptographic_Failures.md)
 5. [A05:2025 - Injection](A05_2025-Injection.md)
-6. [A06:2025 - Insecure Design](A06_2025-Insecure_Design.md)
-7. [A07:2025 - Authentication Failures](A07_2025-Authentication_Failures.md)
-8. [A08:2025 - Software or Data Integrity Failures](A08_2025-Software_or_Data_Integrity_Failures.md)
-9. [A09:2025 - Security Logging and Alerting Failures](A09_2025-Security_Logging_and_Alerting_Failures.md)
-10. [A10:2025 - Mishandling of Exceptional Conditions](A10_2025-Mishandling_of_Exceptional_Conditions.md)
+6. [A06:2025 - Unsicheres Design](A06_2025-Insecure_Design.md)
+7. [A07:2025 - Fehlerhafte Authentifizierung](A07_2025-Authentication_Failures.md)
+8. [A08:2025 - Fehler bei der Software- und Datenintegrität](A08_2025-Software_or_Data_Integrity_Failures.md)
+9. [A09:2025 - Unzureichendes Sicherheitslogging und Alarmierung](A09_2025-Security_Logging_and_Alerting_Failures.md)
+10. [A10:2025 - Fehlerhafte Behandlung von Ausnahmezuständen](A10_2025-Mishandling_of_Exceptional_Conditions.md)
 
----
-
-**Note:** Translations will be added as they become available.
