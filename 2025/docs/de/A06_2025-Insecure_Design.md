@@ -10,26 +10,26 @@ Unsicheres Design rutscht zwei Plätze von #4 auf #6 im Ranking ab, da **[A02:20
 
 
 <table>
-  <tr>
-   <td>Zugeordnete CWEs
-   </td>
-   <td>Maximale Häufigkeit
-   </td>
-   <td>Durchschn. Häufigkeit
-   </td>
-   <td>Durchschn. Ausnutzbarkeit (gewichtet)
-   </td>
-   <td>Durchschn. Auswirkungen (gewichtet)
-   </td>
-   <td>Maximale Abdeckung
-   </td>
-   <td>Durchschnittliche Abdeckung
-   </td>
-   <td>Gesamtanzahl
-   </td>
-   <td>CVEs insgesamt
-   </td>
-  </tr>
+<tr>
+   <td>Zugeordnete CWEs
+   </td>
+   <td>Max. Häufigkeit
+   </td>
+   <td>Durchschn. Häufigkeit
+   </td>
+   <td>Max. Abdeckung
+   </td>
+   <td>Durchschn. Abdeckung
+   </td>
+   <td>Durchschn. gewichtete Ausnutzbarkeit
+   </td>
+   <td>Durchschn. gewichtete Auswirkung
+   </td>
+   <td>Gesamtanzahl
+   </td>
+   <td>Summe CVEs
+   </td>
+</tr>
   <tr>
    <td>39
    </td>
