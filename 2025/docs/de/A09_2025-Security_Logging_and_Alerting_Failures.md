@@ -54,7 +54,7 @@
 
 
 
-## Description. 
+## Beschreibung. 
 
 Ohne Protokollierung und Überwachung lassen sich Angriffe und Sicherheitsverletzungen nicht erkennen, und ohne Warnmeldungen ist es sehr schwierig, bei einem Sicherheitsvorfall schnell und effektiv zu reagieren. Eine unzureichende Protokollierung, kontinuierliche Überwachung, Erkennung und Warnmeldung zur Einleitung aktiver Maßnahmen kommt immer dann vor, wenn:
 

@@ -6,7 +6,7 @@
 Fehlerhafte Authentifizierung behält mit einer leichten Namensänderung seinen Rang #7 bei, um die 36 CWEs dieser Kategorie präziser widerzuspiegeln. Trotz der Vorteile standardisierter Frameworks hat diese Kategorie ihren Rang #7 aus 2021 gehalten. Zu den relevanten CWEs zählen *CWE-259: Use of Hard-coded Password*, *CWE-297: Improper Validation of Certificate with Host Mismatch*, *CWE-287: Improper Authentication*, *CWE-384: Session Fixation* sowie *CWE-798: Use of Hard-coded Credentials*.
 
 
-## Beurteilungskriterien.
+## Punktetabelle.
 
 
 <table>
