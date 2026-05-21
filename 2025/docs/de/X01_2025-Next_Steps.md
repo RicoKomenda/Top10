@@ -316,4 +316,4 @@ Wir fordern alle Personen, die Code schreiben, auf, beim Einsatz von KI Folgende
 
 
 ### Liste der zugeordneten CWEs 
-- keine-
+- keine
