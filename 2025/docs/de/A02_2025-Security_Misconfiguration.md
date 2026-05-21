@@ -77,7 +77,7 @@ Es sollten sichere Installationsprozesse implementiert werden, darunter:
 
 * Ein wiederholbarer Härtungsprozess, welcher die schnelle und einfache Bereitstellung zusätzlicher Umgebungen, die entsprechend abgesichert sind, ermöglicht. Entwicklungs-, Qualitätssicherungs- und Produktionsumgebungen sollten alle identisch konfiguriert sein, wobei in jeder Umgebung unterschiedliche Anmeldeinformationen verwendet werden sollten. Dieser Prozess sollte automatisiert werden, um den Aufwand für die Einrichtung einer neuen sicheren Umgebung zu minimieren.
 * Eine minimale Plattform ohne unnötige Funktionen, Komponenten, Dokumentation oder Beispiele: Entfernen Sie Funktionen und Frameworks die Sie nicht verwenden oder installieren Sie diese erst gar nicht.
-* Überprüfen und Aktualisieren der Konfigurationen, die für alle Sicherheitshinweise, Updates und Patches im Rahmen des Patch-Verwaltungsprozesses geeignet sind (siehe [A03:2025 – Software Supply Chain Failures](A03_2025-Software_Supply_Chain_Failures.md)). Überprüfen Sie die Cloud-Speicherberechtigungen (z. B. S3-Bucket-Berechtigungen).
+* Überprüfen und Aktualisieren der Konfigurationen, die für alle Sicherheitshinweise, Updates und Patches im Rahmen des Patch-Verwaltungsprozesses geeignet sind (siehe [A03:2025 – Schwachstellen in der Software-Lieferkette](A03_2025-Software_Supply_Chain_Failures.md)). Überprüfen Sie die Cloud-Speicherberechtigungen (z. B. S3-Bucket-Berechtigungen).
 
 
 ## Beispielhafte Angriffsszenarien.
