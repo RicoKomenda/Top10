@@ -60,11 +60,11 @@ Eine Injection-Sicherheitslücke ist ein Anwendungsfehler, der es ermöglicht, d
 Eine Anwendung ist für diesen Angriff anfällig, wenn:
 
 * Daten, die von Nutzenden stammen, von der Anwendung nicht ausreichend validiert, gefiltert oder bereinigt werden.
-* Dynamische Anfragen oder nicht-parametrisierte Aufrufe ohne ein, dem Kontext entsprechendes Escaping direkt einem Interpreter übergeben werden.
+* Dynamische Anfragen oder nicht-parametrisierte Aufrufe ohne ein dem Kontext entsprechendes Escaping direkt einem Interpreter übergeben werden.
 * Unbereinigte Daten innerhalb von ORM („Object-Relational Mapping“)-Suchparametern genutzt werden können, um zusätzliche, sensible Datensätze zu extrahieren.
-* Potenziell bösartige Daten direkt oder als Teil zusammengesetzter, dynamischer Querys verwendet werden. Die SQL-Abfragen oder Befehle beinhalten die schädlichen Daten in dynamischen Querys, Befehlen oder Stored Procedures.
+* Potenziell bösartige Daten direkt oder als Teil zusammengesetzter, dynamischer Abfragen verwendet werden. Die SQL-Abfragen oder Befehle beinhalten die schädlichen Daten in dynamischen Abfragen, Befehlen oder gespeicherten Prozeduren (Stored Procedures).
 
-Zu den häufigeren Injection Arten gehören SQL, NoSQL, OS-Befehle, Object Relational Mapping (ORM), LDAP und Expression Language (EL) oder Object Graph Navigation Library (OGNL). Das Grundkonzept eines Injection-Angriffs ist für alle Interpreter gleich. Die Erkennung lässt sich am besten durch eine Kombination aus Code-Review und automatisierten Tests (einschließlich Fuzzing) aller Parameter, Header, URLs, Cookies sowie JSON-, SOAP- und XML-Eingabedaten erreichen. Statische (SAST, Quellcode-Ebene), dynamische (DAST, laufende Anwendung) und interaktive (IAST, Mischform aus statisch und dynamisch) Test-Werkzeuge können von Organisationen für ihre CI/CD-Pipeline genutzt werden, um neue Schwachstellen noch vor einer möglichen Auslieferung in Produktivsysteme zu identifizieren.
+Zu den häufigeren Injection Arten gehören SQL, NoSQL, OS-Befehle, Object Relational Mapping (ORM), LDAP und Expression Language (EL) oder Object Graph Navigation Library (OGNL). Das Grundkonzept eines Injection-Angriffs ist für alle Interpreter gleich. Die Erkennung lässt sich am besten durch eine Kombination aus Code-Review und automatisierten Tests (einschließlich Fuzzing) aller Parameter, Kopfzeilen, URLs, Cookies sowie JSON-, SOAP- und XML-Eingabedaten erreichen. Statische (SAST, Quellcode-Ebene), dynamische (DAST, laufende Anwendung) und interaktive (IAST, Mischform aus statisch und dynamisch) Test-Werkzeuge können von Organisationen für ihre CI/CD-Pipeline genutzt werden, um neue Schwachstellen noch vor einer möglichen Auslieferung in Produktivsysteme zu identifizieren.
 
 Eine verwandte Klasse von Injektionsschwachstellen ist bei LLMs mittlerweile weit verbreitet. Diese werden separat in den [OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/) behandelt, insbesondere unter [LLM01:2025 Prompt-Injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
 
@@ -74,16 +74,16 @@ Eine verwandte Klasse von Injektionsschwachstellen ist bei LLMs mittlerweile wei
 Eine konsequente Trennung von Daten, Suchanfragen und Befehlen ist für die Vermeidung von Injection-Angriffen unerlässlich:
 
 * Die bevorzugte Methode ist die Verwendung einer sicheren API, die die Verwendung des Interpreters vollständig vermeidet, eine parametrisierte Schnittstelle bereitstellt oder in objektrelationale Mapping-Tools (ORMs) umwandelt. 
-**Anmerkung:** Stored Procedures können - auch parametrisiert - immer noch SQL-Injections ermöglichen, wenn PL/SQL oder T-SQL Anfragen und Eingabedaten konkateniert oder mit EXECUTE IMMEDIATE oder exec() ausgeführt werden.
+**Anmerkung:** Gespeicherte Prozeduren können - auch parametrisiert - immer noch SQL-Injections ermöglichen, wenn PL/SQL oder T-SQL Anfragen und Eingabedaten konkateniert oder mit EXECUTE IMMEDIATE oder exec() ausgeführt werden.
 
 Wenn es nicht möglich ist, die Daten von den Befehlen zu trennen, können Sie die Risiken mithilfe der folgenden Techniken verringern:
 
-* Nutzen Sie eine serverseitige Eingabe-Validierung mit Allow-List. Dies ist kein vollständiger Schutz, da viele Anwendungen Sonderzeichen z. B. in Textfelder oder APIs für mobile Anwendungen benötigen.
+* Nutzen Sie eine serverseitige Eingabe-Validierung mit Allow-List. Dies ist kein vollständiger Schutz, da viele Anwendungen Sonderzeichen z. B. in Textfeldern oder APIs für mobile Anwendungen benötigen.
 
-* Für jede noch verbliebene dynamische Query müssen Sonderzeichen für den jeweiligen Interpreter mit der richtigen Escape-Syntax entschärft werden.
+* Für jede noch verbliebene dynamische Abfrage müssen Sonderzeichen für den jeweiligen Interpreter mit der richtigen Escape-Syntax entschärft werden.
 **Anmerkung:** Ein Escaping von SQL-Bezeichnern, wie z. B. die Namen von Tabellen oder Spalten usw. ist nicht möglich. Falls Nutzende solche Bezeichner selbst eingeben können, so ist dies durchaus gefährlich. Dies ist eine übliche Schwachstelle bei Software, die Reports aus einer Datenbank erstellt.
 
-**Warnung**: Diese Techniken beinhalten das Parsen und Escapen komplexer Zeichenfolgen, wodurch sie fehleranfällig sind und nicht robust bei geringfügigen Änderungen am System. 
+**Warnung**: Diese Techniken beinhalten das Parsen und Escapen komplexer Zeichenfolgen, wodurch sie bei geringfügigen Änderungen am System fehleranfällig und nicht robust sind. 
 
 ## Beispielhafte Angriffsszenarien. 
 
@@ -93,30 +93,30 @@ Wenn es nicht möglich ist, die Daten von den Befehlen zu trennen, können Sie d
 String query = "SELECT * FROM accounts WHERE custID='" + request.getParameter("id") + "'";
 ```
 
-Ein Angreifer manipuliert den Wert des id-Parameters im Browser und sendet `' OR '1'='1`. z.B.:
+Eine angreifende Person manipuliert den Wert des id-Parameters im Browser und sendet `' OR '1'='1`. z.B.:
 
 ```
 http://example.com/app/accountView?id=' OR '1'='1
 ```
 
-Dadurch wird die Abfrage so geändert, dass alle Datensätze aus der Tabelle „accounts“ zurückgegeben werden. Gefährlichere Angriffe könnten Daten verändern oder löschen oder sogar Stored Procedures aufrufen.
+Dadurch wird die Abfrage so geändert, dass alle Datensätze aus der Tabelle „accounts“ zurückgegeben werden. Gefährlichere Angriffe könnten Daten verändern oder löschen oder sogar gespeicherte Prozeduren aufrufen.
 
-**Szenario Nr. 2:** Auch das blinde Vertrauen in Frameworks kann zu Querys führen, die ganz analog zu obigem Beispiel verwundbar sind (z. B. Hibernate Query Language (HQL)):
+**Szenario Nr. 2:** Auch das blinde Vertrauen in Frameworks kann zu Abfragen führen, die ganz analog zu obigem Beispiel verwundbar sind (z. B. Hibernate Query Language (HQL)):
 
 ```
 Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.getParameter("id") + "'");
 ```
 
-Ein Angreifer gibt Folgendes ein: `' OR custID IS NOT NULL OR custID='`. Dadurch wird der Filter umgangen und es werden alle Accounts zurückgegeben. Obwohl HQL weniger gefährliche Funktionen enthält als reines SQL, ermöglicht es dennoch unbefugten Datenzugriff, wenn Benutzereingaben in Abfragen eingebunden werden.
+Eine angreifende Person gibt Folgendes ein: `' OR custID IS NOT NULL OR custID='`. Dadurch wird der Filter umgangen und es werden alle Accounts zurückgegeben. Obwohl HQL weniger gefährliche Funktionen enthält als reines SQL, ermöglicht es dennoch unbefugten Datenzugriff, wenn Benutzereingaben in Abfragen eingebunden werden.
 
-**Szenario Nr. 3:** Eine Anwendung gibt Benutzereingaben direkt an ein OS-Kommando weiter:
+**Szenario Nr. 3:** Eine Anwendung gibt Benutzereingaben direkt an einen Betriebssystembefehl weiter:
 
 ```
 String cmd = "nslookup " + request.getParameter("domain");
 Runtime.getRuntime().exec(cmd);
 ```
 
-Ein Angreifer übergibt `example.com; cat /etc/passwd` um beliebige Befehle auf dem Server auszuführen.
+Eine angreifende Person übergibt `example.com; cat /etc/passwd` um beliebige Befehle auf dem Server auszuführen.
 
 ## Referenzen.
 

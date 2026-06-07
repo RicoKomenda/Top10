@@ -1,4 +1,4 @@
-# A04:2025 Fehlerhafter Einsatz von Kryptographie ![icon](../assets/TOP_10_Icons_Final_Crypto_Failures.png){: style="height:80px;width:80px" align="right"}
+# A04:2025 Fehlerhafter Einsatz von Kryptografie ![icon](../assets/TOP_10_Icons_Final_Crypto_Failures.png){: style="height:80px;width:80px" align="right"}
 
 
 
@@ -64,14 +64,14 @@ Neben der Absicherung der Transportschicht ist es wichtig zu ermitteln, welche D
 
 Folgendes ist zu klären:
 
-* Werden alte oder schwache kryptografische Algorithmen oder Protokolle verwendet, z. B. per Default-Einstellung oder in älterem Code?
+* Werden alte oder schwache kryptografische Algorithmen oder Protokolle verwendet, z. B. per Standardeinstellung oder in älterem Code?
 * Werden vordefinierte kryptografische Schlüssel verwendet, schwache Schlüssel generiert oder Schlüssel wiederverwendet? Fehlt eine Schlüsselverwaltung oder Schlüsselrotation? 
 * Werden kryptografische Schlüssel in Quellcode-Repositories eingecheckt?
-* Wird Verschlüsselung nicht verbindlich erzwungen, z. B. fehlen bei Web Anwendungen Vorgaben für den Browser in den entsprechenden HTTP-Headern?
-* Werden empfangene Serverzertifikate und die Zertifikatskette korrekt validiert
-* Werden Initialisierungsvektoren ignoriert, wiederverwendet oder nicht ausreichend sicher für den kryptografischen Betriebsmodus generiert? Ist ein unsicherer Betriebsmodus wie ECB im Einsatz? Wird ein Betriebsmodus verwendet, der nur verschlüsselt, obwohl ein AEAD Betriebsmodus angebracht wäre, der auch die Integrität schützt?
+* Wird Verschlüsselung nicht verbindlich erzwungen, z. B. fehlen bei Webanwendungen Vorgaben für den Browser in den entsprechenden HTTP-Kopfzeilen?
+* Werden empfangene Serverzertifikate und die Zertifikatskette korrekt validiert?
+* Werden Initialisierungsvektoren ignoriert, wiederverwendet oder nicht ausreichend sicher für den kryptografischen Betriebsmodus generiert? Ist ein unsicherer Betriebsmodus wie ECB im Einsatz? Wird Verschlüsselung genutzt, wenn authentifizierte Verschlüsselung angebrachter wäre?
 * Werden Passwörter direkt als kryptografische Schlüssel verwendet ohne eine Schlüsselableitung mittels Key Derivation Function?
-* Werden Zufallszahlen für kryptografische Zwecke genutzt, die nicht auf kryptografische Anforderungen ausgelegt sind? Selbst wenn die richtige Funktion genutzt wird, muss diese eventuell vom Entwickler korrekt initialisiert werden. Wurde eine integrierte starke Initialisierung eventuell durch einen Entwickler mit einem schwachen Wert überschrieben, dem es an ausreichender Entropie und Nichtvorhersehbarkeit mangelt?
+* Werden Zufallszahlen für kryptografische Zwecke genutzt, die nicht auf kryptografische Anforderungen ausgelegt sind? Selbst wenn die richtige Funktion genutzt wird, muss diese eventuell von Entwickler:innen korrekt initialisiert werden. Wurde eine integrierte starke Initialisierung eventuell durch ein Entwickler:in mit einem schwachen Wert überschrieben, dem es an ausreichender Entropie und Unberechenbarkeit mangelt?
 * Werden Hash-Funktionen mit bekannten Schwächen wie MD5 oder SHA1 verwendet oder werden nicht-kryptografische Hash-Funktionen verwendet, wenn kryptografische Hash-Funktionen benötigt werden?
 * Sind kryptografische Fehlermeldungen oder Seitenkanäle ausnutzbar, beispielsweise in Form von Padding-Oracle-Angriffen?
 * Kann der eingesetzte kryptografische Algorithmus abgeschwächt oder umgangen werden?
@@ -81,27 +81,27 @@ Siehe ASVS: Cryptography (V11), Secure Communication (V12) and Data Protection (
 
 ## Prävention und Gegenmaßnahmen. 
 
-Gehen Sie als Minimum wie folgt vor und konsultieren Sie die Referenzen:
+Befolgen Sie mindestens die folgenden Schritte und konsultieren Sie die weiterführenden Webseiten:
 
 * Klassifizieren Sie die Daten, die von einer Anwendung verarbeitet, gespeichert oder übermittelt werden
 nach ihrem Schutzbedarf. Berücksichtigen Sie dabei auch Datenschutzgesetze, regulatorische und Geschäfts-Anforderungen.
-* Speichern Sie Ihre sensibelsten Schlüssel in einem Hardware- oder cloudbasierten HSM.
+* Speichern Sie Ihre am stärksten gefährdeten Schlüssel in einem Hardware- oder cloudbasierten HSM.
 * Verwenden Sie nach Möglichkeit überall bewährte Implementierungen kryptografischer Algorithmen
 * Speichern Sie sensible Daten nicht unnötig. Löschen Sie sensible Daten auf sichere Weise sobald wie möglich oder verwenden Sie Techniken wie PCI-DSS-konformes Speichern von Ersatzwerten (tokenization) oder gar gekürzten (truncation) Werten.
 Daten, die es nicht mehr gibt, können auch nicht gestohlen werden.
 * Stellen Sie sicher, dass alle vertraulichen Daten bei Speicherung verschlüsselt werden.
 * Stellen Sie sicher, dass aktuelle, starke, standardisierte Algorithmen, Protokolle und Schlüssel, z. B. gemäß BSI TR-02102, verwendet werden. Etablieren Sie wirksames Schlüsselmanagement für kryptografische Schlüssel.
-* Verschlüsseln Sie alle Daten während der Übertragung mit TLS >= 1.2, die Forward Secrecy (FS) bieten, deaktivieren Sie die Unterstützung von cipher block chaining (CBC) Chiffren, unterstützen Sie quantensichere Schlüsselaustauschverfahren. Erzwingen Sie die Verschlüsselung durch HTTP Strict Transport Security (HSTS). Prüfen Sie die Einstellungen mit einem Tool.
+* Verschlüsseln Sie alle Daten während der Übertragung mit TLS >= 1.2, die Forward Secrecy (FS) bieten, deaktivieren Sie die Unterstützung von cipher block chaining (CBC) Chiffren, unterstützen Sie quantensichere Schlüsselaustauschverfahren. Erzwingen Sie die Verschlüsselung durch HTTP Strict Transport Security (HSTS). Prüfen Sie die Einstellungen mit einem Werkzeug.
 * Deaktivieren Sie das Caching für Antworten mit vertraulichen Daten. Dazu gehören das Caching in Ihrem CDN, auf Ihrem Webserver sowie jegliches Anwendungs-Caching (z. B. Redis).
 * Wenden Sie die Sicherheitsmaßnahmen gemäß dem Schutzbedarf der Datenklassifizierung an.
 * Verwenden Sie keine unverschlüsselten Protokolle wie FTP und STARTTLS. Vermeiden Sie die Verwendung von SMTP für die Übertragung vertraulicher Daten.
-* Verwenden Sie spezielle Hash-Funktionen für das Hashen von Passwörtern, bei denen für jedes Passwort ein Salt-Wert (salted hash) und Rechenaufwand (work-factor) zum Einsatz kommt. Beispiele sind: Argon2, yescrypt, scrypt, PBKDF2-HMAC-SHA-512. Für Altsysteme, die bcrypt verwenden, finden Sie weitere Hinweise unter [OWASP Cheat Sheet: Password Storage](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
+* Verwenden Sie spezielle Hash-Funktionen für das Hashen von Passwörtern, bei denen für jedes Passwort ein Salz-Wert (salted hash) und Rechenaufwand (work-factor) zum Einsatz kommt. Beispiele sind: Argon2, yescrypt, scrypt, PBKDF2-HMAC-SHA-512. Für Altsysteme, die bcrypt verwenden, finden Sie weitere Hinweise unter [OWASP Cheat Sheet: Password Storage](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
 * Initialisierungsvektoren müssen passend zum kryptografischen Betriebsmodus gewählt werden. In vielen Fällen bedeutet dies, dass ein CSPRNG (kryptografisch sicherer Pseudozufallszahlengenerator) für die Generierung des Initialisierungsvektors verwendet wird. Für Modi, die eine Nonce erfordern, benötigt der Initialisierungsvektor nicht notwendigerweise einen CSPRNG. In allen Fällen darf der gleiche Initialisierungsvektor niemals zweimal für den gleichen Schlüssel verwendet werden.
 * Verwenden Sie immer eine authentifizierte Verschlüsselung statt nur einer Verschlüsselung.
-* Schlüssel sollten kryptografisch zufällig generiert und als Byte-Arrays im Speicher gehalten werden. Wenn ein Passwort zur Verschlüsselung verwendet werden soll, muss über eine Funktion zur Schlüsselableitung ein Schlüssel generiert werden.
-* Stellen Sie sicher, dass an den notwendigen Stellen kryptografisch sichere, unvorhersagbare Zufallszahlen verwendet werden, und dass der Pseudozufallszahlengenerator nicht auf vorhersehbare Weise oder nur mit geringer Entropie initialisiert wurde. Bei den meisten modernen APIs muss der Entwickler die Initialisierung des Pseudozufallszahlengenerators (CSPRNG) nicht manuell durchführen.
-* Vermeiden Sie veraltete kryptografische Funktionen und Padding-Verfahren wie MD5, SHA1, Cipher Block Chaining Mode (CBC), PKCS Nummer 1 v1.5.
-* Stellen Sie sicher, dass Einstellungen und Konfigurationen den Sicherheitsanforderungen entsprechen, indem Sie sie von Sicherheitsspezialisten, speziell dafür entwickelten Tools oder beidem überprüfen lassen.
+* Schlüssel sollten kryptografisch zufällig generiert und als Byte-Felder (Arrays) im Speicher gehalten werden. Wenn ein Passwort zur Verschlüsselung verwendet werden soll, muss über eine Funktion zur Schlüsselableitung ein Schlüssel generiert werden.
+* Stellen Sie sicher, dass an den notwendigen Stellen kryptografisch sichere, unvorhersagbare Zufallszahlen verwendet werden, und dass der Pseudozufallszahlengenerator nicht auf vorhersehbare Weise oder nur mit geringer Entropie initialisiert wurde. Bei den meisten modernen APIs muss die Entwickler:in die Initialisierung des Pseudozufallszahlengenerators (CSPRNG) nicht manuell durchführen.
+* Meiden Sie veraltete kryptografische Funktionen und Padding-Verfahren wie MD5, SHA1, Cipher Block Chaining Mode (CBC), PKCS Nummer 1 v1.5.
+* Stellen Sie sicher, dass Einstellungen und Konfigurationen den Sicherheitsanforderungen entsprechen, indem Sie sie von Sicherheitsspezialist:innen, speziell dafür entwickelte Werkzeugen oder beidem überprüfen lassen.
 * Sie müssen sich bereits jetzt auf die Post-Quanten-Kryptografie (PQC) vorbereiten (siehe Referenz (ENISA)), damit risikoreiche Systeme spätestens bis Ende 2030 sicher sind.
 
 
@@ -109,9 +109,9 @@ Daten, die es nicht mehr gibt, können auch nicht gestohlen werden.
 
 ## Beispielhafte Angriffsszenarien. 
 
-**Scenario #1**: Eine Webseite benutzt kein TLS, erzwingt dies nicht auf allen Seiten oder lässt schwache Verschlüsselung zu. Die angreifende Person liest die Kommunikation mit (z. B. in einem offenen WLAN), ersetzt HTTPS- durch HTTP-Verbindungen, hört diese ab und stiehlt das Sitzungscookie. Durch Wiedereinspielen dieses Cookies übernimmt die angreifende Person die (authentifizierte) Sitzung des Nutzers und erlangt Zugriff auf dessen private Daten. Anstatt dessen kann die angreifende Person auch die übertragenen Daten ändern, z. B. den Empfänger einer Überweisung.
+**Scenario #1**: Eine Webseite benutzt kein TLS, erzwingt dies nicht auf allen Seiten oder lässt schwache Verschlüsselung zu. Die angreifende Person liest die Kommunikation mit (z. B. in einem offenen WLAN), ersetzt HTTPS- durch HTTP-Verbindungen, hört diese ab und stiehlt das Sitzungscookie. Durch Wiedereinspielen dieses Cookies übernimmt die angreifende Person die (authentifizierte) Sitzung der Nutzer:in und erlangt Zugriff auf deren private Daten. Anstatt dessen kann die angreifende Person auch die übertragenen Daten ändern, z. B. die Empfänger:in einer Überweisung.
 
-**Scenario #2**: Die Passwortdatenbank benutzt einfache Hashwerte oder Hashes ohne Salt zur Speicherung der Passwörter. Eine Schwachstelle in der Uploadfunktion erlaubt Angreifenden den Zugriff auf die Passwortdatei. Zu Hashes ohne Salt kann über vorausberechnete Rainbow-Tabellen der Klartext gefunden werden. Hashes, die über einfache oder schnelle Funktionen berechnet wurden, können effizient mit Grafikkarten gebrochen werden.
+**Scenario #2**: Die Passwortdatenbank benutzt einfache Hashwerte oder Hashes ohne Salz zur Speicherung der Passwörter. Eine Schwachstelle in der Uploadfunktion erlaubt Angreifenden den Zugriff auf die Passwortdatei. Zu Hashes ohne Salz kann über vorausberechnete Rainbow-Tabellen der Klartext gefunden werden. Hashes, die über einfache oder schnelle Funktionen berechnet wurden, können effizient mit Grafikkarten gebrochen werden, selbst wenn sie gesalzt waren.
 
 
 ## Referenzen.

@@ -4,7 +4,7 @@
 
 # Einführung
 
-Willkommen zur 8. Ausgabe der OWASP Top Ten!
+Willkommen zur 8. Ausgabe der OWASP Top 10!
 
 Ein großes Dankeschön an alle, die Daten und Einschätzungen in der Umfrage beigetragen haben. Ohne diese Beiträge wäre diese Ausgabe nicht möglich gewesen. **HERZLICHEN DANK!**
 
@@ -27,7 +27,7 @@ Ein großes Dankeschön an alle, die Daten und Einschätzungen in der Umfrage be
 
 ## Was sich in den Top 10 für 2025 geändert hat
 
-Es gibt zwei neue Kategorien und eine Konsolidierung in den Top Ten für 2025. Wir haben uns bemüht, den Fokus so weit wie möglich auf die Grundursachen statt auf die Symptome zu legen. Angesichts der Komplexität von Software-Engineering und Software-Sicherheit ist es nahezu unmöglich, zehn Kategorien ohne ein gewisses Maß an Überschneidungen zu erstellen.
+Es gibt zwei neue Kategorien und eine Konsolidierung in den Top 10 für 2025. Wir haben uns bemüht, den Fokus so weit wie möglich auf die Grundursachen statt auf die Symptome zu legen. Angesichts der Komplexität von Software-Engineering und Software-Sicherheit ist es nahezu unmöglich, zehn Kategorien ohne ein gewisses Maß an Überschneidungen zu erstellen.
 
 ![Mapping](../assets/2025-mappings.png)
 
@@ -45,18 +45,18 @@ Es gibt zwei neue Kategorien und eine Konsolidierung in den Top Ten für 2025. W
 
 ## Methodik
 
-Diese Ausgabe der Top Ten bleibt datengestützt, aber nicht blind datengetrieben. Wir haben 12 Kategorien anhand der eingereichten Daten eingestuft und zwei weitere durch die Ergebnisse der Community-Umfrage aufgenommen. Wir tun dies aus einem grundlegenden Grund: Die Analyse der eingereichten Daten ist im Wesentlichen ein Blick in die Vergangenheit. Sicherheitsforschende im Bereich Anwendungssicherheit widmen ihre Zeit der Identifizierung neuer Schwachstellen und der Entwicklung neuer Testmethoden. Es dauert Wochen bis Jahre, bis diese Tests in Werkzeuge und Prozesse integriert sind. Bis eine Schwachstelle zuverlässig in großem Maßstab getestet werden kann, können Jahre vergangen sein. Es gibt auch wichtige Risiken, die wir möglicherweise nie zuverlässig testen können und die daher in den Daten fehlen. Um diesen Blickwinkel auszugleichen, nutzen wir eine Community-Umfrage, um Praktizierende aus der Anwendungssicherheit und Softwareentwicklung an vorderster Front zu befragen, was sie als wesentliche Risiken betrachten, die in den Testdaten unterrepräsentiert sein könnten.
+Diese Ausgabe der Top 10 bleibt datengestützt, aber nicht blind datengetrieben. Wir haben 12 Kategorien anhand der eingereichten Daten eingestuft und zwei weitere durch die Ergebnisse der Community-Umfrage aufgenommen. Wir tun dies aus einem grundlegenden Grund: Die Analyse der eingereichten Daten ist im Wesentlichen ein Blick in die Vergangenheit. Sicherheitsforschende im Bereich Anwendungssicherheit widmen ihre Zeit der Identifizierung neuer Schwachstellen und der Entwicklung neuer Testmethoden. Es dauert Wochen bis Jahre, bis diese Tests in Werkzeuge und Prozesse integriert sind. Bis eine Schwachstelle zuverlässig in großem Maßstab getestet werden kann, können Jahre vergangen sein. Es gibt auch wichtige Risiken, die wir möglicherweise nie zuverlässig testen können und die daher in den Daten fehlen. Um diesen Blickwinkel auszugleichen, nutzen wir eine Community-Umfrage, um Praktizierende aus der Anwendungssicherheit und Softwareentwicklung an vorderster Front zu befragen, was sie als wesentliche Risiken betrachten, die in den Testdaten unterrepräsentiert sein könnten.
 
 
 ## Aufbau der Kategorien
 
-Einige Kategorien haben sich gegenüber der vorherigen Ausgabe der OWASP Top Ten geändert. Im Folgenden finden Sie eine übergeordnete Zusammenfassung der Kategorieänderungen.
+Einige Kategorien haben sich gegenüber der vorherigen Ausgabe der OWASP Top 10 geändert. Im Folgenden finden Sie eine übergeordnete Zusammenfassung der Kategorieänderungen.
 
-In dieser Ausgabe haben wir Daten ohne Einschränkung auf bestimmte CWEs angefragt, wie wir es bereits für die Ausgabe 2021 getan haben. Wir fragten nach der Anzahl der getesteten Anwendungen für ein bestimmtes Jahr (ab 2021) und nach der Anzahl der Anwendungen, bei denen mindestens ein CWE im Test gefunden wurde. Dieses Format ermöglicht es uns, zu erfassen, wie häufig die einzelnen CWEs in der Gesamtzahl der Anwendungen vorkommen. Wir ignorieren die Häufigkeit für unsere Zwecke; obwohl sie in anderen Situationen notwendig sein kann, verdeckt sie nur die tatsächliche Verbreitung in der Anwendungspopulation. Ob eine Anwendung vier oder 4.000 Vorkommen eines CWEs aufweist, ist für die Berechnung der Top Ten nicht relevant. Insbesondere da manuelle Tester eine Schwachstelle in der Regel nur einmal vermerken, unabhängig davon, wie oft sie in einer Anwendung vorkommt, während automatisierte Test-Frameworks jedes Vorkommen als einzigartig aufführen. Wir sind von etwa 30 CWEs im Jahr 2017 auf fast 400 CWEs im Jahr 2021 und auf 589 CWEs in dieser Ausgabe gestiegen. Wir planen, in Zukunft zusätzliche Datenanalysen als Ergänzung durchzuführen. Dieser deutliche Anstieg der CWE-Anzahl erfordert Änderungen in der Strukturierung der Kategorien.
+In dieser Ausgabe haben wir Daten ohne Einschränkung auf bestimmte CWEs angefragt, wie wir es bereits für die Ausgabe 2021 getan haben. Wir fragten nach der Anzahl der getesteten Anwendungen für ein bestimmtes Jahr (ab 2021) und nach der Anzahl der Anwendungen, bei denen mindestens ein CWE im Test gefunden wurde. Dieses Format ermöglicht es uns, zu erfassen, wie häufig die einzelnen CWEs in der Gesamtzahl der Anwendungen vorkommen. Wir ignorieren die Häufigkeit für unsere Zwecke; obwohl sie in anderen Situationen notwendig sein kann, verdeckt sie nur die tatsächliche Verbreitung in der Anwendungspopulation. Ob eine Anwendung vier oder 4.000 Vorkommen eines CWEs aufweist, ist für die Berechnung der Top 10 nicht relevant. Insbesondere da manuelle Tester:innen eine Schwachstelle in der Regel nur einmal vermerken, unabhängig davon, wie oft sie in einer Anwendung vorkommt, während automatisierte Test-Frameworks jedes Vorkommen als einzigartig aufführen. Wir sind von etwa 30 CWEs im Jahr 2017 auf fast 400 CWEs im Jahr 2021 und auf 589 CWEs in dieser Ausgabe gestiegen. Wir planen, in Zukunft zusätzliche Datenanalysen als Ergänzung durchzuführen. Dieser deutliche Anstieg der CWE-Anzahl erfordert Änderungen in der Strukturierung der Kategorien.
 
-Wir haben mehrere Monate damit verbracht, CWEs zu gruppieren und zu kategorisieren, und hätten noch weitere Monate damit fortfahren können. Irgendwann mussten wir aufhören. Es gibt sowohl CWEs für Grundursachen als auch für Symptome – Grundursachen-Typen sind beispielsweise „Kryptografischer Fehler" und „Fehlkonfiguration", während Symptomtypen wie „Sensitive Data Exposure" und „Denial of Service" zu nennen sind. Wir haben beschlossen, uns wann immer möglich auf die Grundursache zu konzentrieren, da dies sinnvoller für die Identifizierung und Behebung ist. Sich auf die Grundursache statt auf das Symptom zu konzentrieren ist kein neues Konzept; die Top Ten war schon immer eine Mischung aus Symptomen und Grundursachen. CWEs sind ebenfalls eine solche Mischung – wir gehen nun bewusster damit um. In dieser Ausgabe gibt es durchschnittlich 25 CWEs pro Kategorie, mit einem Minimum von 5 CWEs für A03:2025 und A09:2025 bis hin zu 40 CWEs in A01:2025. Wir haben beschlossen, die Anzahl der CWEs pro Kategorie auf 40 zu begrenzen. Diese aktualisierte Kategoriestruktur bietet zusätzliche Vorteile für Schulungen, da Unternehmen sich auf CWEs konzentrieren können, die für eine bestimmte Programmiersprache oder ein Framework relevant sind.
+Wir haben mehrere Monate damit verbracht, CWEs zu gruppieren und zu kategorisieren, und hätten noch weitere Monate damit fortfahren können. Irgendwann mussten wir aufhören. Es gibt sowohl CWEs für Grundursachen als auch für Symptome – Grundursachen-Typen sind beispielsweise „Kryptografischer Fehler" und „Fehlkonfiguration", während Symptomtypen wie „Sensitive Data Exposure" und „Denial of Service" zu nennen sind. Wir haben beschlossen, uns wann immer möglich auf die Grundursache zu konzentrieren, da dies sinnvoller für die Identifizierung und Behebung ist. Sich auf die Grundursache statt auf das Symptom zu konzentrieren ist kein neues Konzept; die Top 10 war schon immer eine Mischung aus Symptomen und Grundursachen. CWEs sind ebenfalls eine solche Mischung – wir gehen nun bewusster damit um. In dieser Ausgabe gibt es durchschnittlich 25 CWEs pro Kategorie, mit einem Minimum von 5 CWEs für A03:2025 und A09:2025 bis hin zu 40 CWEs in A01:2025. Wir haben beschlossen, die Anzahl der CWEs pro Kategorie auf 40 zu begrenzen. Diese aktualisierte Kategoriestruktur bietet zusätzliche Vorteile für Schulungen, da Unternehmen sich auf CWEs konzentrieren können, die für eine bestimmte Programmiersprache oder ein Framework relevant sind.
 
-Wir wurden gefragt, warum wir nicht zu einer Liste von 10 CWEs als Top 10 wechseln, ähnlich den MITRE Top 25 Most Dangerous Software Weaknesses. Es gibt zwei Hauptgründe für die Verwendung mehrerer CWEs in Kategorien. Erstens existieren nicht alle CWEs in allen Programmiersprachen oder Frameworks, was Probleme für Werkzeuge und Schulungsprogramme verursacht. Zweitens gibt es mehrere CWEs für häufige Schwachstellen – etwa für Injection, Command Injection, Cross-Site Scripting, hartcodierte Passwörter, fehlende Validierung, Buffer Overflows und viele weitere. Je nach Organisation oder Tester werden unterschiedliche CWEs verwendet. Durch die Verwendung einer Kategorie mit mehreren CWEs können wir das Bewusstsein für die verschiedenen Schwachstellentypen unter einem gemeinsamen Kategorienamen schärfen. In dieser Ausgabe der Top Ten 2025 gibt es 248 CWEs in den 10 Kategorien. Zum Zeitpunkt dieser Veröffentlichung enthält die [herunterladbare Auflistung von MITRE](https://cwe.mitre.org) insgesamt 968 CWEs.
+Wir wurden gefragt, warum wir nicht zu einer Liste von 10 CWEs als Top 10 wechseln, ähnlich den MITRE Top 25 Most Dangerous Software Weaknesses. Es gibt zwei Hauptgründe für die Verwendung mehrerer CWEs in Kategorien. Erstens existieren nicht alle CWEs in allen Programmiersprachen oder Frameworks, was Probleme für Werkzeuge und Schulungsprogramme verursacht. Zweitens gibt es mehrere CWEs für häufige Schwachstellen – etwa für Injection, Command Injection, Cross-Site Scripting, hartcodierte Passwörter, fehlende Validierung, Buffer Overflows und viele weitere. Je nach Organisation oder Tester werden unterschiedliche CWEs verwendet. Durch die Verwendung einer Kategorie mit mehreren CWEs können wir das Bewusstsein für die verschiedenen Schwachstellentypen unter einem gemeinsamen Kategorienamen schärfen. In dieser Ausgabe der Top 10 2025 gibt es 248 CWEs in den 10 Kategorien. Zum Zeitpunkt dieser Veröffentlichung enthält die [herunterladbare Auflistung von MITRE](https://cwe.mitre.org) insgesamt 968 CWEs.
 
 
 ## Verwendung der Daten zur Kategorienauswahl
@@ -95,11 +95,11 @@ Die folgenden Organisationen (sowie mehrere anonyme Spender) haben freundlicherw
 * Tanya Janca - X: [@shehackspurple](https://x.com/shehackspurple)
 * Torsten Gigler - Mastodon: [@torsten_gigler@infosec.exchange](https://infosec.exchange/@torsten_gigler)
 
-## Hauptautoren
-* Tobias Heide - Mastodon [@tobiasheide@muenster.im](https://muenster.im/@tobiasheide)
-* Rico Komenda
-* Martina Kraus
-* Lilith Pendzich
+## Deutsche Übersetzung
+* Tobias Heide - [LinkedIn](https://www.linkedin.com/in/tobias-heide/)
+* Rico Komenda - [LinkedIn](https://www.linkedin.com/in/ricokomenda)
+* Martina Kraus - [LinkedIn](https://www.linkedin.com/in/martina-kraus-398493108/)
+* Lilith Pendzich - [LinkedIn](https://www.linkedin.com/in/lilithp)
 
 ## Fehler melden und Pull Requests stellen
 
