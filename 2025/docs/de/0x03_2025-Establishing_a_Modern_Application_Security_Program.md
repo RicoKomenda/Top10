@@ -1,210 +1,202 @@
-# Establishing a Modern Application Security Program
+# Aufbau eines modernen Programms zur Anwendungssicherheit
 
-The OWASP Top Ten lists are awareness documents, meant to bring awareness to the most critical risks of whichever topic they cover. They are not meant to be a complete list, only a starting place. In previous versions of this list we have prescribed starting an application security program as the best way to avoid these risks, and more. In this section we will cover how to start and build a modern application security program.
+Die OWASP-Top-Ten-Listen sind Informationsdokumente, die darauf abzielen, das Bewusstsein für die kritischsten Risiken des jeweiligen Themas zu schärfen. Sie sind nicht als vollständige Liste gedacht, sondern lediglich als Ausgangspunkt. In früheren Versionen dieser Liste haben wir die Einführung eines Programms zur Anwendungssicherheit als besten Weg empfohlen, um diese und weitere Risiken zu vermeiden. In diesem Abschnitt behandeln wir, wie man ein modernes Programm zur Anwendungssicherheit aufbaut und weiterentwickelt.
 
- 
+Wenn Sie bereits über ein Anwendungssicherheitsprogramm verfügen, sollten Sie eine Reifegradbewertung mithilfe von [OWASP SAMM (Software Assurance Maturity Model)](https://owasp.org/www-project-samm/) oder DSOMM (DevSecOps Maturity Model) durchführen. Diese Reifegradmodelle sind umfassend und ausführlich und können Ihnen dabei helfen, herauszufinden, worauf Sie Ihre Bemühungen zur Erweiterung und Weiterentwicklung Ihres Programms am besten konzentrieren sollten. Bitte beachten Sie: Sie müssen nicht alle Schritte in OWASP SAMM oder DSOMM durchführen, um gute Arbeit zu leisten; die Modelle dienen als Leitfaden und bieten viele Optionen. Sie sollen keine unerreichbaren Standards vorgeben oder unerschwingliche Programme beschreiben. Sie sind umfassend, um Ihnen viele Ideen und Optionen zu bieten.
 
-If you already have an application security program, consider performing a maturity assessment on it using [OWASP SAMM (Software Assurance Maturity Model)](https://owasp.org/www-project-samm/) or DSOMM (DevSecOps Maturity Model). These maturity models are comprehensive and exhaustive and can be used to help you figure out where you should best focus your efforts for expanding and maturing your program. Please note: you do not need to do everything in OWASP SAMM or DSOMM to be doing a good job, they are meant to guide you and offer many options. They are not meant to offer unattainable standards or describe unaffordable programs. They are expansive in order to offer you many ideas and options.
+Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für Ihr Team derzeit als „zu viel“ empfinden, lesen Sie bitte die folgenden Ratschläge.
 
- 
 
-If you are starting a program from scratch, or you find OWASP SAMM or DSOMM ‘too much’ for your team right now, please review the following advice.
+### 1. Einführung eines risikobasierten Portfolioansatzes:
 
+* Ermitteln Sie den Schutzbedarf Ihres Anwendungsportfolios aus geschäftlicher Sicht. Dabei sollten unter anderem Datenschutzgesetze und andere Vorschriften berücksichtigt werden, die für die zu schützenden Datenbestände relevant sind.
 
-### 1. Establish a Risk Based Portfolio Approach:
+* Erstellen Sie ein [Risikobewertungsmodell](https://owasp.org/www-community/OWASP_Risk_Rating_Methodology) mit einem einheitlichen Satz von Wahrscheinlichkeits- und Auswirkungsfaktoren, die die Risikotoleranz Ihres Unternehmens widerspiegeln.
 
-* Identify the protection needs of your application portfolio from a business perspective. This should be driven in part by privacy laws and other regulations relevant to the data asset being protected.
+* Bewerten und priorisieren Sie entsprechend alle Ihre Anwendungen und APIs. Fügen Sie die Ergebnisse Ihrer [Konfigurationsmanagement-Datenbank (CMDB)](https://de.wikipedia.org/wiki/Configuration_Management_Database) hinzu.
 
-* Establish a [common risk rating model](https://owasp.org/www-community/OWASP_Risk_Rating_Methodology) with a consistent set of likelihood and impact factors reflective of your organization’s tolerance for risk.
+* Legen Sie Sicherheitsrichtlinien fest, um den erforderlichen Umfang und Grad an Genauigkeit richtig zu definieren.
 
 
-* Accordingly measure and prioritize all your applications and APIs. Add the results to your [Configuration Management Database (CMDB)](https://de.wikipedia.org/wiki/Configuration_Management_Database).
+### 2. Schaffung einer soliden Grundlage:
 
-* Establish assurance guidelines to properly define coverage and level of rigor required.
+* Legen Sie eine Reihe gezielter Richtlinien und Standards fest, die allen Entwicklungsteams als Grundlage für die Anwendungssicherheit dienen.
 
+* Definieren Sie einen gemeinsamen Satz wiederverwendbarer Sicherheitsmaßnahmen, die diese Richtlinien und Standards ergänzen, und geben Sie Leitlinien für deren Anwendung in den Bereichen Design und Entwicklung vor.
 
-### 2. Enable with a Strong Foundation:
+* Erstellen Sie ein obligatorisches Schulungsprogramm zur Anwendungssicherheit, das auf verschiedene Entwicklungsrollen und Themen zugeschnitten ist.
 
-* Establish a set of focused policies and standards that provide an application security baseline for all development teams to adhere to.
+### 3. Integration von Sicherheit in bestehende Prozesse:
 
-* Define a common set of reusable security controls that complement these policies and standards and provide design and development guidance on their use.
+* Definieren und integrieren Sie Maßnahmen zur sicheren Implementierung und Verifizierung in bestehende Entwicklungs- und Betriebsprozesse.
 
-* Establish an application security training curriculum that is required and targeted to different development roles and topics.
+* Zu diesen Maßnahmen gehören Bedrohungsmodellierung, sicheres Design und Designprüfung, sicheres Programmieren und Codeüberprüfung, Penetrationstests sowie die Behebung von Schwachstellen.
 
+* Stellen Sie Fachexpert:innen und Unterstützungsdienste bereit, damit Entwicklungs- und Projektteams erfolgreich arbeiten können.
 
-### 3. Integrate Security into Existing Processes:
+* Überprüfen Sie Ihren aktuellen Systementwicklungslebenszyklus sowie alle Aktivitäten, Werkzeuge, Richtlinien und Prozesse im Bereich Softwaresicherheit und dokumentieren Sie diese anschließend.
 
-* Define and integrate secure implementation and verification activities into existing development and operational processes.
+* Fügen Sie bei neuer Software eine oder mehrere Sicherheitsmaßnahmen in jede Phase des Systementwicklungslebenszyklus (SDLC) ein. Im Folgenden finden Sie zahlreiche Vorschläge, was Sie tun können. Stellen Sie sicher, dass Sie diese neuen Maßnahmen bei jedem neuen Projekt oder jeder neuen Softwareinitiative durchführen. Auf diese Weise können Sie sicher sein, dass jede neue Software mit einem für Ihr Unternehmen akzeptablen Sicherheitsniveau ausgeliefert wird.
 
-* Activities include threat modeling, secure design and design review, secure coding and code review, penetration testing, and remediation.
+* Wählen Sie Ihre Maßnahmen so aus, dass Ihr Endprodukt ein für Ihr Unternehmen akzeptables Risikoniveau aufweist.
 
-* Provide subject matter experts and support services for development and project teams to be successful.
+* Für bestehende Software (manchmal auch als Legacy-Software bezeichnet) sollten Sie über einen formellen Wartungsplan verfügen. Ideen zur Aufrechterhaltung sicherer Anwendungen finden Sie weiter unten im Abschnitt „Betrieb und Änderungsmanagement“.
 
-* Review your current system development life cycle and all software security activities, tooling, policies, and processes, then document them.
 
-* For new software, add one or more security activities to each phase of the system development life cycle (SDLC). Below we offer many suggestions of what you can do below. Ensure you perform these new activities on every new project or software initiative, this way you will know each new piece of software will be delivered at an acceptable security posture for your organizations.
+### 4. Schulungen zur Anwendungssicherheit:
 
-* Select your activities to ensure your final product meets an acceptable level of risk for your organization.
+* Erwägen Sie die Einführung eines „Security Champion“-Programms oder eines allgemeinen Sicherheitsschulungsprogramms für Ihre Entwickler (manchmal auch als „Security Awareness“-Programm bezeichnet), um ihnen alles beizubringen, was sie Ihrer Meinung nach wissen sollten. So bleiben sie auf dem neuesten Stand, lernen, wie sie ihre Arbeit sicher ausführen können, und tragen dazu bei, die Sicherheitskultur in Ihrem Unternehmen positiver zu gestalten. Oft verbessert dies auch das Vertrauen zwischen den Teams und sorgt für ein harmonischeres Arbeitsklima. OWASP unterstützt Sie dabei mit dem [OWASP Security Champions Guide](https://securitychampions.owasp.org/), der Schritt für Schritt erweitert wird.
 
-* For existing software (sometimes called legacy) you will want to have a formal maintenance plan, please look below for ideas of how to maintain secure applications in the section called 'Operations and Change Management'.
+* Das OWASP Education Project stellt Schulungsmaterialien bereit, um Entwickler in Bezug auf Webanwendungssicherheit zu schulen. Für praktisches Lernen über Schwachstellen probieren Sie das [OWASP Juice Shop Project](https://owasp.org/www-project-juice-shop/) oder [OWASP WebGoat](https://owasp.org/www-project-webgoat/) aus. Um auf dem Laufenden zu bleiben, besuchen Sie eine [OWASP AppSec Konferenz](https://owasp.org/events/), ein [OWASP Konferenz Training](https://owasp.org/events/) oder lokale Treffen der [OWASP-Chapters](https://owasp.org/chapters/).
 
 
-### 4. Application Security Education:
+### 5. Transparenz für das Management schaffen:
 
-* Consider starting a security champion program, or general security education program for your developers (sometimes called an advocacy or security awareness program), to teach them everything you wish they would know. This will keep them up to date, help them know how to do their work securely, and make the security culture where you work more positive. It often also improves trust between the teams and makes for a happier working relationship. OWASP supports you in this with the [OWASP Security Champions Guide](https://securitychampions.owasp.org/), which is being expanded step by step.
+* Managen Sie anhand von Kennzahlen. Treiben Sie Verbesserungen und Finanzierungsentscheidungen auf der Grundlage der erfassten Kennzahlen und Analysedaten voran. Zu den Kennzahlen gehören die Einhaltung von Sicherheitspraktiken und -maßnahmen, neu auftretende Schwachstellen, behobene Schwachstellen, Anwendungsabdeckung, Fehlerdichte nach Art und Anzahl der Vorkommen usw.
 
-* The OWASP Education Project provides training materials to help educate developers on web application security. For hands-on learning about vulnerabilities, try the [OWASP Juice Shop Project](https://owasp.org/www-project-juice-shop/), or [OWASP WebGoat](https://owasp.org/www-project-webgoat/). To stay current, come to an [OWASP AppSec Conference](https://owasp.org/events/), [OWASP Conference Training](https://owasp.org/events/), or local [OWASP Chapter](https://owasp.org/chapters/) meetings.
+* Analysieren Sie Daten aus den Implementierungs- und Verifizierungsaktivitäten, um nach Ursachen und Schwachstellenmustern zu suchen und so strategische und systemische Verbesserungen im gesamten Unternehmen voranzutreiben. Lernen Sie aus Fehlern und bieten Sie positive Anreize, um Verbesserungen zu fördern.
 
 
-### 5. Provide Management Visibility:
 
-* Manage with metrics. Drive improvement and funding decisions based on the metrics and analysis data captured. Metrics include adherence to security practices and activities, vulnerabilities introduced, vulnerabilities mitigated, application coverage, defect density by type and instance counts, etc.
+## Einrichtung und Anwendung wiederholbarer Sicherheitsprozesse und standardisierter Sicherheitskontrollen
 
-* Analyze data from the implementation and verification activities to look for root cause and vulnerability patterns to drive strategic and systemic improvements across the enterprise. Learn from mistakes and offer positive incentives to promote improvements.
+### Phase der Anforderungs- und Ressourcenverwaltung:
 
+* Erfassen und verhandeln Sie gemeinsam mit dem Fachbereich die geschäftlichen Anforderungen an eine Anwendung, einschließlich der Schutzanforderungen hinsichtlich Vertraulichkeit, Authentizität, Integrität und Verfügbarkeit aller Datenbestände sowie der erwarteten Geschäftslogik.
 
+* Erstellen Sie die technischen Anforderungen, einschließlich funktionaler und nicht-funktionaler Sicherheitsanforderungen. OWASP empfiehlt, den [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/www-project-application-security-verification-standard/) als Leitfaden für die Festlegung der Sicherheitsanforderungen für Ihre Anwendung(en) zu verwenden.
 
-## Establish & Use Repeatable Security Processes and Standard Security Controls
+* Planen und verhandeln Sie das Budget, das alle Aspekte von Entwurf, Entwicklung, Test und Betrieb abdeckt, einschließlich der Sicherheitsmaßnahmen.
 
-### Requirements and Resource Management Phase:
+* Nehmen Sie Sicherheitsmaßnahmen in Ihren Projektplan auf.
 
-* Collect and negotiate the business requirements for an application with the business, including the protection requirements with regard to confidentiality, authenticity, integrity and availability of all data assets, and the expected business logic.
+* Stellen Sie sich beim Projektstart als Sicherheitsbeauftragte:r vor, damit die Projektbeteiligten wissen, an wen sie sich wenden können.
 
-* Compile the technical requirements including functional and nonfunctional security requirements. OWASP recommends you use the [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/www-project-application-security-verification-standard/) as a guide for setting the security requirements for your application(s).
 
-* Plan and negotiate the budget that covers all aspects of design, build, testing and operation, including security activities.
+### Ausschreibung und Vertragsabschluss:
 
-* Add security activities to your project schedule.
+* Verhandeln Sie die Anforderungen mit internen oder externen Entwickler:innen, einschließlich Richtlinien und Sicherheitsanforderungen im Hinblick auf Ihr Sicherheitsprogramm, z. B. SDLC und bewährte Methoden.
 
-* Introduce yourself as the security representative at the project kick off, so they know who to talk to.
+* Bewerten Sie die Erfüllung aller technischen Anforderungen, einschließlich einer Planungs- und Entwurfsphase.
 
+* Verhandeln Sie alle technischen Anforderungen, einschließlich Design, Sicherheit und Leistungsvereinbarung (SLA).
 
-### Request for Proposals (RFP) and Contracting:
+*  Verwenden Sie Vorlagen und Checklisten, wie z. B. den [OWASP Secure Software Contract Annex](https://owasp.org/www-community/OWASP_Secure_Software_Contract_Annex).<br>**Hinweis:** *Der Anhang bezieht sich auf das US-Vertragsrecht; bitte holen Sie daher qualifizierten Rechtsrat ein, bevor Sie den Musteranhang verwenden.*
 
-* Negotiate the requirements with internal or external developers, including guidelines and security requirements with respect to your security program, e.g. SDLC, best practices.
 
-*  Rate the fulfillment of all technical requirements, including a planning and design phase.
+### Planungs- und Entwurfsphase:
 
-*  Negotiate all technical requirements, including design, security, and service level agreements (SLA).
+*  Besprechen Sie die Planung und den Entwurf mit den Entwicklern und internen Beteiligten, z. B. Sicherheitsspezialisten.
 
-*  Adopt templates and checklists, such as [OWASP Secure Software Contract Annex](https://owasp.org/www-community/OWASP_Secure_Software_Contract_Annex).<br>**Note:** *The annex is for US contract law, so please consult qualified legal advice before using the sample annex.*
+*  Definieren Sie die Sicherheitsarchitektur, Kontrollmaßnahmen, Gegenmaßnahmen und Entwurfsprüfungen (design reviews) entsprechend den Schutzanforderungen und dem erwarteten Bedrohungsniveau. Dies sollte von Sicherheitsspezialisten unterstützt werden.
 
+*  Anstatt Sicherheitsfunktionen nachträglich in Ihre Anwendungen und APIs zu integrieren, ist es weitaus kostengünstiger, die Sicherheit von Anfang an mit einzuplanen. OWASP empfiehlt die [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/index.html) und die [OWASP Proactive Controls](https://top10proactive.owasp.org/) als guten Ausgangspunkt für Anleitungen zur Gestaltung von von Anfang an integrierter Sicherheit.
 
-### Planning and Design Phase:
+*  Führen Sie eine Bedrohungsmodellierung durch, siehe [OWASP Cheat Sheet: Bedrohungsmodellierung](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html).
 
-*  Negotiate planning and design with the developers and internal shareholders, e.g. security specialists.
+*  Vermitteln Sie Ihren Softwarearchitekten sichere Designkonzepte und -muster und bitten Sie sie, diese nach Möglichkeit in ihre Entwürfe zu integrieren.
 
-* Define the security architecture, controls, countermeasures and design reviews appropriate to the protection needs and the expected threat level. This should be supported by security specialists.
+*  Prüfen Sie gemeinsam mit Ihren Entwicklern die Datenflüsse.
 
-* Rather than retrofitting security into your applications and APIs, it is far more cost effective to design the security in from the start. OWASP recommends the [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/index.html) and the [OWASP Proactive Controls](https://top10proactive.owasp.org/) as a good starting point for guidance on how to design security included from the beginning.
+*  Fügen Sie neben all Ihren anderen User Stories auch Sicherheits-User-Stories hinzu.
 
-*  Perform threat modelling, see [OWASP Cheat Sheet: Threat Modeling](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html).
 
-*  Teach your software architects secure design concepts and patterns and ask them to add them to their designs where possible.
+### Sicherer Entwicklungslebenszyklus:
 
-*  Examine data flows with your developers.
+* Um den Prozess zu verbessern, den Ihr Unternehmen bei der Entwicklung von Anwendungen und APIs befolgt, empfiehlt OWASP das [OWASP Software Assurance Maturity Model (SAMM)](https://owasp.org/www-project-samm/). Dieses Modell hilft Unternehmen dabei, eine Strategie für Softwaresicherheit zu formulieren und umzusetzen, die auf die spezifischen Risiken zugeschnitten ist, denen Ihr Unternehmen ausgesetzt ist.
 
-*  Add security user stories alongside all of your other user stories.
+*  Bieten Sie Ihren Softwareentwicklern Schulungen zum sicheren Programmieren sowie alle anderen Schulungen an, von denen Sie glauben, dass sie ihnen helfen, robustere und sicherere Anwendungen zu erstellen.
 
+*  Code-Review, siehe [OWASP Cheat Sheet: Secure Code Review](https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html).
 
-### Secure Development Lifecycle:
+*  Stellen Sie Ihren Entwicklern Sicherheitswerkzeuge zur Verfügung und bringen Sie ihnen deren Nutzung bei, insbesondere im Hinblick auf statische Analyse, Software-Kompositionsanalyse, Geheimnisscanner (Secrets) und [Infrastructure als Code (IaC)](https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html).
 
+*  Schaffen Sie nach Möglichkeit Leitplanken für Ihre Entwickler (technische Schutzmaßnahmen, die sie zu sichereren Entscheidungen lenken).
 
-* To improve the process your organization follows when building applications and APIs, OWASP recommends the [OWASP Software Assurance Maturity Model (SAMM)](https://owasp.org/www-project-samm/). This model helps organizations formulate and implement a strategy for software security that is tailored to the specific risks facing their organization.
+*   Die Entwicklung robuster und benutzerfreundlicher Sicherheitsmaßnahmen ist schwierig. Bieten Sie nach Möglichkeit sichere Standardeinstellungen an und schaffen Sie „gepflasterte Wege“ (indem Sie den einfachsten Weg auch zum sichersten Weg machen, also zur naheliegenden und bevorzugten Vorgehensweise). Die [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/index.html) sind ein guter Ausgangspunkt für Entwickler, und viele moderne Frameworks verfügen mittlerweile über standardmäßige und wirksame Sicherheitskontrollen für Autorisierung, Validierung, CSRF-Prävention usw.
 
-*  Provide secure coding training to your software developers, and any other training you think will help them create more robust and secure applications.
+*  Stellen Sie Ihren Entwicklern sicherheitsrelevante Entwicklungsumgebungsplugins zur Verfügung und ermutigen Sie sie, diese zu nutzen.
 
-*  Code review, see [OWASP Cheat Sheet: Secure Code Review](https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html).
+*  Stellen Sie ihnen ein Werkzeug zur Verwaltung von Geheimnissen (Secrets) bereit und die nötigen Lizenzen und eine Dokumentation zur Verwendung.
 
-*  Give your developers security tools, then teach them how to use them, especially static analysis, software composition analysis, secret, and [Infrastructure-as-Code (IaC)](https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html) scanners.
+*  Stellen Sie ihnen eine private KI zur Verfügung, idealerweise eingerichtet mit einem RAG-Server voller nützlicher Sicherheitsdokumentation, Prompts, die Ihr Team für bessere Ergebnisse verfasst hat, und einem MCP-Server, der die für Ihre Organisation ausgewählten Sicherheitswerkzeuge aufruft. Bringen Sie ihnen bei, wie man KI sicher nutzt, denn sie werden es tun, ob es Ihnen gefällt oder nicht.
 
-*  Create guardrails for your developers, if possible (technical safeguards to steer them towards more secure choices).
 
-*   Building strong and usable security controls is difficult. Offer secure defaults whenever possible, and create ‘paved roads’ (making the easiest way also the most secure way to do something, the obvious preferred way) whenever possible. The [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/index.html) are a good starting point for developers, and many modern frameworks now come with standard and effective security controls for authorization, validation, CSRF prevention, etc.
+### Einführung kontinuierlicher Tests zur Anwendungssicherheit:
 
-*  Give your developers security-related IDE plugins and encourage them to use them.
+*  Prüfen Sie technische Funktionen, die Integration in die IT-Architektur und Koordinieren Sie Tests der Fachlogik.
 
-*  Provide them a secret management tool, licenses, and documentation on how to use it.
+*  Erstellung von Testfällen für „korrekte“ und „missbräuchliche“ Nutzung aus technischer und geschäftlicher Perspektive.
 
-*  Provide them a private AI to use, ideally set up with a RAG server full of useful security documentation, prompts your team has written for better outcomes, and an MCP server that calls the security tooling of choice for your org. Teach them how to use AI safely, because they are going to do it whether you like it or not.
+* Verwalten Sie Sicherheitstests gemäß internen Prozessen, den Schutzanforderungen und dem von der Anwendung angenommenen Bedrohungsgrad.
 
+* Stellen Sie Sicherheitstest-Werkzeuge (Fuzzer, DAST usw.), eine sichere Testumgebung und Schulungen zu deren Verwendung bereit, ODER führen Sie die Tests für sie durch ODER beauftragen Sie einen Tester.
 
-### Establish Continuous Application Security Testing:
+*  Wenn Sie ein hohes Maß an Sicherheit benötigen, ziehen Sie einen formellen Penetrationstest sowie Stress- und Leistungstests (Performance) in Betracht.
 
-*  Test the technical functions and integration with the IT architecture and coordinate business tests.
+*  Arbeiten Sie mit Ihren Entwicklern zusammen, um ihnen bei der Entscheidung zu helfen, was aus den Fehlerberichten behoben werden muss, und stellen Sie sicher, dass ihre Vorgesetzten ihnen die dafür erforderliche Zeit einräumen.
 
-* Create “use” and “abuse” test cases from technical and business perspectives.
 
-* Manage security tests according to internal processes, the protection needs, and the assumed threat level by the application.
+### Inbetriebnahme:
 
-* Provide security testing tools (fuzzers, DAST, etc.), a safe place to test, and training on how to use them, OR do the testing for them OR hire a tester
+* Die Anwendung in Betrieb nehmen und bei Bedarf von zuvor verwendeten Anwendungen migrieren.
 
-*  If you require a high level of assurance, consider a formal penetration test, as well as stress testing and performance testing.
+* Die gesamte Dokumentation fertigstellen, einschließlich der Change-Management-Datenbank (CMDB) und der Sicherheitsarchitektur.
 
-*  Work with your developers to help them decide what they need to fix from the bug reports, and ensure their managers give them time to do it.
 
+### Betrieb und Änderungsmanagement:
 
-### Rollout:
+*  Der Betrieb muss Richtlinien für das Sicherheitsmanagement der Anwendung enthalten (z. B. Patch-Management).
 
-* Put the application in operation and migrate from previously used applications if needed.
+*  Das Sicherheitsbewusstsein der Benutzer schärfen und Konflikte zwischen Benutzerfreundlichkeit und Sicherheit bewältigen.
 
-* Finalize all documentation, including the change management database (CMDB) and security architecture.
+*  Änderungen planen (Change Management) und verwalten, z. B. die Migration auf neue Versionen der Anwendung oder anderer Komponenten wie Betriebssystem, Middleware und Bibliotheken.
 
+*  Stellen Sie sicher, dass alle Anwendungen in Ihrem Bestand erfasst sind und alle wichtigen Details dokumentiert sind. Aktualisieren Sie die gesamte Dokumentation, einschließlich der CMDB sowie der Sicherheitsarchitektur, Kontrollen und Gegenmaßnahmen, einschließlich aller Betriebshandbücher oder Projektdokumentationen.
 
-### Operations and Change Management:
+*  Nutzen Sie Protokollierung, Überwachung und Alarmierung für alle Anwendungen. Fügen Sie diese hinzu, falls sie fehlen.
 
-*  Operations must include guidelines for the security management of the application (e.g. patch management).
+*  Erstellen Sie Prozesse für eine effektive und effiziente Aktualisierung und Patch-Verwaltung.
 
-*  Raise the security awareness of users and manage conflicts about usability vs. security.
+*  Erstellen Sie regelmäßige Scan-Zeitpläne (idealerweise für dynamische, statische, Secret-, IaC- und Software-Composition-Analysen).
 
-*  Plan and manage changes, e.g. migrate to new versions of the application or other components like OS, middleware, and libraries.
+*  Definieren Sie SLAs für die Behebung von Sicherheitsfehlern.
 
-*  Ensure all apps are in your inventory, with all important details documented. Update all documentation, including in the CMDB and the security architecture, controls, and countermeasures, including any runbooks or project documentation.
+*  Stellen Sie eine Möglichkeit für Mitarbeiter (und idealerweise auch für Ihre Kunden) bereit, Fehler zu melden.
 
-*  Perform logging, monitoring, and alerting for all apps. Add it if it’s missing.
+*  Richten Sie ein geschultes Vorfallreaktionsteam (Incident Response) ein, das weiß, wie Softwareangriffe aussehen, und das mit Überwachungswerkzeugen (Observability-Tools) vertraut ist.
 
-*  Create processes for effective and efficient updating and patching.
+*  Setzen Sie Blockierungs- oder Schutz-Werkzeuge ein, um automatisierte Angriffe zu stoppen.
 
-*  Create regular scanning schedules (hopefully dynamic, static, secrets, IaC, and software composition analysis).
+*  Jährliche (oder häufigere) Absicherung der Konfigurationen.
 
-*  SLAs for fixing security bugs.
+*  Mindestens jährliche Penetrationstests (abhängig vom für Ihre Anwendung erforderlichen Sicherheitsniveau).
 
-*  Provide a way for employees (and ideally also your customers) to report bugs.
+*  Richten Sie Prozesse und Werkzeuge zur Absicherung und zum Schutz Ihrer Software-Lieferkette ein.
 
-*  Establish a trained incident response team that understands what software attacks look like, observability tooling.
+*  Erstellen und aktualisieren Sie Pläne zur Geschäftskontinuität und Notfallwiederherstellung, die Ihre wichtigsten Anwendungen sowie die zu deren Wartung verwendeten Werkzeuge umfassen.
 
-*  Run blocking or shielding tools to stop automated attacks.
 
-*  Annual (or more often) hardening of configurations.
+### Außerbetriebnahme von Systemen:
 
-*  At least annual penetration testing (depending upon the level assurance required for your app).
+* Alle erforderlichen Daten sollten archiviert werden. Alle übrigen Daten sollten sicher gelöscht werden.
 
-*  Establish processes and tooling for hardening and protecting your software supply chain.
+* Nehmen Sie die Anwendung sicher außer Betrieb, einschließlich der Löschung nicht mehr genutzter Konten, Rollen und Berechtigungen.
 
-*  Establish and update business continuity and disaster recovery planning that includes your most important applications and the tools you use to maintain them.
+* Setzen Sie den Status Ihrer Anwendung in der CMDB auf „außer Betrieb“.
 
 
-### Retiring Systems:
+## Die Verwendung der OWASP Top 10 als Standard
 
-* Any required data should be archived. All other data should be securely wiped.
+Die OWASP Top 10 ist in erster Linie ein Dokument zur Sensibilisierung. Dies hat Unternehmen jedoch nicht davon abgehalten, sie seit ihrer Einführung im Jahr 2003 als de-facto-Standard für die Anwendungssicherheit in der Branche zu nutzen. Wenn Sie die OWASP Top 10 als Standard für die Programmierung oder das Testen verwenden möchten, sollten Sie sich bewusst sein, dass sie das absolute Minimum darstellt und lediglich einen Ausgangspunkt bildet.
 
-* Securely retire the application, including deleting unused accounts and roles and permissions.
+Eine der Schwierigkeiten bei der Verwendung der OWASP Top 10 als Standard besteht darin, dass wir AppSec-Risiken und nicht unbedingt leicht testbare Probleme dokumentieren. Beispielsweise geht [A06:2025 – Unsicheres Design](A06_2025-Insecure_Design.md) über den Rahmen der meisten Testverfahren hinaus. Ein weiteres Beispiel ist die Prüfung, ob eine vor Ort vorhandene, genutzte und wirksame Protokollierung und Überwachung implementiert ist, was nur durch Befragungen und die Anforderung einer Stichprobe wirksamer Reaktionen auf Vorfälle erfolgen kann. Ein statisches Code-Analyse-Werkzeug kann zwar nach fehlender Protokollierung suchen, aber es ist möglicherweise unmöglich festzustellen, ob die Geschäftslogik oder die Zugriffskontrolle kritische Sicherheitsverletzungen protokolliert. Penetrationstester:innen können möglicherweise nur feststellen, dass sie in einer Testumgebung eine Reaktion auf Vorfälle ausgelöst haben, die selten auf die gleiche Weise überwacht wird wie die Produktionsumgebung.
 
-* Set your application’s state to retired in the CMDB.
-
-
-## Using the OWASP Top 10 as a standard
-
-The OWASP Top 10 is primarily an awareness document. However, this has not stopped organizations from using it as a de facto industry AppSec standard since its inception in 2003. If you want to use the OWASP Top 10 as a coding or testing standard, know that it is the bare minimum and just a starting point.
-
-One of the difficulties of using the OWASP Top 10 as a standard is that we document AppSec risks, and not necessarily easily testable issues. For example, [A06:2025-Insecure Design](A06_2025-Insecure_Design.md) is beyond the scope of most forms of testing. Another example is testing whether in-place, in-use, and effective logging and monitoring are implemented, which can only be done with interviews and requesting a sampling of effective incident responses. A static code analysis tool can look for the absence of logging, but it might be impossible to determine if business logic or access control is logging critical security breaches. Penetration testers may only be able to determine that they have invoked incident response in a test environment, which is rarely monitored in the same way as production.
-
-Here are our recommendations for when it is appropriate to use the OWASP Top 10:
-
+Hier sind unsere Empfehlungen dazu, wann die Verwendung der OWASP Top 10 sinnvoll ist:
 
 <table>
   <tr>
-   <td><strong>Use Case</strong>
+   <td><strong>Anwendungsfall</strong>
    </td>
    <td><strong>OWASP Top 10 2025</strong>
    </td>
@@ -212,96 +204,96 @@ Here are our recommendations for when it is appropriate to use the OWASP Top 10:
    </td>
   </tr>
   <tr>
-   <td>Awareness
+   <td>Sensibilisierung
    </td>
-   <td>Yes
+   <td>Ja
    </td>
    <td>
    </td>
   </tr>
   <tr>
-   <td>Training
+   <td>Schulung
    </td>
-   <td>Entry level
+   <td>Zum Einstieg
    </td>
-   <td>Comprehensive
-   </td>
-  </tr>
-  <tr>
-   <td>Design and architecture
-   </td>
-   <td>Occasionally
-   </td>
-   <td>Yes
+   <td>Umfassend
    </td>
   </tr>
   <tr>
-   <td>Coding standard
+   <td>Design und Architektur
    </td>
-   <td>Bare minimum
+   <td>Gelegentlich
    </td>
-   <td>Yes
-   </td>
-  </tr>
-  <tr>
-   <td>Secure Code review
-   </td>
-   <td>Bare minimum
-   </td>
-   <td>Yes
+   <td>Ja
    </td>
   </tr>
   <tr>
-   <td>Peer review checklist
+   <td>Programmier-Standard
    </td>
-   <td>Bare minimum
+   <td>Absolutes Minimum
    </td>
-   <td>Yes
-   </td>
-  </tr>
-  <tr>
-   <td>Unit testing
-   </td>
-   <td>Occasionally
-   </td>
-   <td>Yes
+   <td>Ja
    </td>
   </tr>
   <tr>
-   <td>Integration testing
+   <td>Prüfung des Codes<br />(Secure Code Review)
    </td>
-   <td>Occasionally
+   <td>Absolutes Minimum
    </td>
-   <td>Yes
-   </td>
-  </tr>
-  <tr>
-   <td>Penetration testing
-   </td>
-   <td>Bare minimum
-   </td>
-   <td>Yes
+   <td>Ja
    </td>
   </tr>
   <tr>
-   <td>Tool support
+   <td>Checkliste für gegenseitige Begutachtung (Peer Review)
    </td>
-   <td>Bare minimum
+   <td>Absolutes Minimum
    </td>
-   <td>Yes
+   <td>Ja
    </td>
   </tr>
   <tr>
-   <td>Secure Supply Chain
+   <td>Unit-Tests
    </td>
-   <td>Occasionally
+   <td>Gelegentlich
    </td>
-   <td>Yes
+   <td>Ja
+   </td>
+  </tr>
+  <tr>
+   <td>Integrationstests
+   </td>
+   <td>Gelegentlich
+   </td>
+   <td>Ja
+   </td>
+  </tr>
+  <tr>
+   <td>Penetrations-Tests
+   </td>
+   <td>Absolutes Minimum
+   </td>
+   <td>Ja
+   </td>
+  </tr>
+  <tr>
+   <td>Werkzeug-Unterstützung
+   </td>
+   <td>Absolutes Minimum
+   </td>
+   <td>Ja
+   </td>
+  </tr>
+  <tr>
+   <td>Sichere Lieferketten
+   </td>
+   <td>Gelegentlich
+   </td>
+   <td>Ja
    </td>
   </tr>
 </table>
 
 
-We would encourage anyone wanting to adopt an application security standard to use the [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/) (ASVS), as it’s designed to be verifiable and tested, and can be used in all parts of a secure development lifecycle.
+Wir empfehlen allen, die einen Standard für die Anwendungssicherheit einführen möchten, den [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/) (ASVS) zu verwenden, da dieser so konzipiert ist, dass er überprüfbar und testbar ist, und in allen Phasen eines sicheren Entwicklungszyklus eingesetzt werden kann.
 
-The ASVS is the only acceptable choice for tool vendors. Tools cannot comprehensively detect, test, or protect against the OWASP Top 10 due to the nature of several of the OWASP Top 10 risks, with reference to [A06:2025-Insecure Design](A06_2025-Insecure_Design.md). OWASP discourages any claims of full coverage of the OWASP Top 10, because it’s simply untrue.
+Der ASVS ist die einzig akzeptable Wahl für Werkzeug-Anbieter. Werkzeuge können die OWASP Top 10 aufgrund der Natur einiger der darin enthaltenen Risiken nicht umfassend erkennen, testen oder dagegen schützen, siehe [A06:2025 – Unsicheres Design](A06_2025-Insecure_Design.md). OWASP rät von jeglichen Behauptungen ab, die OWASP Top 10 vollständig abzudecken, da dies schlichtweg nicht der Wahrheit entspricht.
