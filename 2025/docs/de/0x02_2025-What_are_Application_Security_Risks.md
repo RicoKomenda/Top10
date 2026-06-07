@@ -1,12 +1,12 @@
 # Was sind Sicherheitsrisiken für die Anwendungen?
-Angreifer können potenziell viele verschiedene Wege über Ihre Anwendung nutzen, um Ihrem Unternehmen oder Ihrer Organisation Schaden zuzufügen. Jeder dieser Wege birgt ein potenzielles Risiko, das untersucht werden muss.
+Angreifende Personen können potenziell viele verschiedene Wege über Ihre Anwendung nutzen, um Ihrem Unternehmen oder Ihrer Organisation Schaden zuzufügen. Jeder dieser Wege birgt ein potenzielles Risiko, das untersucht werden muss.
 
 ![Calculation diagram](../assets/2025-algorithm-diagram.png)
 
 <table>
   <tr>
    <td>
-    <strong>Bedrohungsakteure</strong>
+    <strong>Bedrohungsakteur:innen</strong>
    </td>
    <td>
     <strong>Angriff \
@@ -40,7 +40,7 @@ Vektoren</strong>
 dynamisch von der Situation abhänging</strong>
    </td>
    <td>
-    <strong>Je nach Ausgesetztheit der Anwendungs (in der Umgebung)</strong>
+    <strong>Je nach Ausgesetztheit der Anwendung (in der Umgebung)</strong>
    </td>
    <td>
     <strong>Durchschn. gewichtete Ausnutzbarkeit</strong>
@@ -61,7 +61,7 @@ gewichtet nach Abdeckung</strong>
 
 Bei unserer Risikobewertung haben wir die allgemeinen Parameter der Ausnutzbarkeit, der durchschnittlichen Wahrscheinlichkeit von Sicherheitsmaßnahmen für eine Schwachstelle und deren technische Auswirkungen berücksichtigt. 
 
-Jede Organisation ist einzigartig, ebenso wie die Angreifer, die auf diese Organisation abzielen, ihre Ziele und die Auswirkungen eines möglichen Sicherheitsvorfalls. Wenn eine Organisation von öffentlichem Interesse ein Content-Management-System (CMS) für öffentliche Informationen nutzt und ein Gesundheitssystem genau dasselbe CMS für sensible Gesundheitsdaten verwendet, können die Angreifer und die geschäftlichen Auswirkungen bei derselben Software sehr unterschiedlich sein. Es ist entscheidend, das Risiko für Ihre Organisation zu verstehen, basierend auf der Gefährdung der Anwendung, den relevanten Bedrohungsakteuren je nach Lagebild (für gezielte und ungezielte Angriffe je nach Geschäftsbereich und Standort) und den individuellen geschäftlichen Auswirkungen. 
+Jede Organisation ist einzigartig, ebenso wie die Angreifenden, die es auf sie abgesehen haben, ihre Ziele und die Auswirkungen eines möglichen Sicherheitsvorfalls. Wenn eine Organisation von öffentlichem Interesse ein Content-Management-System (CMS) für öffentliche Informationen nutzt und ein Gesundheitssystem genau dasselbe CMS für sensible Gesundheitsdaten verwendet, können die Angreifenden und die geschäftlichen Auswirkungen bei derselben Software sehr unterschiedlich sein. Es ist entscheidend, das Risiko für Ihre Organisation zu verstehen, basierend auf der Gefährdung der Anwendung, den relevanten Bedrohungsakteuren je nach Lagebild (für gezielte und ungezielte Angriffe je nach Geschäftsbereich und Standort) und den individuellen geschäftlichen Auswirkungen. 
 
 ## Wie die Daten zur Auswahl und Einstufung der Kategorien verwendet werden
 
@@ -73,7 +73,7 @@ In CVSSv2 konnten sowohl „Ausnutzbarkeit“ als auch „(Technische) 'Auswirku
 
 In der National Vulnerability Database (NVD) gibt es etwa 175.000 Datensätze (gegenüber 125.000 im Jahr 2021) von CVEs, die CWEs zugeordnet sind und aus dem OWASP Dependency Check extrahiert wurden. Darüber hinaus gibt es 643 eindeutige CWEs, die CVEs zugeordnet sind (gegenüber 241 im Jahr 2021). Von den fast 220.000 extrahierten CVEs wiesen 160.000 CVSS-v2-Werte, 156.000 CVSS-v3-Werte und 6.000 CVSS-v4-Werte auf. Viele CVEs haben mehrere Werte, weshalb die Gesamtzahl über 220.000 liegt.
 
-Für die Top Ten 2025 haben wir die durchschnittlichen Ausnutzbarkeits- und Auswirkungs-Werte wie folgt berechnet: Wir haben alle CVEs mit CVSS-Werte nach CWE gruppiert und sowohl die Ausnutzbarkeit- als auch die Auswirkungen-Werte nach dem prozentualen Anteil der Population mit CVSSv3 sowie der verbleibenden Population mit CVSSv2-Werte gewichtet, um einen Gesamtdurchschnitt zu erhalten. Diese Durchschnittswerte haben wir den CWEs im Datensatz zugeordnet, um sie als Ausnutzbarkeit- und (technische) Auswirkungen-Werte für die andere Hälfte der Risikogleichung zu verwenden.
+Für die Top Ten 2025 haben wir die durchschnittlichen Ausnutzbarkeits- und Auswirkungs-Werte wie folgt berechnet: Wir haben alle CVEs mit CVSS-Werten nach CWE gruppiert und sowohl die Ausnutzbarkeit- als auch die Auswirkungen-Werte nach dem prozentualen Anteil der Population mit CVSSv3 sowie der verbleibenden Population mit CVSSv2-Werten gewichtet, um einen Gesamtdurchschnitt zu erhalten. Diese Durchschnittswerte haben wir den CWEs im Datensatz zugeordnet, um sie als Ausnutzbarkeit- und (technische) Auswirkungen-Werte für die andere Hälfte der Risikogleichung zu verwenden.
 
 Sie fragen sich vielleicht, warum wir nicht CVSS v4.0 verwenden? Das liegt daran, dass der Bewertungsalgorithmus grundlegend geändert wurde und er nicht mehr so einfach die *Ausnutzbarkeit*- oder *Auswirkungen*-Werte liefert wie CVSSv2 und CVSSv3. Wir werden versuchen, einen Weg zu finden, die CVSS v4.0-Bewertung für zukünftige Versionen der Top Ten zu nutzen, aber für die Ausgabe 2025 konnten wir keine zeitnahe Lösung dafür finden.
 
@@ -94,11 +94,11 @@ Eine weitere Herausforderung, die zunehmend an Bedeutung gewinnt, ist die Defini
 
 Für jede der Top-Ten-Kategorien werden bestimmte Datenfaktoren aufgeführt. Hier ihre Bedeutung:
 
-**Zuordnete CWEs:** Die Anzahl der CWEs, die vom Top-Ten-Team, einer Kategorie zugeordnet wurden.
+**Zuordnete CWEs:** Die Anzahl der CWEs, die vom Top-10-Team einer Kategorie zugeordnet wurden.
 
 **Häufigkeit:** Die Häufigkeit ist der prozentuale Anteil der Anwendungen, die für diese CWE anfällig sind, gemessen an der von dieser Organisation in diesem Jahr getesteten Gesamtzahl.
 
-**Gewichtete Ausnutzbarkeit:** Die Ausnutzbarkeit-Teilpunktzahl aus den CVSSv2- und CVSSv3-Bewertungen, die den den CWEs zugeordneten CVEs zugewiesen, normalisiert und auf einer 10-Punkte-Skala dargestellt wurden.
+**Gewichtete Ausnutzbarkeit:** Die Ausnutzbarkeits-Teilpunktezahl aus den CVSSv2- und CVSSv3-Bewertungen wurde den den CWEs zugeordneten CVEs zugewiesen, normalisiert und auf einer 10-Punkte-Skala dargestellt.
 
 **Gewichtete Auswirkung:** Die Auswirkungs-Teilpunktzahl aus den CVSSv2- und CVSSv3-Bewertungen, die den den CWEs zugeordneten CVEs zugewiesen, normalisiert und auf einer 10-Punkte-Skala dargestellt wurden.
 
