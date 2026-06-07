@@ -61,16 +61,7 @@ Wir wurden gefragt, warum wir nicht zu einer Liste von 10 CWEs als Top 10 wechse
 
 ## Verwendung der Daten zur Kategorienauswahl
 
-Wie bereits für die Ausgabe 2021 haben wir CVE-Daten für *Ausnutzbarkeit* und *(technische) Auswirkung* herangezogen. Wir haben OWASP Dependency Check heruntergeladen und die CVSS-Exploit- und Impact-Scores extrahiert und nach den zugehörigen CWEs der CVEs gruppiert. Dies erforderte einigen Rechercheaufwand, da alle CVEs CVSSv2-Scores besitzen, CVSSv2 jedoch Schwächen aufweist, die CVSSv3 beheben sollte. Ab einem bestimmten Zeitpunkt wurden alle CVEs auch mit einem CVSSv3-Score versehen. Zudem wurden die Bewertungsskalen und Formeln zwischen CVSSv2 und CVSSv3 aktualisiert.
-
-In CVSSv2 konnten sowohl Exploit als auch (technische) Auswirkung bis zu 10,0 betragen, wurden jedoch durch die Formel auf 60 % für Exploit und 40 % für Impact begrenzt. In CVSSv3 wurde das theoretische Maximum auf 6,0 für Exploit und 4,0 für Impact beschränkt. Unter Berücksichtigung der Gewichtung stieg der Impact-Score in CVSSv3 im Durchschnitt um fast eineinhalb Punkte, während die Ausnutzbarkeit im Durchschnitt um knapp einen halben Punkt sank.
-
-In der National Vulnerability Database (NVD) gibt es ca. 175.000 Datensätze (gegenüber 125.000 in 2021) mit CVEs, die CWEs zugeordnet sind und aus OWASP Dependency Check extrahiert wurden. Zudem gibt es 643 eindeutige CWEs, die CVEs zugeordnet sind (gegenüber 241 in 2021). Von den knapp 220.000 extrahierten CVEs hatten 160.000 CVSS-v2-Scores, 156.000 CVSS-v3-Scores und 6.000 CVSS-v4-Scores. Viele CVEs haben mehrere Scores, weshalb die Summe 220.000 übersteigt.
-
-Für die Top 10 2025 haben wir die durchschnittlichen Exploit- und Impact-Scores wie folgt berechnet: Alle CVEs mit CVSS-Scores wurden nach CWE gruppiert, und sowohl Exploit- als auch Impact-Scores wurden nach dem Anteil der CVSSv3-Population sowie dem verbleibenden Anteil mit CVSSv2-Scores gewichtet, um einen Gesamtdurchschnitt zu erhalten. Diese Durchschnittswerte wurden den CWEs im Datensatz zugeordnet und als Exploit- und (technische) Impact-Bewertung für die zweite Hälfte der Risikogleichung verwendet.
-
-Warum nicht CVSS v4.0 verwenden? Der Bewertungsalgorithmus wurde grundlegend geändert und liefert die *Exploit*- und *Impact*-Scores nicht mehr so einfach wie CVSS v2 und CVSSv3. Wir werden versuchen, einen Weg zu finden, CVSS v4.0 für zukünftige Versionen der Top 10 zu nutzen, konnten für die Ausgabe 2025 jedoch keine zeitgerechte Lösung ermitteln.
-
+Wie bereits für die Ausgabe 2021 haben wir CVE-Daten für *Ausnutzbarkeit* und *(technische) Auswirkung* herangezogen. In der National Vulnerability Database (NVD) gibt es ca. 175.000 Datensätze (gegenüber 125.000 in 2021) mit CVEs. Zudem gibt es 643 eindeutige CWEs, die CVEs zugeordnet sind (gegenüber 241 in 2021). Für die Top Ten 2025 haben wir die durchschnittlichen Exploit- und Impact-Scores wie folgt berechnet: Alle CVEs mit CVSS-Scores wurden nach CWE gruppiert, und sowohl Exploit- als auch Impact-Scores wurden gewichtet. Für Details siehe [Was sind Sicherheitsrisiken für die Anwendungen?](0x02_2025-What_are_Application_Security_Risks.md)
 
 ## Warum wir eine Community-Umfrage nutzen
 

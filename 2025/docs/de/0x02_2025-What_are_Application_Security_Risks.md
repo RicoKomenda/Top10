@@ -1,113 +1,111 @@
-# What are Application Security Risks?
-Attackers can potentially use many different paths through your application to do harm to your business or organization. Each of these ways poses a potential risk that needs to be investigated.
+# Was sind Sicherheitsrisiken für die Anwendungen?
+Angreifer können potenziell viele verschiedene Wege über Ihre Anwendung nutzen, um Ihrem Unternehmen oder Ihrer Organisation Schaden zuzufügen. Jeder dieser Wege birgt ein potenzielles Risiko, das untersucht werden muss.
 
 ![Calculation diagram](../assets/2025-algorithm-diagram.png)
 
 <table>
   <tr>
    <td>
-    <strong>Threat Agents</strong>
+    <strong>Bedrohungsakteure</strong>
    </td>
    <td>
-    <strong>Attack \
-Vectors</strong>
+    <strong>Angriff \
+Vektoren</strong>
    </td>
    <td>
-    <strong>Exploitability</strong>
+    <strong>Ausnutzbarkeit</strong>
    </td>
    <td>
-    <strong>Likelihood of Missing Security</strong>
+    <strong>Wahrscheinlichkeit von fehlenden</strong>
 <p style="text-align: center">
 
-    <strong>Controls</strong>
+    <strong>Sicherheitsmaßnahmen</strong>
    </td>
    <td>
-    <strong>Technical</strong>
+    <strong>Technische</strong>
 <p style="text-align: center">
 
-    <strong>Impacts</strong>
+    <strong>Auswirkungen</strong>
    </td>
    <td>
-    <strong>Business</strong>
+    <strong>Geschäftliche</strong>
 <p style="text-align: center">
 
-    <strong>Impacts</strong>
+    <strong>Auswirkungen</strong>
    </td>
   </tr>
   <tr>
    <td>
-    <strong>By environment, \
-dynamic by situation picture</strong>
+    <strong>Je nach Umgebung \
+dynamisch von der Situation abhänging</strong>
    </td>
    <td>
-    <strong>By Application  exposure (by environment)</strong>
+    <strong>Je nach Ausgesetztheit der Anwendungs (in der Umgebung)</strong>
    </td>
    <td>
-    <strong>Avg Weighted Exploit</strong>
+    <strong>Durchschn. gewichtete Ausnutzbarkeit</strong>
    </td>
    <td>
-    <strong>Missing Controls \
-by average Incidence rate \
-Weighed by coverage</strong>
+    <strong>Fehlende Maßnahmen \
+zu durchschnittlicher Inzidenzrate \
+gewichtet nach Abdeckung</strong>
    </td>
    <td>
-    <strong>Avg Weighted Impact</strong>
+    <strong>Durchschn. gewichtete Auswirkung</strong>
    </td>
    <td>
-    <strong>By Business</strong>
+    <strong>Je nach Geschäft</strong>
    </td>
   </tr>
 </table>
 
+Bei unserer Risikobewertung haben wir die allgemeinen Parameter der Ausnutzbarkeit, der durchschnittlichen Wahrscheinlichkeit von Sicherheitsmaßnahmen für eine Schwachstelle und deren technische Auswirkungen berücksichtigt. 
 
-In our Risk Rating we have taken into account the universal parameters of exploitability, average likelihood of missing security controls for a weakness and its technical impacts. 
+Jede Organisation ist einzigartig, ebenso wie die Angreifer, die auf diese Organisation abzielen, ihre Ziele und die Auswirkungen eines möglichen Sicherheitsvorfalls. Wenn eine Organisation von öffentlichem Interesse ein Content-Management-System (CMS) für öffentliche Informationen nutzt und ein Gesundheitssystem genau dasselbe CMS für sensible Gesundheitsdaten verwendet, können die Angreifer und die geschäftlichen Auswirkungen bei derselben Software sehr unterschiedlich sein. Es ist entscheidend, das Risiko für Ihre Organisation zu verstehen, basierend auf der Gefährdung der Anwendung, den relevanten Bedrohungsakteuren je nach Lagebild (für gezielte und ungezielte Angriffe je nach Geschäftsbereich und Standort) und den individuellen geschäftlichen Auswirkungen. 
 
-Each organization is unique, and so are the threat actors for that organization, their goals, and the impact of any breach. If a public interest organization uses a content management system (CMS) for public information and a health system uses that same exact CMS for sensitive health records, the threat actors and business impacts can be very different for the same software. It is critical to understand the risk to your organization based on the exposure of the application, the applicable threat agents by situation picture (for targeted and undirected attacks by business and location) and the individual business impacts. 
+## Wie die Daten zur Auswahl und Einstufung der Kategorien verwendet werden
 
+Im Jahr 2017 wählten wir die Kategorien anhand der Häufigkeit aus, um die Wahrscheinlichkeit zu ermitteln, und stuften sie anschließend auf der Grundlage jahrzehntelanger Erfahrung in den Bereichen Ausnutzbarkeit, Erkennbarkeit (ebenfalls Wahrscheinlichkeit) und technische Auswirkungen im Rahmen von Teamdiskussionen ein. Für das Jahr 2021 verwendeten wir Daten zur Ausnutzbarkeit und zu den (technischen) Auswirkungen aus den CVSSv2- und CVSSv3-Bewertungen in der National Vulnerability Database (NVD). Für das Jahr 2025 setzten wir die gleiche Methodik fort, die wir 2021 entwickelt hatten.
 
-## How the data is used for selecting categories and ranking them
+Mittels OWASP Dependency Check extrahierten wir die CVSS-Bewertungen für Ausnutzbarkeit und Auswirkungen und gruppiert nach den zugehörigen CWEs. Dies erforderte einiges an Recherche und Aufwand, da alle CVEs zwar CVSSv2-Werte aufweisen, CVSSv2 jedoch Mängel aufweist, die CVSSv3 beheben sollte. Ab einem bestimmten Zeitpunkt werden allen CVEs auch CVSSv3-Werte zugewiesen. Zudem wurden die Bewertungsbereiche und Formeln zwischen CVSSv2 und CVSSv3 aktualisiert. 
 
-In 2017, we selected categories by incidence rate to determine likelihood, then ranked them by team discussion based on decades of experience for Exploitability, Detectability (also likelihood), and Technical Impact. For 2021, we used data for Exploitability and (Technical) Impact from the CVSSv2 and CVSSv3 scores in the National Vulnerability Database (NVD). For 2025, we continued the same methodology that we created in 2021.
+In CVSSv2 konnten sowohl „Ausnutzbarkeit“ als auch „(Technische) 'Auswirkungen'“ bis zu 10,0 betragen, doch die Formel reduzierte diese Werte auf 60 % für „Ausnutzbarkeit“ und 40 % für Auswirkungen. In CVSSv3 war das theoretische Maximum auf 6,0 für „Ausnutzbarkeit“ und 4,0 für „Auswirkungen“ begrenzt. Unter Berücksichtigung der Gewichtung verschob sich die Auswirkungsbewertung nach oben, im Durchschnitt um fast eineinhalb Punkte in CVSSv3, während die Ausnutzbarkeit im Durchschnitt um fast einen halben Punkt nach unten ging, als wir die Analyse für die Top Ten 2021 durchführten.
 
-We downloaded OWASP Dependency Check and extracted the CVSS Exploit, and Impact scores grouped by related CWEs. It took a fair bit of research and effort as all the CVEs have CVSSv2 scores, but there are flaws in CVSSv2 that CVSSv3 should address. After a certain point in time, all CVEs are assigned a CVSSv3 score as well. Additionally, the scoring ranges and formulas were updated between CVSSv2 and CVSSv3. 
+In der National Vulnerability Database (NVD) gibt es etwa 175.000 Datensätze (gegenüber 125.000 im Jahr 2021) von CVEs, die CWEs zugeordnet sind und aus dem OWASP Dependency Check extrahiert wurden. Darüber hinaus gibt es 643 eindeutige CWEs, die CVEs zugeordnet sind (gegenüber 241 im Jahr 2021). Von den fast 220.000 extrahierten CVEs wiesen 160.000 CVSS-v2-Werte, 156.000 CVSS-v3-Werte und 6.000 CVSS-v4-Werte auf. Viele CVEs haben mehrere Werte, weshalb die Gesamtzahl über 220.000 liegt.
 
-In CVSSv2, both Exploit and (Technical) Impact could be up to 10.0, but the formula would knock them down to 60% for Exploit and 40% for Impact. In CVSSv3, the theoretical max was limited to 6.0 for Exploit and 4.0 for Impact. With the weighting considered, the Impact scoring shifted higher, almost a point and a half on average in CVSSv3, and exploitability moved nearly half a point lower on average when we conducted analysis for the 2021 Top Ten.
+Für die Top Ten 2025 haben wir die durchschnittlichen Ausnutzbarkeits- und Auswirkungs-Werte wie folgt berechnet: Wir haben alle CVEs mit CVSS-Werte nach CWE gruppiert und sowohl die Ausnutzbarkeit- als auch die Auswirkungen-Werte nach dem prozentualen Anteil der Population mit CVSSv3 sowie der verbleibenden Population mit CVSSv2-Werte gewichtet, um einen Gesamtdurchschnitt zu erhalten. Diese Durchschnittswerte haben wir den CWEs im Datensatz zugeordnet, um sie als Ausnutzbarkeit- und (technische) Auswirkungen-Werte für die andere Hälfte der Risikogleichung zu verwenden.
 
-There are approximately 175k records (up from 125k in 2021) of CVEs mapped to CWEs in the National Vulnerability Database (NVD), extracted from OWASP Dependency Check. Additionally, there are 643 unique CWEs mapped to CVEs (up from 241 in 2021). Within the nearly 220k CVEs that were extracted, 160k had CVSS v2 scores, 156k had CVSS v3 scores, and 6k had CVSS v4 scores. Many CVEs have multiple scores, which is why they total more than 220k.
+Sie fragen sich vielleicht, warum wir nicht CVSS v4.0 verwenden? Das liegt daran, dass der Bewertungsalgorithmus grundlegend geändert wurde und er nicht mehr so einfach die *Ausnutzbarkeit*- oder *Auswirkungen*-Werte liefert wie CVSSv2 und CVSSv3. Wir werden versuchen, einen Weg zu finden, die CVSS v4.0-Bewertung für zukünftige Versionen der Top Ten zu nutzen, aber für die Ausgabe 2025 konnten wir keine zeitnahe Lösung dafür finden.
 
-For the Top Ten 2025, we calculated average exploit and impact scores in the following manner. We grouped all the CVEs with CVSS scores by CWE and weighted both exploit and impact scores by the percentage of the population that had CVSSv3, as well as the remaining population with CVSSv2 scores, to get an overall average. We mapped these averages to the CWEs in the dataset to use as Exploit and (Technical) Impact scoring for the other half of the risk equation.
+Für die Inzidenzrate haben wir den prozentualen Anteil der Anwendungen berechnet, die für jedes CWE anfällig sind, bezogen auf die von einer Organisation über einen bestimmten Zeitraum getestete Gesamtzahl an Anwendungen. Zur Erinnerung: Wir verwenden nicht die Häufigkeit (d. h. wie oft ein Problem in einer Anwendung auftritt), sondern uns interessiert, bei wie viel Prozent der Anwendungen jedes CWE festgestellt wurde. 
 
-Why not use CVSS v4.0, you may ask? That’s because the scoring algorithm was fundamentally changed, and it no longer easily provides the *Exploit* or *Impact* scores as CVSSv2 and CVSSv3 do. We will attempt to figure out a way to use CVSS v4.0 scoring for future versions of the Top Ten, but we were unable to determine a timely way to do so for the 2025 edition.
+Für die Abdeckung betrachten wir den Prozentsatz der Anwendungen, die von allen Organisationen auf eine bestimmte CWE getestet wurden. Je höher die berechnete Abdeckung ist, desto größer ist die Sicherheit, dass die Inzidenzrate korrekt ist, da die Stichprobengröße repräsentativer für die Grundgesamtheit ist.
 
-For the incidence rate, we calculated the percentage of applications vulnerable to each CWE from the population tested by an org for a period of time. As a reminder, we are not using frequency (or how many times an issue appears in an application), we are interested in what percentage of the population of applications were found to have each CWE. 
+Die Formel, die wir für diese Iteration verwendet haben, ähnelt der von 2021, mit einigen Änderungen bei der Gewichtung:
+(Max. Inzidenzrate % * 1000) + (Max. Abdeckung % * 100) + (Durchschnittliche Ausnutzbarkeit * 10) + (Durchschnittliche Auswirkungen * 20) + (Summe der Vorkommen / 10000) = Risikowert
 
-For coverage we look at the percentage of applications tested by all organizations for a given CWE. The higher the calculated coverage, the stronger the assurance that the incidence rate is accurate as the sample size is more representative of the population.
+Die berechneten Werte reichten von 621,60 für die Kategorie „Mangelhafte Zugriffskontrolle“ bis zu 271,08 für „Fehler bei der Speicherverwaltung“.
 
-The formula that we used for this iteration is similar to 2021, with some weighting changes:
-(Max Incidence Rate % * 1000) + (Max Coverage % * 100) + (Avg Exploit * 10) + (Avg Impact * 20) + (Sum Occurrences / 10000) = Risk Score
+Dies ist kein perfektes System, aber es ist wertvoll für die Einstufung von Risikokategorien.
 
-The calculated scores ranged from 621.60 for the category of Broken Access Control to 271.08 for Memory Management Errors.
+Eine weitere Herausforderung, die zunehmend an Bedeutung gewinnt, ist die Definition des Begriffs „Anwendung“. Da die Branche zunehmend auf andere Architekturen umstellt, die aus Microservices und anderen Implementierungen bestehen, die kleiner sind als eine herkömmliche Anwendung, werden die Berechnungen schwieriger. Wenn ein Unternehmen beispielsweise Code-Repositorys testet, was versteht es dann unter einer Anwendung? Ähnlich wie bei der Weiterentwicklung von CVSSv4 müssen möglicherweise auch in der nächsten Ausgabe der „Top Ten“ die Analyse und die Bewertung angepasst werden, um der sich ständig wandelnden Branche Rechnung zu tragen.
 
-This is not a perfect system, but it is valuable for ranking risk categories.
+## Daten Werte
 
-One additional challenge that is growing is the definition of an "application". As the industry shifts to different architectures that consist of micro-services and other implementations that are smaller than a traditional application, calculations are more difficult. For instance, if an organization is testing code repositories, what does it consider an application? Similar to the growth of CVSSv4, the next edition of the Top Ten may need to adjust the analysis and scoring to account for a constantly changing industry.
+Für jede der Top-Ten-Kategorien werden bestimmte Datenfaktoren aufgeführt. Hier ihre Bedeutung:
 
-## Data Factors
+**Zuordnete CWEs:** Die Anzahl der CWEs, die vom Top-Ten-Team, einer Kategorie zugeordnet wurden.
 
-There are data factors that are listed for each of the Top Ten Categories, here is what they mean:
+**Häufigkeit:** Die Häufigkeit ist der prozentuale Anteil der Anwendungen, die für diese CWE anfällig sind, gemessen an der von dieser Organisation in diesem Jahr getesteten Gesamtzahl.
 
-**CWEs Mapped:** The number of CWEs mapped to a category by the Top Ten team.
+**Gewichtete Ausnutzbarkeit:** Die Ausnutzbarkeit-Teilpunktzahl aus den CVSSv2- und CVSSv3-Bewertungen, die den den CWEs zugeordneten CVEs zugewiesen, normalisiert und auf einer 10-Punkte-Skala dargestellt wurden.
 
-**Incidence Rate:** Incidence rate is the percentage of applications vulnerable to that CWE from the population tested by that org for that year.
+**Gewichtete Auswirkung:** Die Auswirkungs-Teilpunktzahl aus den CVSSv2- und CVSSv3-Bewertungen, die den den CWEs zugeordneten CVEs zugewiesen, normalisiert und auf einer 10-Punkte-Skala dargestellt wurden.
 
-**Weighted Exploit:** The Exploit sub-score from CVSSv2 and CVSSv3 scores assigned to CVEs mapped to CWEs, normalized, and placed on a 10pt scale.
+**(Test-)Abdeckung:** Der Prozentsatz der Anwendungen, die von allen Organisationen für eine bestimmte CWE getestet wurden.
 
-**Weighted Impact:** The Impact sub-score from CVSSv2 and CVSSv3 scores assigned to CVEs mapped to CWEs, normalized, and placed on a 10pt scale.
+**Gesamtanzahl:** Gesamtzahl der Anwendungen, bei denen die einer Kategorie zugeordneten CWEs festgestellt wurden.
 
-**(Testing) Coverage:** The percentage of applications tested by all organizations for a given CWE.
+**Gesamtzahl der CVEs:** Gesamtzahl der CVEs in der NVD-Datenbank, die den einer Kategorie zugeordneten CWEs zugeordnet wurden.
 
-**Total Occurrences:** Total number of applications found to have the CWEs mapped to a category.
-
-**Total CVEs:** Total number of CVEs in the NVD DB that were mapped to the CWEs mapped to a category.
-
-**Formula:** (Max Incidence Rate % * 1000) + (Max Coverage % * 100) + (Avg Exploit * 10) + (Avg Impact * 20) + (Sum Occurrences / 10000) = Risk Score
+**Formel:** (Max. Inzidenzrate % * 1000) + (Max. Abdeckung % * 100) + (Durchschnittliche Ausnutzbarkeit * 10) + (Durchschnittliche Auswirkungen * 20) + (Summe der Vorkommen / 10000) = Risikowert
