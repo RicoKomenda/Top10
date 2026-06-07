@@ -32,9 +32,9 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 * Zu diesen Maßnahmen gehören Bedrohungsmodellierung, sicheres Design und Designprüfung, sicheres Programmieren und Codeüberprüfung, Penetrationstests sowie die Behebung von Schwachstellen.
 
-* Stellen Sie Fachexperten und Unterstützungsdienste bereit, damit Entwicklungs- und Projektteams erfolgreich arbeiten können.
+* Stellen Sie Fachexpert:innen und Unterstützungsdienste bereit, damit Entwicklungs- und Projektteams erfolgreich arbeiten können.
 
-* Überprüfen Sie Ihren aktuellen Systementwicklungslebenszyklus sowie alle Aktivitäten, Tools, Richtlinien und Prozesse im Bereich Softwaresicherheit und dokumentieren Sie diese anschließend.
+* Überprüfen Sie Ihren aktuellen Systementwicklungslebenszyklus sowie alle Aktivitäten, Werkzeuge, Richtlinien und Prozesse im Bereich Softwaresicherheit und dokumentieren Sie diese anschließend.
 
 * Fügen Sie bei neuer Software eine oder mehrere Sicherheitsmaßnahmen in jede Phase des Systementwicklungslebenszyklus (SDLC) ein. Im Folgenden finden Sie zahlreiche Vorschläge, was Sie tun können. Stellen Sie sicher, dass Sie diese neuen Maßnahmen bei jedem neuen Projekt oder jeder neuen Softwareinitiative durchführen. Auf diese Weise können Sie sicher sein, dass jede neue Software mit einem für Ihr Unternehmen akzeptablen Sicherheitsniveau ausgeliefert wird.
 
@@ -70,16 +70,16 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 * Nehmen Sie Sicherheitsmaßnahmen in Ihren Projektplan auf.
 
-* Stellen Sie sich beim Projektstart als Sicherheitsbeauftragter vor, damit die Projektbeteiligten wissen, an wen sie sich wenden können.
+* Stellen Sie sich beim Projektstart als Sicherheitsbeauftragte:r vor, damit die Projektbeteiligten wissen, an wen sie sich wenden können.
 
 
 ### Ausschreibung und Vertragsabschluss:
 
-* Verhandeln Sie die Anforderungen mit internen oder externen Entwicklern, einschließlich Richtlinien und Sicherheitsanforderungen im Hinblick auf Ihr Sicherheitsprogramm, z. B. SDLC und Best Practices.
+* Verhandeln Sie die Anforderungen mit internen oder externen Entwickler:innen, einschließlich Richtlinien und Sicherheitsanforderungen im Hinblick auf Ihr Sicherheitsprogramm, z. B. SDLC und bewährte Methoden.
 
 * Bewerten Sie die Erfüllung aller technischen Anforderungen, einschließlich einer Planungs- und Entwurfsphase.
 
-* Verhandeln Sie alle technischen Anforderungen, einschließlich Design, Sicherheit und Service Level Agreements (SLA).
+* Verhandeln Sie alle technischen Anforderungen, einschließlich Design, Sicherheit und Leistungsvereinbarung (SLA).
 
 *  Verwenden Sie Vorlagen und Checklisten, wie z. B. den [OWASP Secure Software Contract Annex](https://owasp.org/www-community/OWASP_Secure_Software_Contract_Annex).<br>**Hinweis:** *Der Anhang bezieht sich auf das US-Vertragsrecht; bitte holen Sie daher qualifizierten Rechtsrat ein, bevor Sie den Musteranhang verwenden.*
 
@@ -109,7 +109,7 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 *  Code-Review, siehe [OWASP Cheat Sheet: Secure Code Review](https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html).
 
-*  Stellen Sie Ihren Entwicklern Sicherheitstools zur Verfügung und bringen Sie ihnen deren Nutzung bei, insbesondere im Hinblick auf statische Analyse, Software-Kompositionsanalyse, Geheimnisscanner (Secrets) und [Infrastructure als Code (IaC)](https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html).
+*  Stellen Sie Ihren Entwicklern Sicherheitswerkzeuge zur Verfügung und bringen Sie ihnen deren Nutzung bei, insbesondere im Hinblick auf statische Analyse, Software-Kompositionsanalyse, Geheimnisscanner (Secrets) und [Infrastructure als Code (IaC)](https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html).
 
 *  Schaffen Sie nach Möglichkeit Leitplanken für Ihre Entwickler (technische Schutzmaßnahmen, die sie zu sichereren Entscheidungen lenken).
 
@@ -117,9 +117,9 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 *  Stellen Sie Ihren Entwicklern sicherheitsrelevante Entwicklungsumgebungsplugins zur Verfügung und ermutigen Sie sie, diese zu nutzen.
 
-*  Stellen Sie ihnen ein Tool zur Verwaltung von Geheimnissen (Secrets) bereit und die nötigen Lizenzen und eine Dokumentation zur Verwendung.
+*  Stellen Sie ihnen ein Werkzeug zur Verwaltung von Geheimnissen (Secrets) bereit und die nötigen Lizenzen und eine Dokumentation zur Verwendung.
 
-*  Stellen Sie ihnen eine private KI zur Verfügung, idealerweise eingerichtet mit einem RAG-Server voller nützlicher Sicherheitsdokumentation, Prompts, die Ihr Team für bessere Ergebnisse verfasst hat, und einem MCP-Server, der die für Ihre Organisation ausgewählten Sicherheitstools aufruft. Bringen Sie ihnen bei, wie man KI sicher nutzt, denn sie werden es tun, ob es Ihnen gefällt oder nicht.
+*  Stellen Sie ihnen eine private KI zur Verfügung, idealerweise eingerichtet mit einem RAG-Server voller nützlicher Sicherheitsdokumentation, Prompts, die Ihr Team für bessere Ergebnisse verfasst hat, und einem MCP-Server, der die für Ihre Organisation ausgewählten Sicherheitswerkzeuge aufruft. Bringen Sie ihnen bei, wie man KI sicher nutzt, denn sie werden es tun, ob es Ihnen gefällt oder nicht.
 
 
 ### Einführung kontinuierlicher Tests zur Anwendungssicherheit:
@@ -130,7 +130,7 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 * Verwalten Sie Sicherheitstests gemäß internen Prozessen, den Schutzanforderungen und dem von der Anwendung angenommenen Bedrohungsgrad.
 
-* Stellen Sie Sicherheitstest-Tools (Fuzzer, DAST usw.), eine sichere Testumgebung und Schulungen zu deren Verwendung bereit, ODER führen Sie die Tests für sie durch ODER beauftragen Sie einen Tester.
+* Stellen Sie Sicherheitstest-Werkzeuge (Fuzzer, DAST usw.), eine sichere Testumgebung und Schulungen zu deren Verwendung bereit, ODER führen Sie die Tests für sie durch ODER beauftragen Sie einen Tester.
 
 *  Wenn Sie ein hohes Maß an Sicherheit benötigen, ziehen Sie einen formellen Penetrationstest sowie Stress- und Leistungstests (Performance) in Betracht.
 
@@ -166,15 +166,15 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 *  Richten Sie ein geschultes Vorfallreaktionsteam (Incident Response) ein, das weiß, wie Softwareangriffe aussehen, und das mit Überwachungswerkzeugen (Observability-Tools) vertraut ist.
 
-*  Setzen Sie Blockierungs- oder Schutz-Tools ein, um automatisierte Angriffe zu stoppen.
+*  Setzen Sie Blockierungs- oder Schutz-Werkzeuge ein, um automatisierte Angriffe zu stoppen.
 
 *  Jährliche (oder häufigere) Absicherung der Konfigurationen.
 
 *  Mindestens jährliche Penetrationstests (abhängig vom für Ihre Anwendung erforderlichen Sicherheitsniveau).
 
-*  Richten Sie Prozesse und Tools zur Absicherung und zum Schutz Ihrer Software-Lieferkette ein.
+*  Richten Sie Prozesse und Werkzeuge zur Absicherung und zum Schutz Ihrer Software-Lieferkette ein.
 
-*  Erstellen und aktualisieren Sie Pläne zur Geschäftskontinuität und Notfallwiederherstellung, die Ihre wichtigsten Anwendungen sowie die zu deren Wartung verwendeten Tools umfassen.
+*  Erstellen und aktualisieren Sie Pläne zur Geschäftskontinuität und Notfallwiederherstellung, die Ihre wichtigsten Anwendungen sowie die zu deren Wartung verwendeten Werkzeuge umfassen.
 
 
 ### Außerbetriebnahme von Systemen:
@@ -190,7 +190,7 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 Die OWASP Top 10 ist in erster Linie ein Dokument zur Sensibilisierung. Dies hat Unternehmen jedoch nicht davon abgehalten, sie seit ihrer Einführung im Jahr 2003 als de-facto-Standard für die Anwendungssicherheit in der Branche zu nutzen. Wenn Sie die OWASP Top 10 als Standard für die Programmierung oder das Testen verwenden möchten, sollten Sie sich bewusst sein, dass sie das absolute Minimum darstellt und lediglich einen Ausgangspunkt bildet.
 
-Eine der Schwierigkeiten bei der Verwendung der OWASP Top 10 als Standard besteht darin, dass wir AppSec-Risiken dokumentieren und nicht unbedingt leicht testbare Probleme. Beispielsweise geht [A06:2025 – Unsicheres Design](A06_2025-Insecure_Design.md) über den Rahmen der meisten Testverfahren hinaus. Ein weiteres Beispiel ist die Prüfung, ob eine vor Ort vorhandene, genutzte und wirksame Protokollierung und Überwachung implementiert ist, was nur durch Befragungen und die Anforderung einer Stichprobe wirksamer Reaktionen auf Vorfälle erfolgen kann. Ein statisches Code-Analyse-Tool kann zwar nach fehlender Protokollierung suchen, aber es ist möglicherweise unmöglich festzustellen, ob die Geschäftslogik oder die Zugriffskontrolle kritische Sicherheitsverletzungen protokolliert. Penetrationstester können möglicherweise nur feststellen, dass sie in einer Testumgebung eine Reaktion auf Vorfälle ausgelöst haben, die selten auf die gleiche Weise überwacht wird wie die Produktionsumgebung.
+Eine der Schwierigkeiten bei der Verwendung der OWASP Top 10 als Standard besteht darin, dass wir AppSec-Risiken und nicht unbedingt leicht testbare Probleme dokumentieren. Beispielsweise geht [A06:2025 – Unsicheres Design](A06_2025-Insecure_Design.md) über den Rahmen der meisten Testverfahren hinaus. Ein weiteres Beispiel ist die Prüfung, ob eine vor Ort vorhandene, genutzte und wirksame Protokollierung und Überwachung implementiert ist, was nur durch Befragungen und die Anforderung einer Stichprobe wirksamer Reaktionen auf Vorfälle erfolgen kann. Ein statisches Code-Analyse-Werkzeug kann zwar nach fehlender Protokollierung suchen, aber es ist möglicherweise unmöglich festzustellen, ob die Geschäftslogik oder die Zugriffskontrolle kritische Sicherheitsverletzungen protokolliert. Penetrationstester:innen können möglicherweise nur feststellen, dass sie in einer Testumgebung eine Reaktion auf Vorfälle ausgelöst haben, die selten auf die gleiche Weise überwacht wird wie die Produktionsumgebung.
 
 Hier sind unsere Empfehlungen dazu, wann die Verwendung der OWASP Top 10 sinnvoll ist:
 
@@ -244,7 +244,7 @@ Hier sind unsere Empfehlungen dazu, wann die Verwendung der OWASP Top 10 sinnvol
    </td>
   </tr>
   <tr>
-   <td>Checkliste für 4-Augen Prüfung
+   <td>Checkliste für gegenseitige Begutachtung (Peer Review)
    </td>
    <td>Absolutes Minimum
    </td>
@@ -268,7 +268,7 @@ Hier sind unsere Empfehlungen dazu, wann die Verwendung der OWASP Top 10 sinnvol
    </td>
   </tr>
   <tr>
-   <td>Penetration-Tests
+   <td>Penetrations-Tests
    </td>
    <td>Absolutes Minimum
    </td>
@@ -276,7 +276,7 @@ Hier sind unsere Empfehlungen dazu, wann die Verwendung der OWASP Top 10 sinnvol
    </td>
   </tr>
   <tr>
-   <td>Tool-Unterstützung
+   <td>Werkzeug-Unterstützung
    </td>
    <td>Absolutes Minimum
    </td>
@@ -296,4 +296,4 @@ Hier sind unsere Empfehlungen dazu, wann die Verwendung der OWASP Top 10 sinnvol
 
 Wir empfehlen allen, die einen Standard für die Anwendungssicherheit einführen möchten, den [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/) (ASVS) zu verwenden, da dieser so konzipiert ist, dass er überprüfbar und testbar ist, und in allen Phasen eines sicheren Entwicklungszyklus eingesetzt werden kann.
 
-Der ASVS ist die einzig akzeptable Wahl für Tool-Anbieter. Tools können die OWASP Top 10 aufgrund der Natur einiger der darin enthaltenen Risiken nicht umfassend erkennen, testen oder dagegen schützen, siehe [A06:2025 – Unsicheres Design](A06_2025-Insecure_Design.md). OWASP rät von jeglichen Behauptungen ab, die OWASP Top 10 vollständig abzudecken, da dies schlichtweg nicht der Wahrheit entspricht.
+Der ASVS ist die einzig akzeptable Wahl für Werkzeug-Anbieter. Werkzeuge können die OWASP Top 10 aufgrund der Natur einiger der darin enthaltenen Risiken nicht umfassend erkennen, testen oder dagegen schützen, siehe [A06:2025 – Unsicheres Design](A06_2025-Insecure_Design.md). OWASP rät von jeglichen Behauptungen ab, die OWASP Top 10 vollständig abzudecken, da dies schlichtweg nicht der Wahrheit entspricht.
