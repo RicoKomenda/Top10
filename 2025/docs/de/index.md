@@ -2,7 +2,7 @@
 
 Willkommen bei den OWASP Top 10:2025.
 
-Die OWASP Top 10 ist ein Standarddokument zur Sensibilisierung von Entwicklern für die Sicherheit von Webanwendungen. Sie spiegelt einen breiten Konsens über die kritischsten Sicherheitsrisiken für Webanwendungen wider.
+Die OWASP Top 10 ist ein Standarddokument zur Sensibilisierung von Entwickler:innen für die Sicherheit von Webanwendungen. Sie spiegelt einen breiten Konsens über die kritischsten Sicherheitsrisiken für Webanwendungen wider.
 
 ## Über diese Veröffentlichung
 
