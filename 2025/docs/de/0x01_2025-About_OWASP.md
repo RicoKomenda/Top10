@@ -28,6 +28,11 @@ Die OWASP Foundation ist die gemeinnützige Organisation, die den langfristigen 
 
 Mitmachen!
 
+## Stammtisch-Initiative des OWASP German Chapter
+In mehreren deutschen Städten gibt es [OWASP-Stammtische](https://owasp.org/www-chapter-germany/stammtische/), bei denen man sich in lockerer Runde trifft, um sich auszutauschen, nette Leute kennenzulernen oder ernsthafte Sicherheitsthemen zu diskutieren – meistens mit Vortrag.<br>
+
+Aktive Stammtische gibt es (Stand Mai 2026) in [Augsburg](/www-chapter-germany/stammtische/augsburg/), [Berlin](/www-chapter-germany/stammtische/berlin), [Frankfurt](/www-chapter-frankfurt/), [Hamburg](/www-chapter-germany/stammtische/hamburg/), [Heilbronn-Franken](/www-chapter-heilbronn/), [Karlsruhe](/www-chapter-germany/stammtische/karlsruhe/), [Köln](/www-chapter-germany/stammtische/koeln/), [München](/www-chapter-germany/stammtische/muenchen/), [Ruhrpott](/www-chapter-ruhrpott/) und [Stuttgart](/www-chapter-stuttgart/).
+
 ## Copyright und Lizenz
 
 ![License](../assets/license.png)

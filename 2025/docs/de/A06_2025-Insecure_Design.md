@@ -3,33 +3,33 @@
 
 ## Hintergrund.
 
-Unsicheres Design rutscht zwei Plätze von #4 auf #6 im Ranking ab, da **[A02:2025-Security Misconfiguration](A02_2025-Security_Misconfiguration.md)** und **[A03:2025-Software Supply Chain Failures](A03_2025-Software_Supply_Chain_Failures.md)** es überholt haben. Diese Kategorie wurde 2021 eingeführt, und wir haben beachtliche Verbesserungen in der Branche im Zusammenhang mit Bedrohungsmodellierung und einer stärkeren Gewichtung auf sicheres Design beobachtet. Diese Kategorie konzentriert sich auf Risiken im Zusammenhang mit Design- und Architekturfehlern, mit einem Aufruf zu häufigerem Gebrauch von Bedrohungsmodellierung, sicheren Designmustern und Referenzarchitekturen. Dies umfasst Fehler in der Geschäftslogik einer Anwendung, z. B. das Fehlen der Definition unerwünschter oder unerwarteter Zustandsänderungen innerhalb einer Anwendung. Als Community müssen wir über “Shift-Left” im Coding-Bereich hinausgehen und uns auf Aktivitäten vor dem Coding konzentrieren, wie das Verfassen von Anforderungen und das Anwendungsdesign, die für die Prinzipien von Secure by Design entscheidend sind (siehe z. B. **[Establish a Modern AppSec Program: Planning and Design Phase](0x03_2025-Establishing_a_Modern_Application_Security_Program.md)**)
+Unsicheres Design rutscht zwei Plätze von #4 auf #6 im Ranking ab, da **[A02:2025-Sicherheitsrelevante Fehlkonfiguration](A02_2025-Security_Misconfiguration.md)** und **[A03:2025-Schwachstellen in der Software-Lieferkette](A03_2025-Software_Supply_Chain_Failures.md)** es überholt haben. Diese Kategorie wurde 2021 eingeführt, und wir haben beachtliche Verbesserungen in der Branche im Zusammenhang mit Bedrohungsmodellierung und einer stärkeren Gewichtung auf sicheres Design beobachtet. Diese Kategorie konzentriert sich auf Risiken im Zusammenhang mit Design- und Architekturfehlern, mit einem Aufruf zu häufigerem Gebrauch von Bedrohungsmodellierung, sicheren Designmustern und Referenzarchitekturen. Dies umfasst Fehler in der Geschäftslogik einer Anwendung, z. B. das Fehlen der Definition unerwünschter oder unerwarteter Zustandsänderungen innerhalb einer Anwendung. Als Community müssen wir über “Shift-Left” im Coding-Bereich hinausgehen und uns auf Aktivitäten vor dem Coding konzentrieren, wie das Verfassen von Anforderungen und das Anwendungsdesign, die für die Prinzipien von Secure by Design entscheidend sind (siehe z. B. **[Aufbau eines modernen Programms zur Anwendungssicherheit](0x03_2025-Establishing_a_Modern_Application_Security_Program.md)**)
 
 
 ## Punktetabelle.
 
 
 <table>
-  <tr>
-   <td>Zugeordnete CWEs
-   </td>
-   <td>Maximale Häufigkeit
-   </td>
-   <td>Durchschn. Häufigkeit
-   </td>
-   <td>Durchschn. Ausnutzbarkeit (gewichtet)
-   </td>
-   <td>Durchschn. Auswirkungen (gewichtet)
-   </td>
-   <td>Maximale Abdeckung
-   </td>
-   <td>Durchschnittliche Abdeckung
-   </td>
-   <td>Gesamtanzahl
-   </td>
-   <td>CVEs insgesamt
-   </td>
-  </tr>
+<tr>
+   <td>Zugeordnete CWEs
+   </td>
+   <td>Max. Häufigkeit
+   </td>
+   <td>Durchschn. Häufigkeit
+   </td>
+   <td>Max. Abdeckung
+   </td>
+   <td>Durchschn. Abdeckung
+   </td>
+   <td>Durchschn. gewichtete Ausnutzbarkeit
+   </td>
+   <td>Durchschn. gewichtete Auswirkung
+   </td>
+   <td>Gesamtanzahl
+   </td>
+   <td>Summe CVEs
+   </td>
+</tr>
   <tr>
    <td>39
    </td>
