@@ -5,7 +5,7 @@
 ## Hintergrund. 
 
 100 % der getesteten Anwendungen wiesen irgendeine Form fehlerhafter Zugriffskontrolle auf.
-An der Spitze der Top Ten verbleibend, weist diese Kategorie die höchste Anzahl an Vorkommnissen im vorliegenden Datensatz sowie die zweithöchste Anzahl zugehöriger CVEs auf.
+An der Spitze der Top 10 verbleibend, weist diese Kategorie die höchste Anzahl an Vorkommnissen im vorliegenden Datensatz sowie die zweithöchste Anzahl zugehöriger CVEs auf.
 Bemerkenswerte Common Weakness Enumerations (CWEs) sind *CWE-200: Exposure of Sensitive Information to an Unauthorized Actor*, *CWE-201: Insertion of Sensitive Information Into Sent Data*, *CWE-918: Server-Side Request Forgery (SSRF)* und *CWE-352: Cross-Site Request Forgery (CSRF)*.
 
 ## Punktetabelle.
@@ -62,11 +62,11 @@ Die Zugriffskontrolle erzwingt Richtlinien, sodass Nutzende nicht außerhalb ihr
 
 
 
-* Verstoß gegen die Prinzipien der geringsten Rechte oder der standardmäßigen Verweigerung, bei dem der Zugriff nur für bestimmte Fähigkeiten, Rollen oder Nutzende gewährt werden sollte, aber für jedermann verfügbar ist.
+* Verstoß gegen die Prinzipien der geringsten Rechte oder der standardmäßigen Verweigerung, bei dem der Zugriff nur für bestimmte Fähigkeiten, Rollen oder Nutzende gewährt werden sollte, aber für jede Person verfügbar ist.
 * Umgehen von Zugriffskontrollprüfungen durch Ändern der URL (Parametermanipulation oder erzwungenes Durchsuchen), des internen Anwendungsstatus oder der HTML-Seite oder durch Verwendung eines Angriffstools zur Änderung von API-Anfragen.
 * Ermöglichen, das Konto einer anderen Person anzuzeigen oder zu bearbeiten, indem dessen eindeutige Kennung angegeben wird (unsichere direkte Objektreferenzen).
 * Eine zugängliche API mit fehlenden Zugriffskontrollen für POST, PUT und DELETE.
-* Erhöhung der Privilegien. Als Nutzerin/Nutzer fungieren, ohne angemeldet zu sein oder als Administrator fungieren, wenn man als Standard-Nutzerin/Nutzer angemeldet ist.
+* Erhöhung der Privilegien. Als Nutzer:in fungieren, ohne angemeldet zu sein oder als Administrator:in fungieren, wenn man als Standard-Nutzer:in angemeldet ist.
 * Manipulation von Metadaten, wie z. B. das Abfangen oder Manipulieren eines JSON Web Token (JWT)-Zugriffskontrolltokens oder die Manipulation eines Cookies oder eines versteckten Felds, um Berechtigungen zu erhöhen oder die Ungültigerklärung von JWTs zu missbrauchen.
 * CORS-Fehlkonfiguration ermöglicht API-Zugriff von nicht autorisierten/nicht vertrauenswürdigen Quellen.
 * Erzwingen des Zugriffs auf authentifizierte Seiten als nicht authentifizierte Person oder zu privilegierten Seiten als Standard-Nutzerin/Nutzer.
@@ -80,7 +80,7 @@ Die Zugriffskontrolle ist nur wirksam bei vertrauenswürdigem serverseitigem Cod
 
 * Verweigern Sie standardmäßig den Zugriff, mit Ausnahme öffentlicher Ressourcen.
 * Implementieren Sie Zugriffskontrollmechanismen einmalig und verwenden Sie diese in der gesamten Anwendung wieder, einschließlich der Minimierung der Nutzung von Cross-Origin Resource Sharing (CORS).
-* Modellzugriffskontrollen sollten die Datensatzeigentümerschaft erzwingen, anstatt zu akzeptieren, dass Nutzerinnen/Nutzer Datensätze erstellen, lesen, aktualisieren oder löschen können.
+* Modellzugriffskontrollen sollten die Datensatzeigentümerschaft erzwingen, anstatt zu akzeptieren, dass Nutzer:innen Datensätze erstellen, lesen, aktualisieren oder löschen können.
 * Durch Domänenmodelle sollten eindeutige Geschäftslimitanforderungen für Anwendungen durchgesetzt werden.
 * Deaktivieren Sie die Verzeichnisliste des Webservers und stellen Sie sicher, dass Dateimetadaten (z. B. .git) und Sicherungsdateien nicht in Web-Roots vorhanden sind.
 * Protokollieren Sie Fehler bei der Zugriffskontrolle und benachrichtigen Sie Administratoren bei Bedarf (z. B. wiederholte Fehler).
@@ -88,7 +88,7 @@ Die Zugriffskontrolle ist nur wirksam bei vertrauenswürdigem serverseitigem Cod
 * Statusbehaftete Sitzungskennungen sollten nach dem Abmelden auf dem Server ungültig gemacht werden. Zustandslose JWT-Token sollten eher kurzlebig sein, damit das Zeitfenster für Angreifende minimiert wird. Für langlebigere JWTs wird dringend empfohlen, die OAuth-Standards zu befolgen, um den Zugriff zu widerrufen.
 * Verwenden Sie bewährte Toolkits oder Muster, die einfache, deklarative Zugriffskontrollen bieten.
 
-Entwickler und QA-Mitarbeiter sollten funktionale Zugriffskontrolleinheiten und Integrationstests durchführen.
+Entwickler:innen und QA-Mitarbeiter:innen sollten funktionale Zugriffskontrolleinheiten und Integrationstests durchführen.
 
 
 ## Beispielhafte Angriffsszenarien. 
@@ -119,9 +119,9 @@ https://example.com/app/admin_getappInfo
 ```
 
 
-Wenn eine nicht authentifizierte Benutzerin/Benutzer auf eine der Seiten zugreifen kann, liegt ein Fehler vor. Wenn ein Benutzerin/Benutzer ohne Administrationsrechte auf die Admin-Seite zugreifen kann, handelt es sich um einen Fehler.
+Wenn eine nicht authentifizierte Benutzer:in auf eine der Seiten zugreifen kann, liegt ein Fehler vor. Wenn ein Benutzer:in ohne Administrationsrechte auf die Admin-Seite zugreifen kann, handelt es sich um einen Fehler.
 
-**Szneraio Nr. 3:** Eine Anwendung verwaltet ihre gesamte Zugriffskontrolle im Frontend. Während der Angreifer aufgrund von im Browser ausgeführtem JavaScript-Code nicht auf `https://example.com/app/admin_getappInfo` zugreifen kann, kann er einfach Folgendes ausführen:
+**Szenario Nr. 3:** Eine Anwendung verwaltet ihre gesamte Zugriffskontrolle im Frontend. Während die/der Angreifer:in aufgrund von im Browser ausgeführtem JavaScript-Code nicht auf `https://example.com/app/admin_getappInfo` zugreifen kann, kann sie/er einfach Folgendes ausführen:
 
 
 ```
