@@ -3,7 +3,7 @@
 
 ## Hintergrund.
 
-Diese Kategorie belegte den ersten Platz in der Community-Umfrage zum Top 10, wobei genau 50 % der Teilnehmenden sie auf Rang 1 setzten. Seit ihrem ersten Erscheinen im Top 10 von 2013 als „A9 – Using Components with Known Vulnerabilities" hat sich der Risikobereich ausgeweitet und umfasst nun alle Lieferkettenfehler, nicht nur solche mit bekannten Schwachstellen. Trotz dieses erweiterten Umfangs sind Lieferkettenfehler mit nur 11 Common Vulnerability and Exposures (CVEs), die die zugehörigen CWEs aufweisen, nach wie vor schwer zu identifizieren. Werden sie jedoch getestet und in den beigetragenen Daten gemeldet, weist diese Kategorie mit 5,19 % die höchste durchschnittliche Vorfallsrate aller Kategorien auf. Die relevanten CWEs sind *CWE-477: Use of Obsolete Function, CWE-1104: Use of Unmaintained Third Party Components*, CWE-1329: *Reliance on Component That is Not Updateable*, und *CWE-1395: Dependency on Vulnerable Third-Party Component*.
+Diese Kategorie belegte den ersten Platz in der Community-Umfrage zu den Top 10, wobei genau 50 % der Teilnehmenden sie auf Rang 1 setzten. Seit ihrem ersten Erscheinen im Top 10 von 2013 als „A9 – Using Components with Known Vulnerabilities" hat sich der Risikobereich ausgeweitet und umfasst nun alle Lieferkettenfehler, nicht nur solche mit bekannten Schwachstellen. Trotz dieses erweiterten Umfangs sind Lieferkettenfehler mit nur 11 Common Vulnerability and Exposures (CVEs), die die zugehörigen CWEs aufweisen, nach wie vor schwer zu identifizieren. Werden sie jedoch getestet und in den beigetragenen Daten gemeldet, weist diese Kategorie mit 5,19 % die höchste durchschnittliche Vorfallsrate aller Kategorien auf. Die relevanten CWEs sind *CWE-477: Use of Obsolete Function, CWE-1104: Use of Unmaintained Third Party Components*, CWE-1329: *Reliance on Component That is Not Updateable*, und *CWE-1395: Dependency on Vulnerable Third-Party Component*.
 
 
 ## Punktetabelle.
@@ -68,7 +68,7 @@ Sie sind wahrscheinlich verwundbar, wenn:
 * Ihre Lieferkettensysteme keine Aufgabentrennung aufweisen. Keine einzelne Person sollte in der Lage sein, Code zu schreiben und ihn bis in die Produktion zu befördern, ohne die Aufsicht eines anderen Menschen.
 * Komponenten aus nicht vertrauenswürdigen Quellen, über jeden Teil des Tech-Stacks hinweg, in Produktionsumgebungen verwendet werden oder diese beeinflussen können.
 * Sie die zugrunde liegende Plattform, Frameworks und Abhängigkeiten nicht risikobasiert und zeitnah aktualisieren oder upgraden. Dies tritt häufig in Umgebungen auf, in denen das Patchen eine monatliche oder vierteljährliche Aufgabe unter Änderungskontrolle ist, wodurch Organisationen tagelangen oder monatelangen unnötigen Risiken ausgesetzt sind, bevor Schwachstellen behoben werden.
-* Softwareentwickler die Kompatibilität aktualisierter, upgegradeter oder gepatchter Bibliotheken nicht testen.
+* Softwareentwickler:innen die Kompatibilität aktualisierter, upgegradeter oder gepatchter Bibliotheken nicht testen.
 * Sie die Konfigurationen jedes Teils Ihres Systems nicht absichern (siehe [A02:2025-Security Misconfiguration](https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/)).
 * Ihre CI/CD-Pipeline eine schwächere Sicherheit aufweist als die Systeme, die sie erstellt und bereitstellt, insbesondere wenn sie komplex ist.
 
@@ -87,7 +87,7 @@ Es sollte ein Patch-Management-Prozess vorhanden sein, der:
 * Komponenten ausschließlich von offiziellen (vertrauenswürdigen) Quellen über sichere Verbindungen bezieht. Bevorzugen Sie signierte Pakete, um die Wahrscheinlichkeit zu verringern, eine modifizierte, bösartige Komponente einzubinden (siehe [A08:2025-Software and Data Integrity Failures](https://owasp.org/Top10/2025/A08_2025-Software_or_Data_Integrity_Failures/)).
 * Bewusst wählt, welche Version einer Abhängigkeit verwendet wird, und nur bei Bedarf aktualisiert.
 * Bibliotheken und Komponenten überwacht, die nicht mehr gewartet werden oder keine Sicherheits-Patches für ältere Versionen bereitstellen. Falls kein Patchen möglich ist, sollten Sie eine Migration zu einer Alternative in Betracht ziehen. Falls auch das nicht möglich ist, ziehen Sie den Einsatz eines virtuellen Patches in Betracht, um das entdeckte Problem zu überwachen, zu erkennen oder dagegen zu schützen.
-* Ihre CI/CD-, IDE- und anderen Entwickler-Tools regelmäßig aktualisiert.
+* Ihre CI/CD-, IDE- und anderen Entwicklungs-Tools regelmäßig aktualisiert.
 * Vermeidet, Updates gleichzeitig auf alle Systeme auszurollen. Nutzen Sie gestaffelte Rollouts oder Canary-Deployments, um das Risiko zu begrenzen, falls ein vertrauenswürdiger Anbieter kompromittiert wird.
 
 
@@ -96,7 +96,7 @@ Es sollte ein Änderungsmanagementprozess oder ein Tracking-System vorhanden sei
 * CI/CD-Einstellungen (alle Build-Tools und Pipelines)
 * Code-Repositories
 * Sandbox-Bereiche
-* Entwickler-IDEs
+* Entwicklungsumgebungen
 * SBOM-Tooling und erstellte Artefakte
 * Protokollierungssysteme und Protokolle
 * Drittanbieter-Integrationen, z. B. SaaS
@@ -107,7 +107,7 @@ Es sollte ein Änderungsmanagementprozess oder ein Tracking-System vorhanden sei
 Folgende Systeme sollten abgesichert werden, einschließlich der Aktivierung von MFA und der Einschränkung von IAM:
 
 * Ihr Code-Repository (dazu gehört das Nicht-Einchecken von Secrets, der Schutz von Branches und Backups)
-* Entwickler-Workstations (regelmäßiges Patchen, MFA, Monitoring und mehr)
+* Entwickler:innen-Workstations (regelmäßiges Patchen, MFA, Monitoring und mehr)
 * Ihr Build-Server & CI/CD (Aufgabentrennung, Zugangskontrolle, signierte Builds, umgebungsspezifische Secrets, manipulationssichere Protokolle und mehr)
 * Ihre Artefakte (Integrität durch Herkunftsnachweis, Signierung und Zeitstempel sicherstellen, Artefakte befördern statt für jede Umgebung neu zu bauen, sicherstellen, dass Builds unveränderlich sind)
 * Infrastructure as Code (wie jeder Code verwaltet, einschließlich der Verwendung von PRs und Versionskontrolle)
@@ -129,7 +129,7 @@ Jede Organisation muss einen fortlaufenden Plan zur Überwachung, Priorisierung 
 
 * Der Bybit-Diebstahl von 1,5 Milliarden US-Dollar im Jahr 2025 wurde durch [einen Supply-Chain-Angriff auf Wallet-Software](https://www.sygnia.co/blog/sygnia-investigation-bybit-hack/) verursacht, der nur ausgeführt wurde, wenn die Ziel-Wallet verwendet wurde.
 
-**Szenario Nr. 3:** Der [`Shai-Hulud`-Supply-Chain-Angriff](https://www.cisa.gov/news-events/alerts/2025/09/23/widespread-supply-chain-compromise-impacting-npm-ecosystem) im Jahr 2025 war der erste erfolgreiche sich selbst verbreitende npm-Wurm. Angreifer platzierten bösartige Versionen populärer Pakete, die ein Post-Install-Skript verwendeten, um sensible Daten zu sammeln und in öffentliche GitHub-Repositories zu exfiltrieren. Die Malware erkannte auch npm-Token in der Opferumgebung und nutzte diese automatisch, um bösartige Versionen aller zugänglichen Pakete zu veröffentlichen. Der Wurm erreichte über 500 Paketversionen, bevor er von npm gestoppt wurde. Dieser Supply-Chain-Angriff war fortschrittlich, schnell ausbreitend und schädlich, und indem er auf Entwicklermaschinen abzielte, zeigte er, dass Entwickler selbst nun zu den Hauptzielen von Supply-Chain-Angriffen geworden sind.
+**Szenario Nr. 3:** Der [`Shai-Hulud`-Supply-Chain-Angriff](https://www.cisa.gov/news-events/alerts/2025/09/23/widespread-supply-chain-compromise-impacting-npm-ecosystem) im Jahr 2025 war der erste erfolgreiche sich selbst verbreitende npm-Wurm. Angreifer platzierten bösartige Versionen populärer Pakete, die ein Post-Install-Skript verwendeten, um sensible Daten zu sammeln und in öffentliche GitHub-Repositories zu exfiltrieren. Die Malware erkannte auch npm-Token in der Opferumgebung und nutzte diese automatisch, um bösartige Versionen aller zugänglichen Pakete zu veröffentlichen. Der Wurm erreichte über 500 Paketversionen, bevor er von npm gestoppt wurde. Dieser Supply-Chain-Angriff war fortschrittlich, schnell ausbreitend und schädlich, und indem er auf Entwicklungsmaschinen abzielte, zeigte er, dass Entwickler:innen selbst nun zu den Hauptzielen von Supply-Chain-Angriffen geworden sind.
 
 **Szenario Nr. 4:** Komponenten laufen typischerweise mit denselben Berechtigungen wie die Anwendung selbst, sodass Fehler in einer beliebigen Komponente erhebliche Auswirkungen haben können. Solche Fehler können versehentlich (z. B. Codefehler) oder absichtlich (z. B. eine Hintertür in einer Komponente) sein. Einige Beispiele für entdeckte ausnutzbare Komponentenschwachstellen sind:
 
