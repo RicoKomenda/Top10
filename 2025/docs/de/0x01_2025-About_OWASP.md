@@ -2,21 +2,21 @@
 
 Das Open Worldwide Application Security Project (OWASP) ist eine offene Community. OWASP möchte Organisationen in die Lage versetzen, sichere und vertrauenswürdige Anwendungen zu entwickeln, zu kaufen und zu betreiben.
 
-Von OWASP kann man folgendes erwarten; stets frei verfügbar und für jedermann zugänglich:
+Von OWASP kann man Folgendes erwarten; stets frei verfügbar und für alle Personen zugänglich:
 
 - Werkzeuge und Standards für sichere Anwendungen.
 - Neueste Forschung.
 - Standard Security-Controls und Programm-Bibliotheken.
-- Bücher zu den Themen Prüfungen, Entwicklung und Quellcodeanalyse im Bereich der Anwendungssicherheit.
+- Bücher zu den Themen Prüfung, Entwicklung und Quellcodeanalyse im Bereich der Anwendungssicherheit.
 - Vorträge und [Videos](https://www.youtube.com/user/OWASPGLOBAL).
-- ["Cheat sheets"](https://cheatsheetseries.owasp.org/) zu vielen sicherheitsrelevanten Themen.
-- [Lokale "Chapter" auf der ganzen Welt](https://owasp.org/chapters/) und zusätzlich **Stammtische** in Deutschland.
+- ["Cheat sheets"](https://cheatsheetseries.owasp.org/) (Spickzettel) zu vielen sicherheitsrelevanten Themen.
+- [Lokale "Chapter" auf der ganzen Welt](https://owasp.org/chapters/) und zusätzlich [**Stammtische**](https://owasp.org/www-chapter-germany/stammtische/) in Deutschland.
 - Große und häufige [Konferenzen auf der ganzen Welt](https://owasp.org/events/).
 - [Google Groups](https://groups.google.com/g/owasp).
 
 Alle Informationen auf: [https://owasp.org](https://owasp.org).
 
-Alle OWASP Werkzeuge, Dokumente, Videos, Präsentationen und Chapter sind frei verfügbar und stehen jedem offen, der Anwendungssicherheit weiterentwickeln möchte.
+Alle OWASP Werkzeuge, Dokumente, Videos, Präsentationen und Chapter sind frei verfügbar und stehen allen offen, die Anwendungssicherheit weiterentwickeln möchten.
 
 Mangelnde Anwendungssicherheit begreifen wir als ein personen-, prozess- und technologie-bezogenes Problem, da die meisten wirksamen Ansätze für Anwendungssicherheit Verbesserungen in all diesen Feldern erfordern.
 
@@ -24,7 +24,7 @@ OWASP ist eine andere Art von Organisation. Wir unterliegen keinem kommerziellen
 
 OWASP ist nicht von Dritten abhängig, wenngleich wir die sachkundige Verwendung freier und kommerzieller Technologien unterstützen. OWASP erstellt viele unterschiedliche Materialien auf Basis eines kollaborativen, transparenten und offenen Ansatzes.
 
-Die OWASP Foundation ist die gemeinnützige Organisation, die den langfristigen Erfolg des Projektes sicher stellt. Fast jeder bei OWASP ist ehrenamtlich tätig. Das schließt das Board, Chapter- und Projekt-Leiter, sowie Mitglieder ein. Wir unterstützen innovative Sicherheitsforschung mit Spenden, Förderungen und Infrastruktur.
+Die OWASP Foundation ist die gemeinnützige Organisation, die den langfristigen Erfolg des Projektes sicher stellt. Fast jede:r bei OWASP ist ehrenamtlich tätig. Das schließt das Board, Chapter- und Projekt-Leiter:innen, sowie Mitglieder ein. Wir unterstützen innovative Sicherheitsforschung mit Spenden, Förderungen und Infrastruktur.
 
 Mitmachen!
 
