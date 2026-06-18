@@ -3,7 +3,7 @@
 
 ## Hintergrund. 
 
-„Unzureichendes Sicherheitslogging und Alarmierung“ behält seinen Platz auf Rang 9. Der Name dieser Kategorie wurde leicht geändert, um die Alarmierungsfunktion hervorzuheben, die erforderlich ist, um bei relevanten Protokollereignissen Maßnahmen auszulösen. Diese Kategorie wird in den Daten stets unterrepräsentiert sein und wurde von den Teilnehmern der Community-Umfrage bereits zum dritten Mal auf einen Platz in der Liste gewählt. Diese Kategorie ist unglaublich schwer zu testen und in den CVE/CVSS-Daten nur minimal vertreten (nur 723 CVEs); sie kann jedoch erhebliche Auswirkungen auf die Transparenz, die Benachrichtigung bei Vorfällen und die Forensik haben. Diese Kategorie umfasst Probleme mit *properly handling output encoding to log files (CWE-117), inserting sensitive data into log files (CWE-532), und insufficient logging (CWE-778).*
+„Unzureichendes Sicherheitslogging und Alarmierung“ behält seinen Platz auf Rang 9. Der Name dieser Kategorie wurde leicht geändert, um die Alarmierungsfunktion hervorzuheben, die erforderlich ist, um bei relevanten Protokollereignissen Maßnahmen auszulösen. Diese Kategorie wird in den Daten stets unterrepräsentiert sein und wurde von den Teilnehmer:innen der Community-Umfrage bereits zum dritten Mal auf einen Platz in der Liste gewählt. Diese Kategorie ist unglaublich schwer zu testen und in den CVE/CVSS-Daten nur minimal vertreten (nur 723 CVEs); sie kann jedoch erhebliche Auswirkungen auf die Transparenz, die Benachrichtigung bei Vorfällen und die Forensik haben. Diese Kategorie umfasst Probleme mit *properly handling output encoding to log files (CWE-117), inserting sensitive data into log files (CWE-532), und insufficient logging (CWE-778).*
 
 
 ## Punktetabelle.
@@ -56,7 +56,7 @@
 
 ## Beschreibung. 
 
-Ohne Protokollierung und Überwachung lassen sich Angriffe und Sicherheitsverletzungen nicht erkennen, und ohne Warnmeldungen ist es sehr schwierig, bei einem Sicherheitsvorfall schnell und effektiv zu reagieren. Eine unzureichende Protokollierung, kontinuierliche Überwachung, Erkennung und Warnmeldung zur Einleitung aktiver Maßnahmen kommt immer dann vor, wenn:
+Ohne Protokollierung und Überwachung lassen sich Angriffe und Sicherheitsverletzungen nicht erkennen, und ohne Warnmeldungen ist es sehr schwierig, bei einem Sicherheitsvorfall schnell und effektiv zu reagieren. Eine unzureichende Protokollierung, kontinuierliche Überwachung, Erkennung und Warnmeldung zur Einleitung aktiver Maßnahmen kommt immer dann vor, wenn Folgendes zutrifft:
 
 
 * Nachvollziehbare Ereignisse, wie Anmeldungen, fehlgeschlagene Anmeldungen und wertvolle Transaktionen, werden nicht protokolliert (zum Beispiel nur erfolgreiche Anmeldungen protokollieren, nicht aber fehlgeschlagene Versuche).
@@ -67,28 +67,28 @@ Ohne Protokollierung und Überwachung lassen sich Angriffe und Sicherheitsverlet
 * Geeignete Schwellenwerte für Warnmeldungen und Eskalationsprozesse für Gegenmaßnahmen sind nicht vorhanden oder nicht wirksam. Benachrichtigungen werden nicht innerhalb einer angemessenen Frist empfangen oder geprüft.
 * Penetrationstests und Scans durch DAST-Tools (Dynamic Application Security Testing) (wie Burp oder ZAP) lösen keine Alarme aus.
 * Die Anwendung kann Angriffe weder in Echtzeit noch nahezu in Echtzeit erkennen, eskalieren oder Alarm schlagen.
-* Sie sind anfällig für den Verlust sensibler Informationen, wenn Sie Protokollierungs- und Warnereignisse für einen Benutzer oder einen Angreifer sichtbar machen (siehe [A01:2025-Broken Access Control](A01_2025-Broken_Access_Control.md)) oder wenn Sie sensible Informationen protokollieren, die nicht protokolliert werden sollten (wie z. B. personenbezogene Daten oder geschützte Gesundheitsdaten).
+* Sie sind anfällig für den Verlust sensibler Informationen, wenn Sie Protokollierungs- und Warnereignisse für eine:n Benutzer:in oder eine:n Angreifer:in sichtbar machen (siehe [A01:2025-Mangelhafte Zugriffskontrolle](A01_2025-Broken_Access_Control.md)) oder wenn Sie sensible Informationen protokollieren, die nicht protokolliert werden sollten (wie z. B. personenbezogene Daten oder geschützte Gesundheitsdaten).
 * Sie sind anfällig für Injection oder Angriffe auf die Protokollierungs- oder Überwachungssysteme, wenn Protokolldaten nicht encoded sind.
-* Der Anwendung fehlen Fehler und andere Ausnahmebedingungen oder sie behandelt diese falsch, sodass das System nicht erkennt, dass ein Fehler aufgetreten ist, und daher nicht protokollieren kann, dass ein Problem vorlag.
+* Die Anwendung erkennt Fehler und andere Ausnahmebedingungen nicht oder sie behandelt diese falsch, sodass das System nicht erkennt, dass ein Fehler aufgetreten ist, und daher nicht protokollieren kann, dass ein Problem vorlag.
 * Es fehlen angemessene „Anwendungsfälle“ für die Ausgabe von Warnmeldungen oder diese sind veraltet, um eine besondere Situation zu erkennen.
 * Zu viele Fehlalarme machen es unmöglich, wichtige Warnmeldungen von unwichtigen zu unterscheiden, was dazu führt, dass sie zu spät oder gar nicht erkannt werden (physische Überlastung des SOC-Teams).
 * Erkannte Warnmeldungen können nicht korrekt verarbeitet werden, da das Handbuch für den Anwendungsfall unvollständig, veraltet oder nicht vorhanden ist.
 
 ## Prävention und Gegenmaßnahmen.
 
-Je nach dem Risiko der Anwendung sollten Entwickler einige oder alle der folgenden Maßnahmen ergreifen:
+Je nach dem Risiko der Anwendung sollten Entwickler:innen einige oder alle der folgenden Maßnahmen ergreifen:
 
 * Sicherstellen, dass alle Anmeldevorgänge, Zugriffskontrollen und Fehler bei der serverseitigen Eingabeüberprüfung mit ausreichendem Sitzungskontext der Nutzenden erfasst werden, um verdächtige oder böswillige Anwendende zu identifizieren und ausreichend lange gespeichert werden, um eine spätere forensische Analyse zu ermöglichen.
-* Stellen Sie sicher, dass jeder Teil Ihrer App, der eine Sicherheitsprüfung enthält, protokolliert wird, unabhängig davon, ob diese erfolgreich ist oder fehlschlägt.
-* Stellen Sie sicher, dass die Protokolle in einem Format gespeichert werden, das von Protokollmanagement Lösungen leicht verarbeitet werden kann.
+* Sicherstellen, dass jeder Teil Ihrer App, der eine Sicherheitsprüfung enthält, protokolliert wird, unabhängig davon, ob diese erfolgreich ist oder fehlschlägt.
+* Sicherstellen, dass die Protokolle in einem Format gespeichert werden, das von Protokollmanagement-Lösungen leicht verarbeitet werden kann.
 * Es sollte sichergestellt werden, dass die Protokolldaten korrekt encoded werden, sodass Injection-Angriffe oder Angriffe auf Logging- oder Überwachungssysteme verhindert werden.
 * Es soll sichergestellt sein, dass alle Transaktionen einen Prüfpfad mit Integritätskontrollen aufweisen um Manipulationen oder Löschungen zu verhindern, z. B. durch Datenbanktabellen, die nur erweitert werden können, oder ähnliches.
-* Stelle sicher, dass alle Transaktionen, bei denen ein Fehler auftritt, zurückgesetzt und neu gestartet werden. Wähle stets die „Fail-Closed“-Strategie.
-* Wenn sich Ihre Anwendung oder deren Nutzer verdächtig verhalten, geben Sie eine Warnmeldung aus. Erstellen Sie zu diesem Thema Leitlinien für Ihre Entwickler, damit diese entsprechende Maßnahmen in den Code integrieren können, oder erwerben Sie ein System, das diese Aufgabe übernimmt.
+* Sicherstellen, dass alle Transaktionen, bei denen ein Fehler auftritt, zurückgesetzt und neu gestartet werden. Wähle stets die „Fail-Closed“-Strategie.
+* Wenn sich Ihre Anwendung oder deren Nutzer:innen verdächtig verhalten, geben Sie eine Warnmeldung aus. Erstellen Sie zu diesem Thema Leitlinien für Ihre Entwickler:innen, damit diese entsprechende Maßnahmen in den Code integrieren können, oder erwerben Sie ein System, das diese Aufgabe übernimmt.
 * DevSecOps-Teams sollten eine effektive Überwachung und Alarmierung einrichten, sodass verdächtige Aktivitäten vom Security Operations Center (SOC)-Team schnell erkannt und darauf reagiert werden kann.
-* Fügen Sie „Honeytokens“ als Fallen für Angreifer in Ihre Anwendung ein, z. B. in die Datenbank, in Daten oder als echte und/oder technische Benutzeridentität. Da diese im normalen Geschäftsbetrieb nicht verwendet werden, erzeugt jeder Zugriff Protokolldaten, die nahezu ohne Fehlalarme gemeldet werden können.
+* Fügen Sie „Honeytokens“ als Fallen für Angreifer:innen in Ihre Anwendung ein, z. B. in die Datenbank, in Daten oder als echte und/oder technische Benutzeridentität. Da diese im normalen Geschäftsbetrieb nicht verwendet werden, erzeugt jeder Zugriff Protokolldaten, die nahezu ohne Fehlalarme gemeldet werden können.
 * Verhaltensanalysen und KI-Unterstützung könnten optional als zusätzliche Technik eingesetzt werden, um die Fehlalarmquote bei Warnmeldungen zu senken.
-* Erstellen oder übernehmen Sie einen Notfallplan für die Reaktion auf Vorfälle und für die Wiederherstellung, wie z. B. dem Leitfaden des National Institute of Standards and Technology (NIST) 800-61r2 oder neuer. Bringen Sie Ihren Softwareentwicklern bei, wie Angriffe auf Anwendungen und Vorfälle aussehen, damit sie diese melden können.
+* Erstellen oder übernehmen Sie einen Notfallplan für die Reaktion auf Vorfälle und für die Wiederherstellung, wie z. B. dem Leitfaden des National Institute of Standards and Technology (NIST) 800-61r2 oder neuer. Bringen Sie Ihren Softwareentwickler:innen bei, wie Angriffe auf Anwendungen und Vorfälle aussehen, damit sie diese melden können.
 
 Es gibt kommerzielle und Open-Source-Frameworks zum Schutz von Anwendungen wie das OWASP ModSecurity Core Rule Set, und Open-Source-Log correlation software, wie Elasticsearch, Logstash, Kibana (ELK) Stack, die individuelle Dashboards und Warnmeldungen bereitstellen. Es gibt auch kommerzielle Observability-Tools, mit denen Sie nahezu in Echtzeit auf Angriffe reagieren oder diese abwehren können.
 
