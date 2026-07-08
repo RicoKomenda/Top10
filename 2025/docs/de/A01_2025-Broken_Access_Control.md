@@ -58,23 +58,23 @@ Bemerkenswerte Common Weakness Enumerations (CWEs) sind *CWE-200: Exposure of Se
 
 ## Beschreibung. 
 
-Die Zugriffskontrolle erzwingt Richtlinien, sodass Nutzende nicht außerhalb ihrer vorgesehenen Berechtigungen handeln können. Fehler führen in der Regel zur unbefugten Offenlegung, Änderung oder Zerstörung aller Daten oder zur Ausführung einer Geschäftsfunktion außerhalb der Verfügungen der anwendenden Person. Zu den häufigsten Schwachstellen bei der Zugriffskontrolle gehören:
+Die Zugriffskontrolle erzwingt Richtlinien, sodass Nutzer:innen nicht außerhalb ihrer vorgesehenen Berechtigungen handeln können. Fehler führen in der Regel zur unbefugten Offenlegung, Änderung oder Zerstörung aller Daten oder zur Ausführung einer Geschäftsfunktion außerhalb der Verfügungen der Anwender:innen. Zu den häufigsten Schwachstellen bei der Zugriffskontrolle gehören:
 
 
 
-* Verstoß gegen die Prinzipien der geringsten Rechte oder der standardmäßigen Verweigerung, bei dem der Zugriff nur für bestimmte Fähigkeiten, Rollen oder Nutzende gewährt werden sollte, aber für jede Person verfügbar ist.
+* Verstoß gegen die Prinzipien der geringsten Rechte oder der standardmäßigen Verweigerung, bei dem der Zugriff nur für bestimmte Fähigkeiten, Rollen oder Nutzer:innen gewährt werden sollte, aber für jede Person verfügbar ist.
 * Umgehen von Zugriffskontrollprüfungen durch Ändern der URL (Parametermanipulation oder erzwungenes Durchsuchen), des internen Anwendungsstatus oder der HTML-Seite oder durch Verwendung eines Angriffstools zur Änderung von API-Anfragen.
 * Ermöglichen, das Konto einer anderen Person anzuzeigen oder zu bearbeiten, indem dessen eindeutige Kennung angegeben wird (unsichere direkte Objektreferenzen).
 * Eine zugängliche API mit fehlenden Zugriffskontrollen für POST, PUT und DELETE.
 * Erhöhung der Privilegien. Als Nutzer:in fungieren, ohne angemeldet zu sein oder als Administrator:in fungieren, wenn man als Standard-Nutzer:in angemeldet ist.
 * Manipulation von Metadaten, wie z. B. das Abfangen oder Manipulieren eines JSON Web Token (JWT)-Zugriffskontrolltokens oder die Manipulation eines Cookies oder eines versteckten Felds, um Berechtigungen zu erhöhen oder die Ungültigerklärung von JWTs zu missbrauchen.
 * CORS-Fehlkonfiguration ermöglicht API-Zugriff von nicht autorisierten/nicht vertrauenswürdigen Quellen.
-* Erzwingen des Zugriffs auf authentifizierte Seiten als nicht authentifizierte Person oder zu privilegierten Seiten als Standard-Nutzerin/Nutzer.
+* Erzwingen des Zugriffs auf authentifizierte Seiten als nicht authentifizierte Person oder zu privilegierten Seiten als Standard-Nutzer:in.
 
 
 ## Prävention und Gegenmaßnahmen.
 
-Die Zugriffskontrolle ist nur wirksam bei vertrauenswürdigem serverseitigem Code oder serverlosen APIs, bei denen Angreifende die Zugriffskontrollprüfung oder Metadaten nicht ändern können.
+Die Zugriffskontrolle ist nur wirksam bei vertrauenswürdigem serverseitigem Code oder serverlosen APIs, bei denen Angreifer:innen die Zugriffskontrollprüfung oder Metadaten nicht ändern können.
 
 
 
@@ -83,9 +83,9 @@ Die Zugriffskontrolle ist nur wirksam bei vertrauenswürdigem serverseitigem Cod
 * Modellzugriffskontrollen sollten die Datensatzeigentümerschaft erzwingen, anstatt zu akzeptieren, dass Nutzer:innen Datensätze erstellen, lesen, aktualisieren oder löschen können.
 * Durch Domänenmodelle sollten eindeutige Geschäftslimitanforderungen für Anwendungen durchgesetzt werden.
 * Deaktivieren Sie die Verzeichnisliste des Webservers und stellen Sie sicher, dass Dateimetadaten (z. B. .git) und Sicherungsdateien nicht in Web-Roots vorhanden sind.
-* Protokollieren Sie Fehler bei der Zugriffskontrolle und benachrichtigen Sie Administratoren bei Bedarf (z. B. wiederholte Fehler).
+* Protokollieren Sie Fehler bei der Zugriffskontrolle und benachrichtigen Sie Administrator:innen bei Bedarf (z. B. wiederholte Fehler).
 * Setzen Sie Ratenbegrenzung für API- und Controller-Zugriff, um den Schaden durch automatisierte Angriffstools zu minimieren.
-* Statusbehaftete Sitzungskennungen sollten nach dem Abmelden auf dem Server ungültig gemacht werden. Zustandslose JWT-Token sollten eher kurzlebig sein, damit das Zeitfenster für Angreifende minimiert wird. Für langlebigere JWTs wird dringend empfohlen, die OAuth-Standards zu befolgen, um den Zugriff zu widerrufen.
+* Statusbehaftete Sitzungskennungen sollten nach dem Abmelden auf dem Server ungültig gemacht werden. Zustandslose JWT-Token sollten eher kurzlebig sein, damit das Zeitfenster für Angreifer:innen minimiert wird. Für langlebigere JWTs wird dringend empfohlen, die OAuth-Standards zu befolgen, um den Zugriff zu widerrufen.
 * Verwenden Sie bewährte Toolkits oder Muster, die einfache, deklarative Zugriffskontrollen bieten.
 
 Entwickler:innen und QA-Mitarbeiter:innen sollten funktionale Zugriffskontrolleinheiten und Integrationstests durchführen.
@@ -102,7 +102,7 @@ ResultSet results = pstmt.executeQuery( );
 ```
 
 
-Angreifende ändern einfach den „acct“-Parameter des Browsers, um die gewünschte Kontonummer zu senden. Bei nicht korrekter Überprüfung kann die angreifende Person auf das Konto einer beliebigen Nutzerin/Nutzers zugreifen.
+Angreifer:innen ändern einfach den „acct“-Parameter des Browsers, um die gewünschte Kontonummer zu senden. Bei nicht korrekter Überprüfung kann die/der Angreifer:in auf das Konto einer beliebigen Nutzer:in zugreifen.
 
 
 ```
@@ -110,7 +110,7 @@ https://example.com/app/accountInfo?acct=notmyacct
 ```
 
 
-**Szenario Nr. 2:** Eine angreifende Person erzwingt einfach die Suche nach Ziel-URLs. Für den Zugriff auf die Admin-Seite sind Admin-Rechte erforderlich.
+**Szenario Nr. 2:** Angreifer:innen erzwingen einfach die Suche nach Ziel-URLs. Für den Zugriff auf die Admin-Seite sind Admin-Rechte erforderlich.
 
 
 ```

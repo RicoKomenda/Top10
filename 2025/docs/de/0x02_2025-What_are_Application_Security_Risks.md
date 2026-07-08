@@ -1,5 +1,5 @@
 # Was sind Sicherheitsrisiken für die Anwendungen?
-Angreifende Personen können potenziell viele verschiedene Wege über Ihre Anwendung nutzen, um Ihrem Unternehmen oder Ihrer Organisation Schaden zuzufügen. Jeder dieser Wege birgt ein potenzielles Risiko, das untersucht werden muss.
+Angreifer:innen können potenziell viele verschiedene Wege über Ihre Anwendung nutzen, um Ihrem Unternehmen oder Ihrer Organisation Schaden zuzufügen. Jeder dieser Wege birgt ein potenzielles Risiko, das untersucht werden muss.
 
 ![Calculation diagram](../assets/2025-algorithm-diagram.png)
 
@@ -55,7 +55,7 @@ gewichtet nach Abdeckung</strong>
 
 Bei unserer Risikobewertung haben wir die allgemeinen Parameter der Ausnutzbarkeit, der durchschnittlichen Wahrscheinlichkeit von Sicherheitsmaßnahmen für eine Schwachstelle und deren technische Auswirkungen berücksichtigt. 
 
-Jede Organisation ist einzigartig, ebenso wie die Angreifenden, die es auf sie abgesehen haben, ihre Ziele und die Auswirkungen eines möglichen Sicherheitsvorfalls. Wenn eine Organisation von öffentlichem Interesse ein Content-Management-System (CMS) für öffentliche Informationen nutzt und ein Gesundheitssystem genau dasselbe CMS für sensible Gesundheitsdaten verwendet, können die Angreifenden und die geschäftlichen Auswirkungen bei derselben Software sehr unterschiedlich sein. Es ist entscheidend, das Risiko für Ihre Organisation zu verstehen, basierend auf der Gefährdung der Anwendung, den relevanten Bedrohungsakteur:innen je nach Lagebild (für gezielte und ungezielte Angriffe je nach Geschäftsbereich und Standort) und den individuellen geschäftlichen Auswirkungen. 
+Jede Organisation ist einzigartig, ebenso wie die Angreifer:innen, die es auf sie abgesehen haben, ihre Ziele und die Auswirkungen eines möglichen Sicherheitsvorfalls. Wenn eine Organisation von öffentlichem Interesse ein Content-Management-System (CMS) für öffentliche Informationen nutzt und ein Gesundheitssystem genau dasselbe CMS für sensible Gesundheitsdaten verwendet, können die Angreifer:innen und die geschäftlichen Auswirkungen bei derselben Software sehr unterschiedlich sein. Es ist entscheidend, das Risiko für Ihre Organisation zu verstehen, basierend auf der Gefährdung der Anwendung, den relevanten Bedrohungsakteur:innen je nach Lagebild (für gezielte und ungezielte Angriffe je nach Geschäftsbereich und Standort) und den individuellen geschäftlichen Auswirkungen. 
 
 ## Wie die Daten zur Auswahl und Einstufung der Kategorien verwendet werden
 

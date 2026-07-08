@@ -109,9 +109,9 @@ Daten, die es nicht mehr gibt, können auch nicht gestohlen werden.
 
 ## Beispielhafte Angriffsszenarien. 
 
-**Szenario Nr. 1:** Eine Webseite benutzt kein TLS, erzwingt dies nicht auf allen Seiten oder lässt schwache Verschlüsselung zu. Die angreifende Person liest die Kommunikation mit (z. B. in einem offenen WLAN), ersetzt HTTPS- durch HTTP-Verbindungen, hört diese ab und stiehlt das Sitzungscookie. Durch Wiedereinspielen dieses Cookies übernimmt die angreifende Person die (authentifizierte) Sitzung der Nutzer:in und erlangt Zugriff auf deren private Daten. Anstatt dessen kann die angreifende Person auch die übertragenen Daten ändern, z. B. die Empfänger:in einer Überweisung.
+**Szenario Nr. 1:** Eine Webseite benutzt kein TLS, erzwingt dies nicht auf allen Seiten oder lässt schwache Verschlüsselung zu. Die/Der Angreifer:in liest die Kommunikation mit (z. B. in einem offenen WLAN), ersetzt HTTPS- durch HTTP-Verbindungen, hört diese ab und stiehlt das Sitzungscookie. Durch Wiedereinspielen dieses Cookies übernimmt die/der Angreifer:in die (authentifizierte) Sitzung der Nutzer:in und erlangt Zugriff auf deren private Daten. Anstatt dessen kann die/der Angreifer:in auch die übertragenen Daten ändern, z. B. die Empfänger:in einer Überweisung.
 
-**Szenario Nr. 2:** Die Passwortdatenbank benutzt einfache Hashwerte oder Hashes ohne Salz zur Speicherung der Passwörter. Eine Schwachstelle in der Uploadfunktion erlaubt Angreifenden den Zugriff auf die Passwortdatei. Zu Hashes ohne Salz kann über vorausberechnete Rainbow-Tabellen der Klartext gefunden werden. Hashes, die über einfache oder schnelle Funktionen berechnet wurden, können effizient mit Grafikkarten gebrochen werden, selbst wenn sie gesalzt waren.
+**Szenario Nr. 2:** Die Passwortdatenbank benutzt einfache Hashwerte oder Hashes ohne Salz zur Speicherung der Passwörter. Eine Schwachstelle in der Uploadfunktion erlaubt Angreifer:innen den Zugriff auf die Passwortdatei. Zu Hashes ohne Salz kann über vorausberechnete Rainbow-Tabellen der Klartext gefunden werden. Hashes, die über einfache oder schnelle Funktionen berechnet wurden, können effizient mit Grafikkarten gebrochen werden, selbst wenn sie gesalzt waren.
 
 
 ## Referenzen.

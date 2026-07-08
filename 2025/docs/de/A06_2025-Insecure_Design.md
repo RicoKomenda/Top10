@@ -71,14 +71,14 @@ Sicheres Design ist sowohl eine Denkweise als auch eine Vorgehensweise, die kont
 
 ### Sicherer Entwicklungslebenszyklus
 
-Sichere Software erfordert einen sicheren Entwicklungslebenszyklus, ein sicheres Designmuster, eine Paved-Road-Methodik, eine sichere Komponentenbibliothek, geeignete Werkzeuge, Bedrohungsmodellierung und Incident-Post-Mortems, die zur Verbesserung des Prozesses genutzt werden. Kontaktieren Sie Ihre Sicherheitsspezialistinnen und -spezialisten zu Beginn eines Softwareprojekts, während des gesamten Projekts und für die laufende Softwarewartung. Erwägen Sie die Nutzung des [OWASP Software Assurance Maturity Model (SAMM)](https://owaspsamm.org/), um Ihre Bemühungen zur sicheren Softwareentwicklung zu strukturieren.
+Sichere Software erfordert einen sicheren Entwicklungslebenszyklus, ein sicheres Designmuster, eine Paved-Road-Methodik, eine sichere Komponentenbibliothek, geeignete Werkzeuge, Bedrohungsmodellierung und Incident-Post-Mortems, die zur Verbesserung des Prozesses genutzt werden. Kontaktieren Sie Ihre Sicherheitsspezialist:innen zu Beginn eines Softwareprojekts, während des gesamten Projekts und für die laufende Softwarewartung. Erwägen Sie die Nutzung des [OWASP Software Assurance Maturity Model (SAMM)](https://owaspsamm.org/), um Ihre Bemühungen zur sicheren Softwareentwicklung zu strukturieren.
 
-Oft wird die Eigenverantwortung von Entwicklerinnen und Entwicklern nicht ausreichend gewürdigt. Fördern Sie eine Kultur des Bewusstseins, der Verantwortung und der proaktiven Risikominderung. Regelmäßiger Austausch über Sicherheit (z. B. während Bedrohungsmodellierungs-Sitzungen) kann eine Denkweise erzeugen, die Sicherheit in alle wichtigen Designentscheidungen einbezieht.
+Oft wird die Eigenverantwortung von Entwickler:innen nicht ausreichend gewürdigt. Fördern Sie eine Kultur des Bewusstseins, der Verantwortung und der proaktiven Risikominderung. Regelmäßiger Austausch über Sicherheit (z. B. während Bedrohungsmodellierungs-Sitzungen) kann eine Denkweise erzeugen, die Sicherheit in alle wichtigen Designentscheidungen einbezieht.
 
 
 ## Prävention und Gegenmaßnahmen.
 
-* Entwickeln und nutzen Sie einen sicheren Entwicklungslebenszyklus mit Unterstützung durch AppSec-Expertinnen und -Experten bei der Bewertung und Gestaltung von Sicherheits- und Datenschutzkontrollen.
+* Entwickeln und nutzen Sie einen sicheren Entwicklungslebenszyklus mit Unterstützung durch AppSec-Expert:innen bei der Bewertung und Gestaltung von Sicherheits- und Datenschutzkontrollen.
 * Erstellen und verwenden Sie eine Bibliothek mit sicheren Entwurfsmustern und bewährten, erprobten Komponenten.
 * Verwenden Sie Bedrohungsmodellierung für kritische Bereiche wie Authentifizierung, Zugriffskontrolle, Geschäftslogik und wichtige Abläufe.
 * Verwenden Sie Bedrohungsmodellierung als Schulungswerkzeug, um ein Sicherheitsbewusstsein zu schaffen
@@ -93,9 +93,9 @@ Oft wird die Eigenverantwortung von Entwicklerinnen und Entwicklern nicht ausrei
 
 **Szenario Nr. 1:** Ein Workflow zur Wiederherstellung von Anmeldeinformationen kann „Fragen und Antworten” enthalten, was jedoch gemäß NIST 800-63b, dem OWASP ASVS und den OWASP Top 10 nicht zulässig ist. Fragen und Antworten können nicht als vertrauenswürdiger Identitätsnachweis betrachtet werden, als mehr als eine Person die Antworten kennen kann. Diese Funktionalität sollte entfernt und durch ein sichereres Design ersetzt werden.
 
-**Szenario Nr. 2:** Eine Kinokette bietet Gruppenbuchungsrabatte an und verlangt erst bei mehr als fünfzehn Besucherinnen und Besuchern eine Anzahlung. Angreifende könnten dieses System ausnutzen und testen, ob sie einen Angriffsvektor in der Geschäftslogik der Anwendung finden könne, z.B. indem sie versuchen, mit wenigen Anfragen sechshundert Sitzplätze in allen Kinos gleichzeitig zu reservieren, was zu erheblichen Einnahmeverlusten führen könnte.
+**Szenario Nr. 2:** Eine Kinokette bietet Gruppenbuchungsrabatte an und verlangt erst bei mehr als fünfzehn Besucher:innen eine Anzahlung. Angreifer:innen könnten dieses System ausnutzen und testen, ob sie einen Angriffsvektor in der Geschäftslogik der Anwendung finden könne, z.B. indem sie versuchen, mit wenigen Anfragen sechshundert Sitzplätze in allen Kinos gleichzeitig zu reservieren, was zu erheblichen Einnahmeverlusten führen könnte.
 
-**Szenario Nr. 3:** Die E-Commerce-Website einer Einzelhandelskette ist nicht vor Bots geschützt, die von Scalpern betrieben werden, die High-End-Grafikkarten kaufen, um sie auf Auktionsplattformen weiterzuverkaufen. Dies sorgt für schreckliche Publicity bei den Grafikkartenherstellern und Besitzerinnen und Besitzern von Einzelhandelsketten und sorgt für anhaltende Frustration bei Enthusiastinnen und Enthusiasten, die diese Karten nicht erwerben können. Sorgfältiges Anti-Bot-Design sowie Automatismen, die z. B. Käufe ablehnen, die innerhalb weniger Sekunden nach Verfügbarkeit getätigt werden, können helfen, unechte Käufe zu identifizieren und solche Transaktionen zu verhindern.
+**Szenario Nr. 3:** Die E-Commerce-Website einer Einzelhandelskette ist nicht vor Bots geschützt, die von Scalpern betrieben werden, die High-End-Grafikkarten kaufen, um sie auf Auktionsplattformen weiterzuverkaufen. Dies sorgt für schreckliche Publicity bei den Grafikkartenherstellern und Besitzer:innen von Einzelhandelsketten und sorgt für anhaltende Frustration bei Enthusiast:innen, die diese Karten nicht erwerben können. Sorgfältiges Anti-Bot-Design sowie Automatismen, die z. B. Käufe ablehnen, die innerhalb weniger Sekunden nach Verfügbarkeit getätigt werden, können helfen, unechte Käufe zu identifizieren und solche Transaktionen zu verhindern.
 
 
 ## Referenzen.

@@ -62,7 +62,7 @@ Die Anwendung besitzt möglicherweise Schwachstellen, wenn Folgendes zutrifft:
 * Mangelhafte Sicherheitshärtung des Anwendungsstacks oder ungeeignet konfigurierte Berechtigungen auf Cloud-Diensten.
 * Nicht benötigte Features sind aktiviert oder installiert (z. B. unnötige Ports, Dienste, Seiten, Accounts oder Rechte).
 * Standardkonten und -passwörter sind aktiviert bzw. unverändert.
-* Die Fehlerbehandlung gibt Stack-Traces oder andere interne technische Fehlermeldungen an Anwendende preis.
+* Die Fehlerbehandlung gibt Stack-Traces oder andere interne technische Fehlermeldungen an Anwender:innen preis.
 * Für aktualisierte Systeme sind die neuesten Sicherheitsfeatures deaktiviert oder nicht sicher konfiguriert.
 * Die Sicherheitseinstellungen in den Anwendungsservern und -frameworks (z. B. Struts, Spring, ASP.NET), Bibliotheken, Datenbanken etc. sind nicht auf sichere Werte gesetzt.
 * Der Server sendet keine Sicherheits-Header oder -Direktiven, bzw. diese sind nicht sicher konfiguriert.
@@ -82,11 +82,11 @@ Es sollten sichere Installationsprozesse implementiert werden, darunter:
 
 ## Beispielhafte Angriffsszenarien.
 
-**Szenario Nr. 1:** Der Anwendungsserver wird mit Beispielanwendungen geliefert, die nicht vom Produktionsserver entfernt wurden. Diese Beispielanwendungen weisen bekannte Sicherheitslücken auf, die die Angreifenden nutzen, um den Server zu gefährden. Angenommen, eine dieser Anwendungen ist die Admin-Konsole und die Standardkonten wurden nicht geändert. In diesem Fall meldet sich die angreifende Person mit einem Standardkennwort an und übernimmt die Kontrolle.
+**Szenario Nr. 1:** Der Anwendungsserver wird mit Beispielanwendungen geliefert, die nicht vom Produktionsserver entfernt wurden. Diese Beispielanwendungen weisen bekannte Sicherheitslücken auf, die Angreifer:innen nutzen, um den Server zu gefährden. Angenommen, eine dieser Anwendungen ist die Admin-Konsole und die Standardkonten wurden nicht geändert. In diesem Fall meldet sich die/der Angreifer:in mit einem Standardkennwort an und übernimmt die Kontrolle.
 
-**Szenario Nr. 2:** Die Directory Listings wurden nicht auf dem Server deaktiviert. Angreifende entdecken, dass Verzeichnisse einfach aufgelistet werden können. Die angreifende Person findet die kompilierten Java-Klassen und lädt sie herunter, dekompiliert sie und betreibt Reverse Engineering, um den Code anzuzeigen. Dies ermöglicht das Findet eines schwerwiegenden Fehlers in der Zugriffskontrolle in der Anwendung.
+**Szenario Nr. 2:** Die Directory Listings wurden nicht auf dem Server deaktiviert. Angreifer:innen entdecken, dass Verzeichnisse einfach aufgelistet werden können. Die/Der Angreifer:in findet die kompilierten Java-Klassen und lädt sie herunter, dekompiliert sie und betreibt Reverse Engineering, um den Code anzuzeigen. Dies ermöglicht das Findet eines schwerwiegenden Fehlers in der Zugriffskontrolle in der Anwendung.
 
-**Szenario Nr. 3:** Die Konfiguration des Anwendungsservers ermöglicht die Rückgabe detaillierter Fehlermeldungen an Anwendende, wie z. B. Stack-Traces. Dadurch werden möglicherweise vertrauliche Informationen oder zugrunde liegende Fehler wie Komponentenversionen offengelegt, die als angreifbar bekannt sind.
+**Szenario Nr. 3:** Die Konfiguration des Anwendungsservers ermöglicht die Rückgabe detaillierter Fehlermeldungen an Anwender:innen, wie z. B. Stack-Traces. Dadurch werden möglicherweise vertrauliche Informationen oder zugrunde liegende Fehler wie Komponentenversionen offengelegt, die als angreifbar bekannt sind.
 
 **Szenario Nr. 4:** Ein Cloud-Dienstanbieter (CSP) gewährt standardmäßig Freigabeberechtigungen zum Internet und ermöglicht dadurch Zugriff auf sensible Daten in der Cloud.
 

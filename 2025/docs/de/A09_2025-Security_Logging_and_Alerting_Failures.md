@@ -78,7 +78,7 @@ Ohne Protokollierung und Überwachung lassen sich Angriffe und Sicherheitsverlet
 
 Je nach dem Risiko der Anwendung sollten Entwickler:innen einige oder alle der folgenden Maßnahmen ergreifen:
 
-* Sicherstellen, dass alle Anmeldevorgänge, Zugriffskontrollen und Fehler bei der serverseitigen Eingabeüberprüfung mit ausreichendem Sitzungskontext der Nutzenden erfasst werden, um verdächtige oder böswillige Anwendende zu identifizieren und ausreichend lange gespeichert werden, um eine spätere forensische Analyse zu ermöglichen.
+* Sicherstellen, dass alle Anmeldevorgänge, Zugriffskontrollen und Fehler bei der serverseitigen Eingabeüberprüfung mit ausreichendem Sitzungskontext der Nutzer:innen erfasst werden, um verdächtige oder böswillige Anwender:innen zu identifizieren und ausreichend lange gespeichert werden, um eine spätere forensische Analyse zu ermöglichen.
 * Sicherstellen, dass jeder Teil Ihrer App, der eine Sicherheitsprüfung enthält, protokolliert wird, unabhängig davon, ob diese erfolgreich ist oder fehlschlägt.
 * Sicherstellen, dass die Protokolle in einem Format gespeichert werden, das von Protokollmanagement-Lösungen leicht verarbeitet werden kann.
 * Es sollte sichergestellt werden, dass die Protokolldaten korrekt encoded werden, sodass Injection-Angriffe oder Angriffe auf Logging- oder Überwachungssysteme verhindert werden.
@@ -96,11 +96,11 @@ Es gibt kommerzielle und Open-Source-Frameworks zum Schutz von Anwendungen wie d
 
 ## Beispielhafte Angriffsszenarien. 
 
-**Szenario 1:**  Der Betreiber der Website eines Anbieters von Kinderkrankenversicherungen konnte das Eindringen in das System aufgrund mangelnder Überwachung und Protokollierung nicht erkennen. Eine externe Partei informierte den Krankenversicherungsanbieter, dass Angreifende auf Tausende der mehr als 3,5 Millionen sensiblen Gesundheitsdaten der Kinder zugegriffen und diese verändert haben. Eine Überprüfung nach dem Vorfall ergab, dass die Entwickler der Website wesentliche Schwachstellen nicht behoben hatten. Da es weder eine Protokollierung noch eine Überwachung des Systems gab, bestand die Datenlücke möglicherweise bereits seit 2013, also über einen Zeitraum von mehr als sieben Jahren.
+**Szenario 1:**  Der Betreiber der Website eines Anbieters von Kinderkrankenversicherungen konnte das Eindringen in das System aufgrund mangelnder Überwachung und Protokollierung nicht erkennen. Eine externe Partei informierte den Krankenversicherungsanbieter, dass Angreifer:innen auf Tausende der mehr als 3,5 Millionen sensiblen Gesundheitsdaten der Kinder zugegriffen und diese verändert haben. Eine Überprüfung nach dem Vorfall ergab, dass die Entwickler:innen der Website wesentliche Schwachstellen nicht behoben hatten. Da es weder eine Protokollierung noch eine Überwachung des Systems gab, bestand die Datenlücke möglicherweise bereits seit 2013, also über einen Zeitraum von mehr als sieben Jahren.
 
 **Szenario #2:** Bei einer größeren indischen Fluggesellschaft kam es zu einer Datenpanne, die mehr als zehn Jahre lang personenbezogene Daten von Millionen von Fluggästen betraf, einschließlich Reisepass- und Kreditkartendaten. Die Datenpanne trat bei einem externen Cloud-Hosting-Anbieter auf, der die Fluggesellschaft nach einiger Zeit über die Lücke informierte.
 
-**Szenario #3:** Bei einer großen europäischen Fluggesellschaft kam es zu einem meldepflichtigen Verstoß gegen die DSGVO. Der Verstoß wurde Berichten zufolge durch Sicherheitsschwachstellen in Zahlungsanwendungen verschuldet, die von Angreifenden ausgenutzt wurden, die mehr als 400.000 Zahlungsdatensätze von Kunden abfingen. Die Fluggesellschaft wurde daraufhin von der Datenschutzbehörde mit einer Geldstrafe von 20 Millionen Pfund belegt.
+**Szenario #3:** Bei einer großen europäischen Fluggesellschaft kam es zu einem meldepflichtigen Verstoß gegen die DSGVO. Der Verstoß wurde Berichten zufolge durch Sicherheitsschwachstellen in Zahlungsanwendungen verschuldet, die von Angreifer:innen ausgenutzt wurden, die mehr als 400.000 Zahlungsdatensätze von Kunden abfingen. Die Fluggesellschaft wurde daraufhin von der Datenschutzbehörde mit einer Geldstrafe von 20 Millionen Pfund belegt.
 
 
 ## Referenzen.

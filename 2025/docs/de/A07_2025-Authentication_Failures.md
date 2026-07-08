@@ -56,9 +56,9 @@ Fehlerhafte Authentifizierung behält mit einer leichten Namensänderung seinen 
 
 ## Beschreibung.
 
-Wenn eine angreifende Person ein System dazu bringen kann, eine:n ungültige:n oder nicht autorisierte:n Nutzer:in als legitim anzuerkennen, liegt diese Schwachstelle vor. Schwachstellen bei der Authentifizierung können auftreten, falls die Anwendung:
+Wenn ein:e Angreifer:in ein System dazu bringen kann, eine:n ungültige:n oder nicht autorisierte:n Nutzer:in als legitim anzuerkennen, liegt diese Schwachstelle vor. Schwachstellen bei der Authentifizierung können auftreten, falls die Anwendung:
 
-* automatisierte Angriffe wie Credential Stuffing ermöglicht, bei denen Angreifende über eine Liste bekannter Benutzernamen und Passwörter verfügen. Jüngst wurde diese Angriffsmethode um hybride Passwort-Angriffe erweitert (auch als Password-Spray-Angriffe bekannt), bei denen Angreifende Variationen kompromittierter Zugangsdaten verwenden, z. B. Password1!, Password2!, Password3! usw.
+* automatisierte Angriffe wie Credential Stuffing ermöglicht, bei denen Angreifer:innen über eine Liste bekannter Benutzernamen und Passwörter verfügen. Jüngst wurde diese Angriffsmethode um hybride Passwort-Angriffe erweitert (auch als Password-Spray-Angriffe bekannt), bei denen Angreifer:innen Variationen kompromittierter Zugangsdaten verwenden, z. B. Password1!, Password2!, Password3! usw.
 
 * Brute-Force- oder andere automatisierte, skriptbasierte Angriffe ermöglicht, die nicht schnell genug unterbunden werden.
 
@@ -86,7 +86,7 @@ Wenn eine angreifende Person ein System dazu bringen kann, eine:n ungültige:n o
 
 * Wenn möglich, sollte eine Multi-Faktor-Authentifizierung implementiert und deren Nutzung durchgesetzt werden, um automatisiertes Credential Stuffing, Brute-Force-Angriffe und die Wiederverwendung gestohlener Zugangsdaten zu verhindern.
 
-* Wenn möglich, die Nutzung von Passwort-Managern fördern und ermöglichen, um Nutzenden bessere Entscheidungen bei der Passwortwahl zu erleichtern.
+* Wenn möglich, die Nutzung von Passwort-Managern fördern und ermöglichen, um Nutzer:innen bessere Entscheidungen bei der Passwortwahl zu erleichtern.
 
 * Liefern Sie die Anwendung nicht mit Standard Login-Daten aus, insbesondere nicht für Admin-Konten.
 
@@ -111,11 +111,11 @@ Wenn eine angreifende Person ein System dazu bringen kann, eine:n ungültige:n o
 
 ## Beispielhafte Angriffsszenarien.
 
-**Szenario Nr. 1:** Credential Stuffing, die Verwendung von Listen bekannter Benutzernamen- und Passwortkombinationen, ist heute ein sehr verbreiteter Angriff. Jüngst wurde beobachtet, dass Angreifende Passwörter basierend auf typischem menschlichem Verhalten „inkrementieren" oder abwandeln, z. B. von „Winter2025" zu „Winter2026" oder von „ILoveMyDog6" zu „ILoveMyDog7". Diese Methode wird als hybrider Credential-Stuffing-Angriff oder Password-Spray-Angriff bezeichnet und kann noch effektiver sein als die klassische Variante. Verfügt eine Anwendung über keine Abwehrmechanismen gegen automatisierte Angriffe oder Credential Stuffing, kann sie als Passwort-Orakel genutzt werden, um gültige Zugangsdaten zu ermitteln und unbefugten Zugriff zu erlangen.
+**Szenario Nr. 1:** Credential Stuffing, die Verwendung von Listen bekannter Benutzernamen- und Passwortkombinationen, ist heute ein sehr verbreiteter Angriff. Jüngst wurde beobachtet, dass Angreifer:innen Passwörter basierend auf typischem menschlichem Verhalten „inkrementieren" oder abwandeln, z. B. von „Winter2025" zu „Winter2026" oder von „ILoveMyDog6" zu „ILoveMyDog7". Diese Methode wird als hybrider Credential-Stuffing-Angriff oder Password-Spray-Angriff bezeichnet und kann noch effektiver sein als die klassische Variante. Verfügt eine Anwendung über keine Abwehrmechanismen gegen automatisierte Angriffe oder Credential Stuffing, kann sie als Passwort-Orakel genutzt werden, um gültige Zugangsdaten zu ermitteln und unbefugten Zugriff zu erlangen.
 
-**Szenario Nr. 2:** Die meisten erfolgreichen Authentifizierungsangriffe erfolgen aufgrund der andauernden Verwendung von Passwörtern als einzigem Authentifizierungsfaktor. Die früher als Best Practices geltenden Anforderungen an Passwortwechsel und -komplexität verleiten Nutzende sowohl zur Wiederverwendung als auch zur Wahl schwacher Passwörter. Organisationen wird empfohlen, diese Praktiken gemäß NIST 800-63 einzustellen und die Nutzung von Multi-Faktor-Authentisierung auf allen wichtigen Systemen durchzusetzen.
+**Szenario Nr. 2:** Die meisten erfolgreichen Authentifizierungsangriffe erfolgen aufgrund der andauernden Verwendung von Passwörtern als einzigem Authentifizierungsfaktor. Die früher als Best Practices geltenden Anforderungen an Passwortwechsel und -komplexität verleiten Nutzer:innen sowohl zur Wiederverwendung als auch zur Wahl schwacher Passwörter. Organisationen wird empfohlen, diese Praktiken gemäß NIST 800-63 einzustellen und die Nutzung von Multi-Faktor-Authentisierung auf allen wichtigen Systemen durchzusetzen.
 
-**Szenario Nr. 3:** Die Session-Timeouts von Anwendungen sind nicht korrekt implementiert. Eine Nutzer:in verwendet einen öffentlichen Computer und schließt die Browser-Registerkarte, anstatt sich abzumelden. Ein weiteres Beispiel: Eine SSO-Sitzung kann nicht per Single Logout (SLO) geschlossen werden – ein einzelner Login gewährt Zugang zu mehreren Systemen (z. B. E-Mail, Dokumente, Chat), aber der Logout erfolgt nur im aktuellen System. Greift ein Angreifer danach auf denselben Browser zu, hat er Zugriff auf alle noch aktiven Sitzungen. Dasselbe Problem kann in Büros auftreten, wenn eine sensible Anwendung nicht ordnungsgemäß beendet wurde und Kolleg:innen vorübergehend Zugriff auf den entsperrten Computer haben.
+**Szenario Nr. 3:** Die Session-Timeouts von Anwendungen sind nicht korrekt implementiert. Eine Nutzer:in verwendet einen öffentlichen Computer und schließt die Browser-Registerkarte, anstatt sich abzumelden. Ein weiteres Beispiel: Eine SSO-Sitzung kann nicht per Single Logout (SLO) geschlossen werden – ein einzelner Login gewährt Zugang zu mehreren Systemen (z. B. E-Mail, Dokumente, Chat), aber der Logout erfolgt nur im aktuellen System. Greifen Angreifer:innen danach auf denselben Browser zu, haben sie Zugriff auf alle noch aktiven Sitzungen. Dasselbe Problem kann in Büros auftreten, wenn eine sensible Anwendung nicht ordnungsgemäß beendet wurde und Kolleg:innen vorübergehend Zugriff auf den entsperrten Computer haben.
 
 ## Referenzen.
 

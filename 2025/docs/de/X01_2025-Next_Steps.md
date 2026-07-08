@@ -83,18 +83,18 @@ Um diese Art von Schwachstelle zu verhindern, müssen Sie Ihre Systeme auf Fehle
 * Implementieren Sie Überwachung, Beobachtbarkeit und Alarmierung.
 * Filtern Sie ungültige Absenderadressen gemäß RFC 2267.
 * Blockieren Sie bekannte Botnetze anhand von Fingerabdrücken, IP-Adressen oder dynamisch anhand ihres Verhaltens.
-* Arbeitsnachweis (Proof-of-Work): Initiieren Sie ressourcenintensive Vorgänge auf der Seite der angreifenden Personen, die normale Benutzer:innen kaum beeinträchtigen, jedoch Bots behindern, die versuchen, eine große Anzahl von Anfragen zu senden. Erhöhen Sie den Schwierigkeitsgrad des Arbeitsnachweises, wenn die allgemeine Systemlast steigt, insbesondere für Systeme, die weniger vertrauenswürdig erscheinen oder sich wie Bots verhalten.
+* Arbeitsnachweis (Proof-of-Work): Initiieren Sie ressourcenintensive Vorgänge auf der Seite der Angreifer:innen, die normale Benutzer:innen kaum beeinträchtigen, jedoch Bots behindern, die versuchen, eine große Anzahl von Anfragen zu senden. Erhöhen Sie den Schwierigkeitsgrad des Arbeitsnachweises, wenn die allgemeine Systemlast steigt, insbesondere für Systeme, die weniger vertrauenswürdig erscheinen oder sich wie Bots verhalten.
 * Begrenzen Sie die serverseitige Sitzungsdauer basierend auf Inaktivität und einer maximalen Gesamtdauer.
 * Begrenzen Sie die sitzungsgebundene Informationsspeicherung.
 
 
 ### Beispielhafte Angriffsszenarien.
 
-**Szenario #1:** Angreifende Personen verbrauchen gezielt Anwendungsressourcen, um Ausfälle im System auszulösen und so einen Denial-of-Service zu verursachen. Dies kann durch Arbeitsspeichererschöpfung, Auffüllen des Festplattenspeichers, Prozessorüberlastung oder das Öffnen endloser Verbindungen geschehen.
+**Szenario #1:** Angreifer:innen verbrauchen gezielt Anwendungsressourcen, um Ausfälle im System auszulösen und so einen Denial-of-Service zu verursachen. Dies kann durch Arbeitsspeichererschöpfung, Auffüllen des Festplattenspeichers, Prozessorüberlastung oder das Öffnen endloser Verbindungen geschehen.
 
 **Szenario #2:** Eingabe-Fuzzing, das zu manipulierten Antworten führt, die die Geschäftslogik der Anwendung außer Kraft setzt.
 
-**Szenario #3:** Angreifer konzentrieren sich auf die Abhängigkeiten der Anwendung, indem sie Schnittstellen (APIs) oder andere externe Dienste zum Ausfall bringen, sodass die Anwendung nicht mehr weiterarbeiten kann.
+**Szenario #3:** Angreifer:innen konzentrieren sich auf die Abhängigkeiten der Anwendung, indem sie Schnittstellen (APIs) oder andere externe Dienste zum Ausfall bringen, sodass die Anwendung nicht mehr weiterarbeiten kann.
 
 
 
@@ -242,12 +242,12 @@ Falls die Verwendung einer speichersicheren Sprache nicht möglich ist, führen 
 
 ### Beispielhafte Angriffsszenarien. 
 
-**Szenario #1:** Pufferüberläufe sind die bekannteste Speicherschwachstelle – eine Situation, in der ein eine angreifende Person mehr Daten in ein Eingabefeld eingibt, als dieses aufnehmen kann, sodass der für die zugrundeliegende Variable angelegte Puffer überläuft. Bei einem erfolgreichen Angriff überschreiben die überlaufenden Zeichen den Stapelzeiger, was es dem Angreifer ermöglicht, schadhaften Programmcode in Ihre Anwendung einzuschleusen.
+**Szenario #1:** Pufferüberläufe sind die bekannteste Speicherschwachstelle – eine Situation, in der Angreifer:innen mehr Daten in ein Eingabefeld eingeben, als dieses aufnehmen kann, sodass der für die zugrundeliegende Variable angelegte Puffer überläuft. Bei einem erfolgreichen Angriff überschreiben die überlaufenden Zeichen den Stapelzeiger, was es ihnen ermöglicht, schadhaften Programmcode in Ihre Anwendung einzuschleusen.
 
-**Szenario #2:** Use-After-Free (UAF) – Zugriff auf bereits freigegebenen Speicher – tritt häufig genug auf, um eine gängige Einsendung in Browser-Fehlerprämienprogrammen (bug bounty) zu sein. Stellen Sie sich einen Webbrowser vor, der JavaScript verarbeitet, das DOM-Elemente manipuliert. Der Angreifer erstellt eine JavaScript-Nutzlast, die ein Objekt (z. B. ein DOM-Element) erzeugt und Verweise darauf erhält. Durch gezielte Manipulation veranlasst er den Browser, den Speicher des Objekts freizugeben, während ein hängender Zeiger darauf bestehen bleibt. Bevor der Browser erkennt, dass der Speicher freigegeben wurde, reserviert die angreifende Person ein neues Objekt, das denselben Speicherbereich belegt. Wenn der Browser versucht, den ursprünglichen Zeiger zu verwenden, verweist dieser nun auf von der angreifenden Person kontrollierte Daten. Falls dieser Zeiger auf eine virtuelle Funktionstabelle zeigte, kann die angreifende Person die Programmausführung auf seine Nutzlast umleiten.
+**Szenario #2:** Use-After-Free (UAF) – Zugriff auf bereits freigegebenen Speicher – tritt häufig genug auf, um eine gängige Einsendung in Browser-Fehlerprämienprogrammen (bug bounty) zu sein. Stellen Sie sich einen Webbrowser vor, der JavaScript verarbeitet, das DOM-Elemente manipuliert. Die/Der Angreifer:in erstellt eine JavaScript-Nutzlast, die ein Objekt (z. B. ein DOM-Element) erzeugt und Verweise darauf erhält. Durch gezielte Manipulation veranlasst sie/er den Browser, den Speicher des Objekts freizugeben, während ein hängender Zeiger darauf bestehen bleibt. Bevor der Browser erkennt, dass der Speicher freigegeben wurde, reserviert die/der Angreifer:in ein neues Objekt, das denselben Speicherbereich belegt. Wenn der Browser versucht, den ursprünglichen Zeiger zu verwenden, verweist dieser nun auf von der/dem Angreifer:in kontrollierte Daten. Falls dieser Zeiger auf eine virtuelle Funktionstabelle zeigte, kann die/der Angreifer:in die Programmausführung auf ihre/seine Nutzlast umleiten.
  
 
-**Szenario #3:** Hierbei handelt es sich um einen Netzwerkdienst, der Benutzereingaben entgegennimmt, diese nicht ordnungsgemäß validiert oder bereinigt und sie dann direkt an die Protokollierungsfunktion weitergibt. Die Benutzereingabe wird als syslog(user_input) statt als syslog("%s", user_input) an die Protokollierungsfunktion übergeben, ohne dass ein Formatbezeichner angegeben wird. Die angreifenden Personen senden schadhafte Nutzlasten mit Formatbezeichnern wie %x, um Stapelspeicherinhalte auszulesen (Offenlegung sensibler Daten), oder %n, um in Speicheradressen zu schreiben. Durch die Verkettung mehrerer Formatbezeichner können sie den Stapelspeicher kartieren, wichtige Adressen lokalisieren und diese anschließend überschreiben. Dies wäre eine Formatzeichenketten-Schwachstelle (unkontrolliertes Zeichenkettenformat).
+**Szenario #3:** Hierbei handelt es sich um einen Netzwerkdienst, der Benutzereingaben entgegennimmt, diese nicht ordnungsgemäß validiert oder bereinigt und sie dann direkt an die Protokollierungsfunktion weitergibt. Die Benutzereingabe wird als syslog(user_input) statt als syslog("%s", user_input) an die Protokollierungsfunktion übergeben, ohne dass ein Formatbezeichner angegeben wird. Angreifer:innen senden schadhafte Nutzlasten mit Formatbezeichnern wie %x, um Stapelspeicherinhalte auszulesen (Offenlegung sensibler Daten), oder %n, um in Speicheradressen zu schreiben. Durch die Verkettung mehrerer Formatbezeichner können sie den Stapelspeicher kartieren, wichtige Adressen lokalisieren und diese anschließend überschreiben. Dies wäre eine Formatzeichenketten-Schwachstelle (unkontrolliertes Zeichenkettenformat).
 
 Hinweis: Moderne Browser verwenden viele Schutzebenen, um sich gegen solche Angriffe zu verteidigen, darunter [Browser-Sandboxing](https://www.geeksforgeeks.org/ethical-hacking/what-is-browser-sandboxing/#types-of-browser-sandboxing), ASLR, DEP/NX, RELRO und PIE. Ein Speicherverwaltungsangriff auf einen Browser ist kein einfach durchzuführender Angriff.
 
@@ -286,7 +286,7 @@ Hinweis: Moderne Browser verwenden viele Schutzebenen, um sich gegen solche Angr
 
 ### Hintergrund.
 
-Derzeit spricht und nutzt die gesamte Welt Künstliche Intelligenz (KI), das schließt Softwareentwickler ein. Obwohl es derzeit keine CVEs oder CWEs im Zusammenhang mit KI-generiertem Code gibt, ist allgemein bekannt und dokumentiert, dass KI-generierter Code häufig mehr Schwachstellen enthält als von Menschen geschriebener Code.
+Derzeit spricht und nutzt die gesamte Welt Künstliche Intelligenz (KI), das schließt Softwareentwickler:innen ein. Obwohl es derzeit keine CVEs oder CWEs im Zusammenhang mit KI-generiertem Code gibt, ist allgemein bekannt und dokumentiert, dass KI-generierter Code häufig mehr Schwachstellen enthält als von Menschen geschriebener Code.
 
 ### Beschreibung.
 
