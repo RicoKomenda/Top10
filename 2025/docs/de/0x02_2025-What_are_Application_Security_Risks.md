@@ -17,20 +17,14 @@ Vektoren</strong>
    </td>
    <td>
     <strong>Wahrscheinlichkeit von fehlenden</strong>
-<p style="text-align: center">
-
     <strong>Sicherheitsmaßnahmen</strong>
    </td>
    <td>
     <strong>Technische</strong>
-<p style="text-align: center">
-
     <strong>Auswirkungen</strong>
    </td>
    <td>
     <strong>Geschäftliche</strong>
-<p style="text-align: center">
-
     <strong>Auswirkungen</strong>
    </td>
   </tr>
@@ -108,4 +102,4 @@ Für jede der Top-Ten-Kategorien werden bestimmte Datenfaktoren aufgeführt. Hie
 
 **Gesamtzahl der CVEs:** Gesamtzahl der CVEs in der NVD-Datenbank, die den einer Kategorie zugeordneten CWEs zugeordnet wurden.
 
-**Formel:** (Max. Inzidenzrate % * 1000) + (Max. Abdeckung % * 100) + (Durchschnittliche Ausnutzbarkeit * 10) + (Durchschnittliche Auswirkungen * 20) + (Summe der Vorkommen / 10000) = Risikowert
+**Formel:** (Häufigkeit % * 1000) + (Max. Abdeckung % * 100) + (Durchschnittliche Ausnutzbarkeit * 10) + (Durchschnittliche Auswirkungen * 20) + (Summe der Vorkommen / 10000) = Risikowert
