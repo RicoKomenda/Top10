@@ -56,11 +56,11 @@ Diese Kategorie belegte den ersten Platz in der Community-Umfrage zu den Top 10,
 
 ## Beschreibung.
 
-Fehler in der Software-Lieferkette sind Störungen oder sonstige Kompromittierungen im Prozess der Erstellung, Verteilung oder Aktualisierung von Software. Sie werden häufig durch Schwachstellen oder böswillige Änderungen in Code, Werkzeugen oder anderen Abhängigkeiten von Drittanbietern verursacht, auf die das System angewiesen ist.
+Schwachstellen in der Software-Lieferkette sind Störungen oder sonstige Kompromittierungen im Prozess der Erstellung, Verteilung oder Aktualisierung von Software. Sie werden häufig durch Schwachstellen oder böswillige Änderungen in Code, Werkzeugen oder anderen Abhängigkeiten von Drittanbietern verursacht, auf die das System angewiesen sind.
 
 Sie sind wahrscheinlich verwundbar, wenn:
 
-* Sie die Versionen aller verwendeten Komponenten (sowohl client- als auch serverseitig) nicht sorgfältig verfolgen. Dies umfasst sowohl direkt verwendete Komponenten als auch verschachtelte (transitive) Abhängigkeiten.
+* Sie die Versionen aller verwendeten Komponenten (sowohl client- als auch serverseitig) nicht sorgfältig nachverfolgen. Dies umfasst sowohl direkt verwendete Komponenten als auch verschachtelte (transitive) Abhängigkeiten.
 * Die Software verwundbar, nicht mehr unterstützt oder veraltet ist. Dies betrifft das Betriebssystem, Web-/Anwendungsserver, Datenbankmanagementsysteme (DBMS), Anwendungen, APIs und alle Komponenten, Laufzeitumgebungen und Bibliotheken.
 * Sie keine regelmäßigen Schwachstellen-Scans durchführen und keine Sicherheitsbulletins zu den von Ihnen verwendeten Komponenten abonniert haben.
 * Sie keinen Änderungsmanagementprozess oder keine Nachverfolgung von Änderungen in Ihrer Lieferkette haben, einschließlich der Nachverfolgung von IDEs, IDE-Erweiterungen und -Updates, Änderungen am Code-Repository Ihrer Organisation, Sandboxen, Image- und Bibliotheks-Repositories sowie der Art und Weise, wie Artefakte erstellt und gespeichert werden usw. Jeder Teil Ihrer Lieferkette sollte dokumentiert werden, insbesondere Änderungen.
@@ -88,7 +88,7 @@ Es sollte ein Patch-Management-Prozess vorhanden sein, der:
 * Bewusst wählt, welche Version einer Abhängigkeit verwendet wird, und nur bei Bedarf aktualisiert.
 * Bibliotheken und Komponenten überwacht, die nicht mehr gewartet werden oder keine Sicherheits-Patches für ältere Versionen bereitstellen. Falls kein Patchen möglich ist, sollten Sie eine Migration zu einer Alternative in Betracht ziehen. Falls auch das nicht möglich ist, ziehen Sie den Einsatz eines virtuellen Patches in Betracht, um das entdeckte Problem zu überwachen, zu erkennen oder dagegen zu schützen.
 * Ihre CI/CD-, IDE- und anderen Entwicklungs-Tools regelmäßig aktualisiert.
-* Vermeidet, Updates gleichzeitig auf alle Systeme auszurollen. Nutzen Sie gestaffelte Rollouts oder Canary-Deployments, um das Risiko zu begrenzen, falls ein vertrauenswürdiger Anbieter kompromittiert wird.
+* Vermeidet, Updates gleichzeitig auf alle Systeme auszurollen. Nutzen Sie gestaffelte Rollouts oder Canary-Deployments, um das Risiko zu begrenzen, falls ein:e vertrauenswürdige:r Anbieter:in kompromittiert wird.
 
 
 Es sollte ein Änderungsmanagementprozess oder ein Tracking-System vorhanden sein, um Änderungen an folgenden Bereichen zu verfolgen:
