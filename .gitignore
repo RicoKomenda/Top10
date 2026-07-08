@@ -80,6 +80,9 @@ venv/
 .env
 .env.*
 
+# direnv (may contain local secrets/tokens)
+.envrc
+
 generated/
 bin/
 lib/

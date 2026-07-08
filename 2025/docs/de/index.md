@@ -32,7 +32,7 @@ Beginnen Sie mit der [Einführung](0x00_2025-Introduction.md), um mehr über die
 5. [A05:2025 - Injection](A05_2025-Injection.md)
 6. [A06:2025 - Unsicheres Design](A06_2025-Insecure_Design.md)
 7. [A07:2025 - Fehlerhafte Authentifizierung](A07_2025-Authentication_Failures.md)
-8. [A08:2025 - Fehler bei der Software- und Datenintegrität](A08_2025-Software_or_Data_Integrity_Failures.md)
+8. [A08:2025 - Fehler bei der Software- oder Datenintegrität](A08_2025-Software_or_Data_Integrity_Failures.md)
 9. [A09:2025 - Unzureichendes Sicherheitslogging und Alarmierung](A09_2025-Security_Logging_and_Alerting_Failures.md)
 10. [A10:2025 - Fehlerhafte Behandlung von Ausnahmezuständen](A10_2025-Mishandling_of_Exceptional_Conditions.md)
 
