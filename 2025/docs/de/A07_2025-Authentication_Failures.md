@@ -56,7 +56,7 @@ Fehlerhafte Authentifizierung behält mit einer leichten Namensänderung seinen 
 
 ## Beschreibung.
 
-Wenn ein Angreifer ein System dazu bringen kann, einen ungültigen oder nicht autorisierten Nutzer als legitim anzuerkennen, liegt diese Schwachstelle vor. Schwachstellen bei der Authentifizierung können auftreten, falls die Anwendung:
+Wenn eine angreifende Person ein System dazu bringen kann, eine:n ungültige:n oder nicht autorisierte:n Nutzer:in als legitim anzuerkennen, liegt diese Schwachstelle vor. Schwachstellen bei der Authentifizierung können auftreten, falls die Anwendung:
 
 * automatisierte Angriffe wie Credential Stuffing ermöglicht, bei denen Angreifende über eine Liste bekannter Benutzernamen und Passwörter verfügen. Jüngst wurde diese Angriffsmethode um hybride Passwort-Angriffe erweitert (auch als Password-Spray-Angriffe bekannt), bei denen Angreifende Variationen kompromittierter Zugangsdaten verwenden, z. B. Password1!, Password2!, Password3! usw.
 
@@ -88,19 +88,19 @@ Wenn ein Angreifer ein System dazu bringen kann, einen ungültigen oder nicht au
 
 * Wenn möglich, die Nutzung von Passwort-Managern fördern und ermöglichen, um Nutzenden bessere Entscheidungen bei der Passwortwahl zu erleichtern.
 
-* Liefern Sie die Anwendung nicht mit Standard Login-Daten aus, insbesondere nicht für Administrator-Konten.
+* Liefern Sie die Anwendung nicht mit Standard Login-Daten aus, insbesondere nicht für Admin-Konten.
 
 * Implementieren Sie Prüfungen auf schwache Passwörter, wie z. B. durch den Vergleich von neuen oder geänderten Passwörtern mit der Liste der 10.000 schlechtesten Passwörter.
 
 * Bei der Erstellung neuer Konten und Passwortänderungen Zugangsdaten gegen Listen bekannter kompromittierter Passwörter prüfen (z. B. mit [haveibeenpwned.com](https://haveibeenpwned.com)).
 
-* Angleichung der Passwortlänge, -komplexität und -rotation an die Richtlinien des National Institute of Standards and Technology (NIST) 800-63b in [Abschnitt 5.1.1 „Memorized Secrets"](https://pages.nist.gov/800-63-3/sp800-63b.html#:~:text=5.1.1%20Memorized%20Secrets) oder andere modernen, bewährten Passwortrichtlinien.
+* Angleichung der Passwortlänge, -komplexität und -rotation an die Richtlinien des National Institute of Standards and Technology (NIST) 800-63b in [Abschnitt 5.1.1 „Memorized Secrets"](https://pages.nist.gov/800-63-3/sp800-63b.html#:~:text=5.1.1%20Memorized%20Secrets) oder andere moderne, bewährte Passwortrichtlinien.
 
 * Passwortrotation nicht erzwingen, es sei denn, es besteht ein Verdacht auf eine Kompromittierung. Bei Verdacht sofortige Passwort-Resets durchsetzen.
 
 * Sicherstellen, dass die Registrierung, die Wiederherstellung von Zugangsdaten und die API-Pfade gegen Angriffe zur Ermittlung von Konten gehärtet sind, indem für alle Resultate die gleiche Nachricht ausgegeben wird („Ungültiger Benutzername oder Passwort.”).
 
-* Begrenzen oder bremsen Sie fehlgeschlagene Anmeldeversuche immer weiter aus, aber achten Sie darauf, dass hierbei kein Denial-of-Service-Szenario entsteht. Loggen Sie alle Fehlversuche und alarmieren Sie die Administratoren, wenn Credential Stuffing, Brute Force oder andere Angriffe erkannt oder vermutet werden.
+* Begrenzen oder bremsen Sie fehlgeschlagene Anmeldeversuche immer weiter aus, aber achten Sie darauf, dass hierbei kein Denial-of-Service-Szenario entsteht. Loggen Sie alle Fehlversuche und alarmieren Sie die Administrator:innen, wenn Credential Stuffing, Brute Force oder andere Angriffe erkannt oder vermutet werden.
 
 * Verwenden Sie einen serverseitigen, sicheren, integrierten Sitzungsmanager, der für jede Sitzung eine neue zufällige Sitzungs-ID mit hoher Entropie erzeugt. Die Sitzungs-ID sollte nicht in der URL enthalten sein, sicher in einem sicheren Cookie gespeichert und nach Abmeldung, Inaktivität und absoluten Timeouts invalidiert werden.
 
@@ -113,9 +113,9 @@ Wenn ein Angreifer ein System dazu bringen kann, einen ungültigen oder nicht au
 
 **Szenario Nr. 1:** Credential Stuffing, die Verwendung von Listen bekannter Benutzernamen- und Passwortkombinationen, ist heute ein sehr verbreiteter Angriff. Jüngst wurde beobachtet, dass Angreifende Passwörter basierend auf typischem menschlichem Verhalten „inkrementieren" oder abwandeln, z. B. von „Winter2025" zu „Winter2026" oder von „ILoveMyDog6" zu „ILoveMyDog7". Diese Methode wird als hybrider Credential-Stuffing-Angriff oder Password-Spray-Angriff bezeichnet und kann noch effektiver sein als die klassische Variante. Verfügt eine Anwendung über keine Abwehrmechanismen gegen automatisierte Angriffe oder Credential Stuffing, kann sie als Passwort-Orakel genutzt werden, um gültige Zugangsdaten zu ermitteln und unbefugten Zugriff zu erlangen.
 
-**Szenario Nr. 2:** Die meisten erfolgreichen Authentifizierungsangriffe erfolgen aufgrund der andauernden Verwendung von Passwörtern als einzigem Authentifizierungsfaktor. Die früher als Best Practices geltenden Anforderungen an Passwortwechsel und -komplexität verleiten Nutzende sowohl zur Wiederverwendung als auch zur Wahl schwacher Passwörter. Organisationen wird empfohlen, diese Praktiken gemäß NIST 800-63 einzustellen und die Nutzung von Multi-Faktor-Authentifizierung auf allen wichtigen Systemen durchzusetzen.
+**Szenario Nr. 2:** Die meisten erfolgreichen Authentifizierungsangriffe erfolgen aufgrund der andauernden Verwendung von Passwörtern als einzigem Authentifizierungsfaktor. Die früher als Best Practices geltenden Anforderungen an Passwortwechsel und -komplexität verleiten Nutzende sowohl zur Wiederverwendung als auch zur Wahl schwacher Passwörter. Organisationen wird empfohlen, diese Praktiken gemäß NIST 800-63 einzustellen und die Nutzung von Multi-Faktor-Authentisierung auf allen wichtigen Systemen durchzusetzen.
 
-**Szenario Nr. 3:** Die Session-Timeouts von Anwendungen sind nicht korrekt implementiert. Eine Nutzerin/Nutzer verwendet einen öffentlichen Computer und schließt die Browser-Registerkarte, anstatt sich abzumelden. Ein weiteres Beispiel: Eine SSO-Sitzung kann nicht per Single Logout (SLO) geschlossen werden – ein einzelner Login gewährt Zugang zu mehreren Systemen (z. B. E-Mail, Dokumente, Chat), aber der Logout erfolgt nur im aktuellen System. Greift ein Angreifer danach auf denselben Browser zu, hat er Zugriff auf alle noch aktiven Sitzungen. Dasselbe Problem kann in Büros auftreten, wenn eine sensible Anwendung nicht ordnungsgemäß beendet wurde und Kolleginnen oder Kollegen vorübergehend Zugriff auf den entsperrten Computer haben.
+**Szenario Nr. 3:** Die Session-Timeouts von Anwendungen sind nicht korrekt implementiert. Eine Nutzer:in verwendet einen öffentlichen Computer und schließt die Browser-Registerkarte, anstatt sich abzumelden. Ein weiteres Beispiel: Eine SSO-Sitzung kann nicht per Single Logout (SLO) geschlossen werden – ein einzelner Login gewährt Zugang zu mehreren Systemen (z. B. E-Mail, Dokumente, Chat), aber der Logout erfolgt nur im aktuellen System. Greift ein Angreifer danach auf denselben Browser zu, hat er Zugriff auf alle noch aktiven Sitzungen. Dasselbe Problem kann in Büros auftreten, wenn eine sensible Anwendung nicht ordnungsgemäß beendet wurde und Kolleg:innen vorübergehend Zugriff auf den entsperrten Computer haben.
 
 ## Referenzen.
 
