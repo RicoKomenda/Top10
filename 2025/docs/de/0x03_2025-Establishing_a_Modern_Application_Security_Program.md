@@ -45,7 +45,7 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 ### 4. Schulungen zur Anwendungssicherheit:
 
-* Erwägen Sie die Einführung eines „Security Champion“-Programms oder eines allgemeinen Sicherheitsschulungsprogramms für Ihre Entwickler (manchmal auch als „Security Awareness“-Programm bezeichnet), um ihnen alles beizubringen, was sie Ihrer Meinung nach wissen sollten. So bleiben sie auf dem neuesten Stand, lernen, wie sie ihre Arbeit sicher ausführen können, und tragen dazu bei, die Sicherheitskultur in Ihrem Unternehmen positiver zu gestalten. Oft verbessert dies auch das Vertrauen zwischen den Teams und sorgt für ein harmonischeres Arbeitsklima. OWASP unterstützt Sie dabei mit dem [OWASP Security Champions Guide](https://securitychampions.owasp.org/), der Schritt für Schritt erweitert wird.
+* Erwägen Sie die Einführung eines „Security Champion“-Programms oder eines allgemeinen Sicherheitsschulungsprogramms für Ihre Entwickler:innen (manchmal auch als „Security Awareness“-Programm bezeichnet), um ihnen alles beizubringen, was sie Ihrer Meinung nach wissen sollten. So bleiben sie auf dem neuesten Stand, lernen, wie sie ihre Arbeit sicher ausführen können, und tragen dazu bei, die Sicherheitskultur in Ihrem Unternehmen positiver zu gestalten. Oft verbessert dies auch das Vertrauen zwischen den Teams und sorgt für ein harmonischeres Arbeitsklima. OWASP unterstützt Sie dabei mit dem [OWASP Security Champions Guide](https://securitychampions.owasp.org/), der Schritt für Schritt erweitert wird.
 
 * Das OWASP Education Project stellt Schulungsmaterialien bereit, um Entwickler in Bezug auf Webanwendungssicherheit zu schulen. Für praktisches Lernen über Schwachstellen probieren Sie das [OWASP Juice Shop Project](https://owasp.org/www-project-juice-shop/) oder [OWASP WebGoat](https://owasp.org/www-project-webgoat/) aus. Um auf dem Laufenden zu bleiben, besuchen Sie eine [OWASP AppSec Konferenz](https://owasp.org/events/), ein [OWASP Konferenz Training](https://owasp.org/events/) oder lokale Treffen der [OWASP-Chapters](https://owasp.org/chapters/).
 
@@ -94,9 +94,9 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 *  Führen Sie eine Bedrohungsmodellierung durch, siehe [OWASP Cheat Sheet: Bedrohungsmodellierung](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html).
 
-*  Vermitteln Sie Ihren Softwarearchitekten sichere Designkonzepte und -muster und bitten Sie sie, diese nach Möglichkeit in ihre Entwürfe zu integrieren.
+*  Vermitteln Sie Ihren Softwarearchitekt:innen sichere Designkonzepte und -muster und bitten Sie sie, diese nach Möglichkeit in ihre Entwürfe zu integrieren.
 
-*  Prüfen Sie gemeinsam mit Ihren Entwicklern die Datenflüsse.
+*  Prüfen Sie gemeinsam mit Ihren Entwickler:innen die Datenflüsse.
 
 *  Fügen Sie neben all Ihren anderen User Stories auch Sicherheits-User-Stories hinzu.
 
@@ -105,19 +105,19 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 * Um den Prozess zu verbessern, den Ihr Unternehmen bei der Entwicklung von Anwendungen und APIs befolgt, empfiehlt OWASP das [OWASP Software Assurance Maturity Model (SAMM)](https://owasp.org/www-project-samm/). Dieses Modell hilft Unternehmen dabei, eine Strategie für Softwaresicherheit zu formulieren und umzusetzen, die auf die spezifischen Risiken zugeschnitten ist, denen Ihr Unternehmen ausgesetzt ist.
 
-*  Bieten Sie Ihren Softwareentwicklern Schulungen zum sicheren Programmieren sowie alle anderen Schulungen an, von denen Sie glauben, dass sie ihnen helfen, robustere und sicherere Anwendungen zu erstellen.
+*  Bieten Sie Ihren Softwareentwickler:innen Schulungen zum sicheren Programmieren sowie alle anderen Schulungen an, von denen Sie glauben, dass sie ihnen helfen, robustere und sicherere Anwendungen zu erstellen.
 
 *  Code-Review, siehe [OWASP Cheat Sheet: Secure Code Review](https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html).
 
-*  Stellen Sie Ihren Entwicklern Sicherheitswerkzeuge zur Verfügung und bringen Sie ihnen deren Nutzung bei, insbesondere im Hinblick auf statische Analyse, Software-Kompositionsanalyse, Geheimnisscanner (Secrets) und [Infrastructure als Code (IaC)](https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html).
+*  Stellen Sie Ihren Entwickler:innen Sicherheitswerkzeuge zur Verfügung und bringen Sie ihnen deren Nutzung bei, insbesondere im Hinblick auf statische Analyse, Software-Kompositionsanalyse, Geheimnisscanner (Secrets) und [Infrastructure als Code (IaC)](https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html).
 
-*  Schaffen Sie nach Möglichkeit Leitplanken für Ihre Entwickler (technische Schutzmaßnahmen, die sie zu sichereren Entscheidungen lenken).
+*  Schaffen Sie nach Möglichkeit Leitplanken für Ihre Entwickler:innen (technische Schutzmaßnahmen, die sie zu sichereren Entscheidungen lenken).
 
-*   Die Entwicklung robuster und benutzerfreundlicher Sicherheitsmaßnahmen ist schwierig. Bieten Sie nach Möglichkeit sichere Standardeinstellungen an und schaffen Sie „gepflasterte Wege“ (indem Sie den einfachsten Weg auch zum sichersten Weg machen, also zur naheliegenden und bevorzugten Vorgehensweise). Die [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/index.html) sind ein guter Ausgangspunkt für Entwickler, und viele moderne Frameworks verfügen mittlerweile über standardmäßige und wirksame Sicherheitskontrollen für Autorisierung, Validierung, CSRF-Prävention usw.
+*   Die Entwicklung robuster und benutzungsfreundlicher Sicherheitsmaßnahmen ist schwierig. Bieten Sie nach Möglichkeit sichere Standardeinstellungen an und schaffen Sie „gepflasterte Wege“ (indem Sie den einfachsten Weg auch zum sichersten Weg machen, also zur naheliegenden und bevorzugten Vorgehensweise). Die [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/index.html) sind ein guter Ausgangspunkt für Entwickler:innen, und viele moderne Frameworks verfügen mittlerweile über standardmäßige und wirksame Sicherheitskontrollen für Autorisierung, Validierung, CSRF-Prävention usw.
 
-*  Stellen Sie Ihren Entwicklern sicherheitsrelevante Entwicklungsumgebungsplugins zur Verfügung und ermutigen Sie sie, diese zu nutzen.
+*  Stellen Sie Ihren Entwickler:innen sicherheitsrelevante Entwicklungsumgebungsplugins zur Verfügung und ermutigen Sie sie, diese zu nutzen.
 
-*  Stellen Sie ihnen ein Werkzeug zur Verwaltung von Geheimnissen (Secrets) bereit und die nötigen Lizenzen und eine Dokumentation zur Verwendung.
+*  Stellen Sie ihnen ein Werkzeug zur Verwaltung von Geheimnissen (Secrets)  und die nötigen Lizenzen und eine Dokumentation zur Verwendung bereit.
 
 *  Stellen Sie ihnen eine private KI zur Verfügung, idealerweise eingerichtet mit einem RAG-Server voller nützlicher Sicherheitsdokumentation, Prompts, die Ihr Team für bessere Ergebnisse verfasst hat, und einem MCP-Server, der die für Ihre Organisation ausgewählten Sicherheitswerkzeuge aufruft. Bringen Sie ihnen bei, wie man KI sicher nutzt, denn sie werden es tun, ob es Ihnen gefällt oder nicht.
 
@@ -130,11 +130,11 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 * Verwalten Sie Sicherheitstests gemäß internen Prozessen, den Schutzanforderungen und dem von der Anwendung angenommenen Bedrohungsgrad.
 
-* Stellen Sie Sicherheitstest-Werkzeuge (Fuzzer, DAST usw.), eine sichere Testumgebung und Schulungen zu deren Verwendung bereit, ODER führen Sie die Tests für sie durch ODER beauftragen Sie einen Tester.
+* Stellen Sie Sicherheitstest-Werkzeuge (Fuzzer, DAST usw.), eine sichere Testumgebung und Schulungen zu deren Verwendung bereit, ODER führen Sie die Tests für sie durch ODER beauftragen Sie eine:n Tester:in.
 
 *  Wenn Sie ein hohes Maß an Sicherheit benötigen, ziehen Sie einen formellen Penetrationstest sowie Stress- und Leistungstests (Performance) in Betracht.
 
-*  Arbeiten Sie mit Ihren Entwicklern zusammen, um ihnen bei der Entscheidung zu helfen, was aus den Fehlerberichten behoben werden muss, und stellen Sie sicher, dass ihre Vorgesetzten ihnen die dafür erforderliche Zeit einräumen.
+*  Arbeiten Sie mit Ihren Entwickler:innen zusammen, um ihnen bei der Entscheidung zu helfen, was aus den Fehlerberichten behoben werden muss, und stellen Sie sicher, dass ihre Vorgesetzten ihnen die dafür erforderliche Zeit einräumen.
 
 
 ### Inbetriebnahme:
@@ -148,7 +148,7 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 *  Der Betrieb muss Richtlinien für das Sicherheitsmanagement der Anwendung enthalten (z. B. Patch-Management).
 
-*  Das Sicherheitsbewusstsein der Benutzer schärfen und Konflikte zwischen Benutzerfreundlichkeit und Sicherheit bewältigen.
+*  Das Sicherheitsbewusstsein der Benutzer:innen schärfen und Konflikte zwischen Benutzbarkeit und Sicherheit bewältigen.
 
 *  Änderungen planen (Change Management) und verwalten, z. B. die Migration auf neue Versionen der Anwendung oder anderer Komponenten wie Betriebssystem, Middleware und Bibliotheken.
 
@@ -162,7 +162,7 @@ Wenn Sie ein Programm von Grund auf neu starten oder OWASP SAMM oder DSOMM für 
 
 *  Definieren Sie SLAs für die Behebung von Sicherheitsfehlern.
 
-*  Stellen Sie eine Möglichkeit für Mitarbeiter (und idealerweise auch für Ihre Kunden) bereit, Fehler zu melden.
+*  Stellen Sie eine Möglichkeit für Mitarbeiter:innen (und idealerweise auch für Ihre Kund:innen) bereit, Fehler zu melden.
 
 *  Richten Sie ein geschultes Vorfallreaktionsteam (Incident Response) ein, das weiß, wie Softwareangriffe aussehen, und das mit Überwachungswerkzeugen (Observability-Tools) vertraut ist.
 
@@ -296,4 +296,4 @@ Hier sind unsere Empfehlungen dazu, wann die Verwendung der OWASP Top 10 sinnvol
 
 Wir empfehlen allen, die einen Standard für die Anwendungssicherheit einführen möchten, den [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/) (ASVS) zu verwenden, da dieser so konzipiert ist, dass er überprüfbar und testbar ist, und in allen Phasen eines sicheren Entwicklungszyklus eingesetzt werden kann.
 
-Der ASVS ist die einzig akzeptable Wahl für Werkzeug-Anbieter. Werkzeuge können die OWASP Top 10 aufgrund der Natur einiger der darin enthaltenen Risiken nicht umfassend erkennen, testen oder dagegen schützen, siehe [A06:2025 – Unsicheres Design](A06_2025-Insecure_Design.md). OWASP rät von jeglichen Behauptungen ab, die OWASP Top 10 vollständig abzudecken, da dies schlichtweg nicht der Wahrheit entspricht.
+Der ASVS ist die einzig akzeptable Wahl für Werkzeug-Anbieter:innen. Werkzeuge können die OWASP Top 10 aufgrund der Natur einiger der darin enthaltenen Risiken nicht umfassend erkennen, testen oder dagegen schützen, siehe [A06:2025 – Unsicheres Design](A06_2025-Insecure_Design.md). OWASP rät von jeglichen Behauptungen ab, die OWASP Top 10 vollständig abzudecken, da dies schlichtweg nicht der Wahrheit entspricht.
