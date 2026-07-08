@@ -1,39 +1,39 @@
-# Next Steps
+# Nächste Schritte
 
-By design, the OWASP Top 10 is innately limited to the ten most significant risks. Every OWASP Top 10 has “on the cusp” risks considered at length for inclusion, but in the end, didn't make the cut. The other risks were more prevalent and impactful.
+Die OWASP Top 10 sind von Natur aus auf die zehn bedeutendsten Risiken beschränkt. Jede OWASP Top 10 hat Risiken, die an der Schwelle zur Aufnahme in die Top 10 stehen,  es letztendlich jedoch nicht in die Liste geschafft haben. Die anderen Risiken waren weiter verbreitet und hatten größere Auswirkungen.
 
-The following three issues are well worth the effort to identify and remediate, organizations working towards a mature appsec program, security consultancies, or tool vendors wishing to expand coverage for their offerings.
-
-
-## X01:2025 Lack of Application Resilience
-
-### Background. 
-
-This is a renaming of 2021’s Denial of Service. That was renamed as it described a symptom rather than a root cause. This category focuses on CWEs that describe weaknesses that are related to resilience issues. The scoring of this category was very close with A10:2025-Mishandling of Exceptional Conditions. Relevant CWEs include: *CWE-400 Uncontrolled Resource Consumption, CWE-409 Improper Handling of Highly Compressed Data (Data Amplification), CWE-674 Uncontrolled Recursion*, and *CWE-835 Loop with Unreachable Exit Condition ('Infinite Loop').*
+Die folgenden drei Themen sind es wert, identifiziert und behoben zu werden – insbesondere für Organisationen, die ein ausgereiftes Anwendungssicherheitsprogramm aufbauen möchten, sowie für Sicherheitsberatungsunternehmen oder Werkzeughersteller, die 
+ihre Abdeckung erweitern möchten.
 
 
-### Score table.
+## X01:2025 Mangelnde Resilienz der Anwendung
 
+### Hintergrund. 
+
+Dies ist eine Umbenennung des Themas „Denial of Service" aus dem Jahr 2021. Die Umbenennung erfolgte, da der frühere Begriff ein Symptom beschrieb und nicht die eigentliche Ursache. Diese Kategorie konzentriert sich auf CWEs (Common Weakness Enumerations – Auflistungen häufiger Schwachstellen), die Schwächen im Zusammenhang mit Resilienzproblemen beschreiben. Die Bewertung dieser Kategorie lag sehr nahe an A10:2025 – Fehlerhafte Behandlung von Ausnahmezuständen. Relevante CWEs umfassen: *CWE-400 Unkontrollierter Ressourcenverbrauch, CWE-409 Unsachgemäße Behandlung von stark komprimierten Daten (Datenverstärkung), CWE-674 Unkontrollierte Rekursion* und *CWE-835 Schleife mit unerreichbarer Abbruchbedingung ('Endlosschleife')*.
+
+
+### Punktetabelle.
 
 <table>
   <tr>
-   <td>CWEs Mapped 
+   <td>Zugeordnete CWEs 
    </td>
-   <td>Max Incidence Rate
+   <td>Max. Häufigkeit
    </td>
-   <td>Avg Incidence Rate
+   <td>Durchschn. Häufigkeit
    </td>
-   <td>Max Coverage
+   <td>Max. Abdeckung
    </td>
-   <td>Avg Coverage
+   <td>Durchschn. Abdeckung
    </td>
-   <td>Avg Weighted Exploit
+   <td>Durchschn. gewichtete Ausnutzbarkeit
    </td>
-   <td>Avg Weighted Impact
+   <td>Durchschn. gewichtete Auswirkung
    </td>
-   <td>Total Occurrences
+   <td>Gesamtanzahl 
    </td>
-   <td>Total CVEs
+   <td>Summe CVEs
    </td>
   </tr>
   <tr>
@@ -60,44 +60,45 @@ This is a renaming of 2021’s Denial of Service. That was renamed as it describ
 
 
 
-### Description. 
+### Beschreibung. 
 
-This category represents a systemic weakness in how applications respond to stress, failures, and edge cases that it is unable to recover from failure. When an application does not gracefully handle, withstand, or recover from unexpected conditions, resource constraints, and other adverse events it can easily result in availability issues (most commonly), but also data corruption, sensitive data disclosure, cascading failures, and/or bypasses of security controls.
+Diese Kategorie stellt eine systemische Schwäche darin dar, wie Anwendungen auf Belastungen, Ausfälle und Grenzfälle reagieren, von denen sie sich nicht erholen können. Wenn eine Anwendung unerwartete Zustände, Ressourcenengpässe und andere ungünstige Ereignisse nicht ordnungsgemäß behandelt, übersteht oder sich davon erholt, kann dies leicht zu Verfügbarkeitsproblemen führen (tritt am häufigsten auf), aber auch zu Datenschädigung, Offenlegung sensibler Daten, Kaskadenausfällen und/oder der Umgehung von Sicherheitskontrollen.
 
-Furthermore [X02:2025 Memory Management Failures](#x022025-memory-management-failures) can also lead to failure of the application or even the entire system.
-
-### How to prevent 
-
-In order to prevent this type of vulnerability you must design for failure and recovery of your systems.
-
-* Add limits, quotas, and failover functionality, paying special attention to the most resource consuming operations
-* Identify resource intensive pages and plan ahead: Reduce attack surface especially not exposing unneeded ‘gadgets’ and functions that require a lot of resources (e.g. CPU, memory) to unknown or untrusted users
-* Perform strict input validation with allow-lists and size limitations, then test thoroughly
-* Limit response sizes, and never send raw responses back to the client (process on the server side)
-* Default to safe/closed (never open), deny by default and roll back if there’s an error
-* Avoid blocking synchronous calls in request threads (use asynchronous/non-blocking, have timeouts, have concurrency limits, etc.)
-* Carefully test your error handling functionality
-* Implement resilience patterns such as circuit breakers, bulkheads, retry logic, and graceful degradation
-* Do performance and load testing; add chaos engineering if you have the risk appetite for it
-* Implement and architect for redundancy where reasonable and affordable
-* Implement monitoring, observability, and alerting
-* Filter invalid sender addresses in accordance with RFC 2267
-* Block known botnets by finger prints, IPs, or dynamically by behavior
-* Proof-of-Work: initiate resource consuming operations at the *attackers* side that does not have big impacts on normal users but impacts bots trying to send a huge amount of requests. Make the Proof-of-Work more difficult if the general load of the system raises, especially for systems that are less trustworthy or appear to be bots
-* Limit server side session time based on inactivity and a final timeout
-* Limit session bound information storage
+Darüber hinaus können [X02:2025 Speicherverwaltungsfehler](#x022025-speicherverwaltungsfehler) ebenfalls zum Ausfall der Anwendung oder sogar des gesamten Systems führen.
 
 
-### Example attack scenarios. 
+### Prävention und Gegenmaßnahmen.
+Um diese Art von Schwachstelle zu verhindern, müssen Sie Ihre Systeme auf Fehlertoleranz und Wiederherstellung auslegen.
 
-**Scenario #1:** Attackers intentionally consume application resources to trigger failures within the system, resulting in denial of service. This could be memory exhaustion, filling up disk space, CPU saturation, or opening endless connections.
+* Fügen Sie Begrenzungen, Kontingente und Failover-Funktionalität hinzu, und achten Sie dabei besonders auf die ressourcenintensivsten Vorgänge.
+* Identifizieren Sie ressourcenintensive Seiten und planen Sie voraus: Reduzieren Sie die Angriffsfläche, indem Sie insbesondere keine unnötigen Funktionen und Komponenten, die viele Ressourcen (z. B. Prozessor, Arbeitsspeicher) benötigen, gegenüber unbekannten oder nicht vertrauenswürdigen Benutzer:innen exponieren.
+* Führen Sie eine strikte Eingabevalidierung mit Positivlisten und Größenbeschränkungen durch und testen Sie diese gründlich.
+* Begrenzen Sie die Größe von Antworten und senden Sie niemals unverarbeitete Rohantworten an den Client zurück (Verarbeitung auf der Serverseite).
+* Standardmäßig sicher/geschlossen konfigurieren (niemals offen), standardmäßig ablehnen und bei einem Fehler zurücksetzen.
+* Vermeiden Sie blockierende synchrone Aufrufe in Anfrage-Threads (verwenden Sie asynchrone/nicht-blockierende Verarbeitung, setzen Sie Zeitüberschreitungen und Parallelitätsbeschränkungen ein usw.).
+* Testen Sie Ihre Fehlerbehandlungsfunktionalität sorgfältig.
+* Implementieren Sie Resilienzmuster wie Schutzschalter (Circuit Breaker), Schotten (Bulkheads), Wiederholungslogik (Retry Logic) und schrittweisen Leistungsabbau (Graceful Degradation).
+* Führen Sie Leistungs- und Lasttests durch; setzen Sie bei ausreichender Risikobereitschaft auch Chaos-Engineering ein.
+* Implementieren Sie Redundanz, wo dies sinnvoll und wirtschaftlich vertretbar ist, und berücksichtigen Sie diese bei der Systemarchitektur.
+* Implementieren Sie Überwachung, Beobachtbarkeit und Alarmierung.
+* Filtern Sie ungültige Absenderadressen gemäß RFC 2267.
+* Blockieren Sie bekannte Botnetze anhand von Fingerabdrücken, IP-Adressen oder dynamisch anhand ihres Verhaltens.
+* Arbeitsnachweis (Proof-of-Work): Initiieren Sie ressourcenintensive Vorgänge auf der Seite der angreifenden Personen, die normale Benutzer:innen kaum beeinträchtigen, jedoch Bots behindern, die versuchen, eine große Anzahl von Anfragen zu senden. Erhöhen Sie den Schwierigkeitsgrad des Arbeitsnachweises, wenn die allgemeine Systemlast steigt, insbesondere für Systeme, die weniger vertrauenswürdig erscheinen oder sich wie Bots verhalten.
+* Begrenzen Sie die serverseitige Sitzungsdauer basierend auf Inaktivität und einer maximalen Gesamtdauer.
+* Begrenzen Sie die sitzungsgebundene Informationsspeicherung.
 
-**Scenario #2:** Input fuzzing that leads to crafted responses that break application business logic.
 
-**Scenario #3:** Attackers focus on the application’s dependencies, taking down APIs or other external services, and the application is unable to continue.
+### Beispielhafte Angriffsszenarien.
+
+**Szenario #1:** Angreifende Personen verbrauchen gezielt Anwendungsressourcen, um Ausfälle im System auszulösen und so einen Denial-of-Service zu verursachen. Dies kann durch Arbeitsspeichererschöpfung, Auffüllen des Festplattenspeichers, Prozessorüberlastung oder das Öffnen endloser Verbindungen geschehen.
+
+**Szenario #2:** Eingabe-Fuzzing, das zu manipulierten Antworten führt, die die Geschäftslogik der Anwendung außer Kraft setzt.
+
+**Szenario #3:** Angreifer konzentrieren sich auf die Abhängigkeiten der Anwendung, indem sie Schnittstellen (APIs) oder andere externe Dienste zum Ausfall bringen, sodass die Anwendung nicht mehr weiterarbeiten kann.
 
 
-### References.
+
+### Referenzen.
 
 * [OWASP Cheat Sheet: Denial of Service](https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html)
 * [OWASP MASVS‑RESILIENCE](https://mas.owasp.org/MASVS/11-MASVS-RESILIENCE/)
@@ -107,7 +108,7 @@ In order to prevent this type of vulnerability you must design for failure and r
 * [NIST Cybersecurity Framework (CSF)](https://www.nist.gov/cyberframework)
 * [Avoid Blocking Calls: Go Async in Java (Devlane)](https://www.devlane.com/blog/avoid-blocking-calls-go-async-in-java)
 
-### List of Mapped CWEs
+### Liste der zugeordneten CWEs
 * [CWE-73  External Control of File Name or Path](https://cwe.mitre.org/data/definitions/73.html)
 * [CWE-183 Permissive List of Allowed Inputs](https://cwe.mitre.org/data/definitions/183.html)
 * [CWE-256 Plaintext Storage of a Password](https://cwe.mitre.org/data/definitions/256.html)
@@ -149,35 +150,32 @@ In order to prevent this type of vulnerability you must design for failure and r
 * [CWE-1125 Excessive Attack Surface](https://cwe.mitre.org/data/definitions/1125.html)
 
 
-## X02:2025 Memory Management Failures
+## X02:2025 Speicherverwaltungsfehler
 
-### Background. 
+### Hintergrund. 
+Sprachen wie Java, C#, JavaScript/TypeScript (node.js), Go und „sicheres" Rust sind speichersicher. Speicherverwaltungsprobleme treten typischerweise in nicht speichersicheren Sprachen wie C und C++ auf. Diese Kategorie erzielte in der Umfrage in der Gemeinschaft (Community) die niedrigste Bewertung und war auch in den Daten gering vertreten, obwohl sie die drittmeisten zugehörigen CVEs aufweist. Wir führen dies auf die Dominanz von Webanwendungen gegenüber traditionellen Desktop-Anwendungen zurück. Speicherverwaltungsschwachstellen weisen häufig die höchsten CVSS-Bewertungen auf.
 
-Languagess like Java, C#, JavaScript/TypeScript (node.js), Go, and "safe" Rust are memory safe. Memory management problems tend to happen in non-memory safe languages such as C and C++. This category scored the lowest on the community survey and low in the data despite having the third most related CVEs. We believe this is due to the predominance of web applications over more traditional desktop applications. Memory management vulnerabilities frequently have the highest CVSS scores. 
-
-
-### Score table.
-
+### Punktetabelle.
 
 <table>
   <tr>
-   <td>CWEs Mapped 
+   <td>Zugeordnete CWEs 
    </td>
-   <td>Max Incidence Rate
+   <td>Max. Häufigkeit
    </td>
-   <td>Avg Incidence Rate
+   <td>Durchschn. Häufigkeit
    </td>
-   <td>Max Coverage
+   <td>Max. Abdeckung
    </td>
-   <td>Avg Coverage
+   <td>Durchschn. Abdeckung
    </td>
-   <td>Avg Weighted Exploit
+   <td>Durchschn. gewichtete Ausnutzbarkeit
    </td>
-   <td>Avg Weighted Impact
+   <td>Durchschn. gewichtete Auswirkung
    </td>
-   <td>Total Occurrences
+   <td>Gesamtanzahl 
    </td>
-   <td>Total CVEs
+   <td>Summe CVEs
    </td>
   </tr>
   <tr>
@@ -204,64 +202,63 @@ Languagess like Java, C#, JavaScript/TypeScript (node.js), Go, and "safe" Rust a
 
 
 
-### Description. 
+### Beschreibung. 
 
-When an application is forced to manage memory itself, it is very easy to make mistakes. Memory safe languages are being used more often, but there are still many legacy systems in production worldwide, new low-level systems that require the use of non-memory safe languages, and web applications that interact with mainframes, IoT devices, firmware, and other systems that may be forced to manage their own memory. Representative CWEs are *CWE-120 Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')* and *CWE-121 Stack-based Buffer Overflow*.
+Wenn eine Anwendung gezwungen ist, den Arbeitsspeicher selbst zu verwalten, können leicht Fehler entstehen. Speichersichere Sprachen werden zwar zunehmend eingesetzt, jedoch gibt es weltweit noch viele veraltete Systeme im produktiven Betrieb, neue systemnahe Anwendungen, die den Einsatz nicht speichersicherer Sprachen erfordern, sowie Webanwendungen, die mit Großrechnern, IoT-Geräten, Firmware und anderen Systemen interagieren, die möglicherweise ihren eigenen Arbeitsspeicher verwalten müssen. Repräsentative CWEs sind *CWE-120 Pufferkopie ohne Überprüfung der Eingabegröße (‚Klassischer Pufferüberlauf')* und *CWE-121 Stapelbasierter Pufferüberlauf. Speicherverwaltungsfehler* können auftreten, wenn:
 
-Memory management failures can happen when:
+* Sie nicht genügend Arbeitsspeicher für eine Variable reservieren
+* Sie Eingaben nicht validieren und dadurch einen Überlauf des Heaps, des Stapelspeichers oder eines Puffers verursachen
+* Sie einen Datenwert speichern, der größer ist als der Datentyp der Variable aufnehmen kann
+* Sie versuchen, nicht reservierten Arbeitsspeicher oder Adressbereiche zu verwenden
+* Sie Einzel-Versatz-Fehler erzeugen (Zählung ab 1 statt ab 0)
+* Sie versuchen, auf ein Objekt zuzugreifen, nachdem dessen Speicher bereits freigegeben wurde
+* Sie nicht initialisierte Variablen verwenden
+* Sie Arbeitsspeicher verlieren oder anderweitig den gesamten verfügbaren Arbeitsspeicher verbrauchen, bis Ihre Anwendung abstürzt
 
-* You do not allocate enough memory for a variable
-* You do not validate input, causing an overflow of the heap, the stack, a buffer
-* You store a data value that is larger than the type of the variable can hold 
-* You attempt to use unallocated memory or address spaces
-* You create off-by-one errors (counting from 1 instead of zero)
-* You try to access an object after its been freed
-* You use uninitialized variables
-* You leak memory or otherwise use up all available memory in error until our application fails
-
-Memory management failures can lead to failure of the application or even the entire system, see also [X01:2025 Lack of Application Resilience](#x012025-lack-of-application-resilience)
+Speicherverwaltungsfehler können zum Ausfall der Anwendung oder sogar des gesamten Systems führen; siehe auch [X01:2025 Mangelnde Resilienz der Anwendung](#x012025-mangelnde-resilienz-der-anwendung).
 
 
-### How to prevent. 
+### Prävention und Gegenmaßnahmen.
 
-The best way to prevent memory management failures is to use a memory-safe language. Examples include Rust, Java, Go, C#, Python, Swift, Kotlin, JavaScript, etc. When creating new applications, try hard to convince your organization that it is worth the learning curve to switch to a memory-safe language. If performing a full refactor, push for a rewrite in a memory-safe language when it is possible and feasible.
+Der beste Weg zur Vermeidung von Speicherverwaltungsfehlern ist die Verwendung einer speichersicheren Sprache. Beispiele hierfür sind Rust, Java, Go, C#, Python, Swift, Kotlin, JavaScript usw. Versuchen Sie bei der Entwicklung neuer Anwendungen, Ihre Organisation davon zu überzeugen, dass der Aufwand für den Umstieg auf eine speichersichere Sprache gerechtfertigt ist. Wenn eine vollständige Überarbeitung durchgeführt wird, setzen Sie sich dafür ein, den Code in einer speichersicheren Sprache neu zu schreiben, sofern dies möglich und machbar ist.
 
-If you are unable to use a memory-safe language, perform the following:
+Falls die Verwendung einer speichersicheren Sprache nicht möglich ist, führen Sie folgende Maßnahmen durch:
 
-* Enable the following server features that make memory management errors harder to exploit: address space layout randomization (ASLR), Data Execution Protection (DEP), and Structured Exception Handling Overwrite Protection (SEHOP).
-* Monitor your application for memory leaks.
-* Validate all input to your system very carefully, and reject all input that does not meet expectations.
-* Study the language you are using and make a list of unsafe and more-safe functions, then share that list with your entire team. If possible, add it to your secure coding guideline or standard. For example, in C, prefer strncpy() over strcpy() and strncat() over strcat().
-* If your language or framework offers memory safety libraries, use them. For example: Safestringlib or SafeStr.
-* Use managed buffers and strings rather than raw arrays and pointers whenever possible.
-* Take secure coding training that focuses on memory issues and/or your language of choice. Inform your trainer that you are concerned about memory management failures.
-* Perform code reviews and/or static analyses.
-* Use compiler tools that help with memory management such as StackShield, StackGuard, and Libsafe.
-* Perform fuzzing on every input to your system.
-* If you have a penetration test performed, inform your tester that you are concerned about memory management failures and that you would like them to pay special attention to this while testing.
-*  Fix all compiler errors *and* warnings. Do not ignore warnings because your program compiles.
-* Ensure your underlying infrastructure is regularly patched, scanned, and hardened.
-* Monitor your underlying infrastructure specifically for potential memory vulnerabilities and other failures.
-* Consider using [canaries](https://en.wikipedia.org/wiki/Buffer_overflow_protection#Canaries) to protect your address stack from overflow attacks.
+* Aktivieren Sie die folgenden Serverfunktionen, die die Ausnutzung von Speicherverwaltungsfehlern erschweren: Adressraumanordnungs-Zufälligkeit (address space layout randomization / ASLR), Datenausführungsschutz (Data Execution Protection / DEP) und Strukturierter-Ausnahmebehandlungs-Überschreibungsschutz (Structured Exception Handling Overwrite Protection / SEHOP).
+* Überwachen Sie Ihre Anwendung auf Arbeitsspeicherlecks.
+* Validieren Sie alle Eingaben in Ihrem System sehr sorgfältig und weisen Sie alle Eingaben zurück, die nicht den Erwartungen entsprechen.
+* Analysieren Sie die von Ihnen verwendete Programmiersprache und erstellen Sie eine Liste unsicherer und sichererer Funktionen. Teilen Sie diese Liste mit Ihrem gesamten Team. Fügen Sie sie, wenn möglich in Ihre Richtlinien oder Standards für sicheres Programmieren ein. Bevorzugen Sie beispielsweise in C die Funktion strncpy() gegenüber strcpy() und strncat() gegenüber strcat().
+* Wenn Ihre Programmiersprache oder Ihr Framework Bibliotheken für Arbeitsspeichersicherheit anbietet, verwenden Sie diese. Beispiele hierfür sind Safestringlib oder SafeStr.
+* Verwenden Sie nach Möglichkeit verwaltete Puffer und Zeichenketten anstelle von unbearbeiteten (raw) Feldern und Zeigern.
+* Nehmen Sie an Schulungen für sicheres Programmieren teil, die sich auf Speicherprobleme und/oder Ihre bevorzugte Programmiersprache konzentrieren. Teilen Sie Ihrem Schulungsanbieter mit, dass Sie Speicherverwaltungsfehler als besonderes Risiko betrachten.
+* Führen Sie Quellcode-Überprüfungen und/oder statische Analysen durch.
+* Verwenden Sie Compiler-Werkzeuge, die bei der Speicherverwaltung helfen, wie StackShield, StackGuard und Libsafe.
+* Führen Sie Fuzzing für alle Eingaben in Ihrem System durch.
+* Wenn ein Penetrationstest durchgeführt wird, informieren Sie die Tester:innen, dass Sie Speicherverwaltungsfehler als besonderes Risiko betrachten und dass sie diesen Aspekt beim Testen besonders berücksichtigen soll.
+* Beheben Sie alle Compiler-Fehler und Warnungen. Ignorieren Sie Warnungen nicht, nur weil Ihr Programm erfolgreich kompiliert.
+* Stellen Sie sicher, dass Ihre zugrundeliegende Infrastruktur regelmäßig mit Sicherheitsaktualisierungen versorgt, überprüft und gehärtet wird.
+* Überwachen Sie Ihre zugrundeliegende Infrastruktur gezielt auf potenzielle Speicherschwachstellen und andere Ausfälle.
+* Erwägen Sie den Einsatz von [Canary-Werten (Prüfwerte)](https://en.wikipedia.org/wiki/Buffer_overflow_protection#Canaries), um Ihren Adressstapel vor Überlaufangriffen zu schützen.
 
-### Example attack scenarios. 
+### Beispielhafte Angriffsszenarien. 
 
-**Scenario #1:** Buffer overflows are the most famous memory vulnerability, a situation where an attacker submits more information into a field than it can accept, such that it overflows the buffer created for the underlying variable. In a successful attack, the overflow characters overwrite the stack pointer, allowing the attacker to insert malicious instructions into your program.
+**Szenario #1:** Pufferüberläufe sind die bekannteste Speicherschwachstelle – eine Situation, in der ein eine angreifende Person mehr Daten in ein Eingabefeld eingibt, als dieses aufnehmen kann, sodass der für die zugrundeliegende Variable angelegte Puffer überläuft. Bei einem erfolgreichen Angriff überschreiben die überlaufenden Zeichen den Stapelzeiger, was es dem Angreifer ermöglicht, schadhaften Programmcode in Ihre Anwendung einzuschleusen.
 
-**Scenario #2:** Use-After-Free (UAF) happens often enough that it’s a semi-common browser bug bounty submission. Imagine a web browser processing JavaScript that manipulates DOM elements. The attacker crafts a JavaScript payload that creates an object (such as a DOM element) and obtains references to it. Through careful manipulation, they trigger the browser to free the object's memory while keeping a dangling pointer to it. Before the browser realizes the memory has been freed, the attacker allocates a new object that occupies the *same* memory space. When the browser tries to use the original pointer, it now points to attacker-controlled data. If this pointer was for a virtual function table, the attacker can redirect code execution to their payload. 
+**Szenario #2:** Use-After-Free (UAF) – Zugriff auf bereits freigegebenen Speicher – tritt häufig genug auf, um eine gängige Einsendung in Browser-Fehlerprämienprogrammen (bug bounty) zu sein. Stellen Sie sich einen Webbrowser vor, der JavaScript verarbeitet, das DOM-Elemente manipuliert. Der Angreifer erstellt eine JavaScript-Nutzlast, die ein Objekt (z. B. ein DOM-Element) erzeugt und Verweise darauf erhält. Durch gezielte Manipulation veranlasst er den Browser, den Speicher des Objekts freizugeben, während ein hängender Zeiger darauf bestehen bleibt. Bevor der Browser erkennt, dass der Speicher freigegeben wurde, reserviert die angreifende Person ein neues Objekt, das denselben Speicherbereich belegt. Wenn der Browser versucht, den ursprünglichen Zeiger zu verwenden, verweist dieser nun auf von der angreifenden Person kontrollierte Daten. Falls dieser Zeiger auf eine virtuelle Funktionstabelle zeigte, kann die angreifende Person die Programmausführung auf seine Nutzlast umleiten.
+ 
 
-**Scenario #3:** A network service that accepts user input, doesn’t properly validate or sanitize it, then passes it directly to the logging function. The input from the user is passed to the logging function as syslog(user_input) instead of syslog("%s", user_input), which doesn’t specify the format. The attacker sends malicious payloads containing format specifiers such as %x to read stack memory (sensitive data disclosure) or %n to write to memory addresses. By chaining together multiple format specifiers they could map out the stack, locate important addresses, and then overwrite them. This would be a Format string vulnerability (uncontrolled string format). 
+**Szenario #3:** Hierbei handelt es sich um einen Netzwerkdienst, der Benutzereingaben entgegennimmt, diese nicht ordnungsgemäß validiert oder bereinigt und sie dann direkt an die Protokollierungsfunktion weitergibt. Die Benutzereingabe wird als syslog(user_input) statt als syslog("%s", user_input) an die Protokollierungsfunktion übergeben, ohne dass ein Formatbezeichner angegeben wird. Die angreifenden Personen senden schadhafte Nutzlasten mit Formatbezeichnern wie %x, um Stapelspeicherinhalte auszulesen (Offenlegung sensibler Daten), oder %n, um in Speicheradressen zu schreiben. Durch die Verkettung mehrerer Formatbezeichner können sie den Stapelspeicher kartieren, wichtige Adressen lokalisieren und diese anschließend überschreiben. Dies wäre eine Formatzeichenketten-Schwachstelle (unkontrolliertes Zeichenkettenformat).
 
-Note: modern browsers use many levels of defenses to defend against such attacks, including [browser sandboxing](https://www.geeksforgeeks.org/ethical-hacking/what-is-browser-sandboxing/#types-of-browser-sandboxing) ASLR, DEP/NX, RELRO, and PIE. A memory management failure attack on a browser is not a simple attack to carry out.
+Hinweis: Moderne Browser verwenden viele Schutzebenen, um sich gegen solche Angriffe zu verteidigen, darunter [Browser-Sandboxing](https://www.geeksforgeeks.org/ethical-hacking/what-is-browser-sandboxing/#types-of-browser-sandboxing), ASLR, DEP/NX, RELRO und PIE. Ein Speicherverwaltungsangriff auf einen Browser ist kein einfach durchzuführender Angriff.
 
-### References.
+### Referenzen.
 
 * [OWASP community pages: Memory leak,](https://owasp.org/www-community/vulnerabilities/Memory_leak) [Doubly freeing memory,](https://owasp.org/www-community/vulnerabilities/Doubly_freeing_memory) [& Buffer Overflow](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)
 * [Awesome Fuzzing: a list of fuzzing resources](https://github.com/secfigo/Awesome-Fuzzing) 
 * [Project Zero Blog](https://googleprojectzero.blogspot.com)
 * [Microsoft MSRC Blog](https://www.microsoft.com/en-us/msrc/blog)
 
-### List of Mapped CWEs
+### Liste der zugeordneten CWEs 
 * [CWE-14 Compiler Removal of Code to Clear Buffers](https://cwe.mitre.org/data/definitions/14.html)
 * [CWE-119 Improper Restriction of Operations within the Bounds of a Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)
 * [CWE-120 Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)
@@ -285,40 +282,38 @@ Note: modern browsers use many levels of defenses to defend against such attacks
 
 
 
-## X03:2025 Inappropriate Trust in AI Generated Code ('Vibe Coding')
+## X03:2025 Unangebrachtes Vertrauen in KI-generierten Code (‚Vibe Coding') 
 
-### Background.
+### Hintergrund.
 
-Currently the entire world is talking about and using AI, and this includes software developers. Although there are currently no CVEs or CWEs related to AI generated code, it is well known and documented that AI generated code often contains more vulnerabilities than code written by human beings.
+Derzeit spricht und nutzt die gesamte Welt Künstliche Intelligenz (KI), das schließt Softwareentwickler ein. Obwohl es derzeit keine CVEs oder CWEs im Zusammenhang mit KI-generiertem Code gibt, ist allgemein bekannt und dokumentiert, dass KI-generierter Code häufig mehr Schwachstellen enthält als von Menschen geschriebener Code.
 
+### Beschreibung.
 
-### Description.
-
-We are seeing software development practices change to include not only code written with the assistance of AI, but code written and committed almost entirely without human oversight (often referred to as vibe coding). Just as it was never a good idea to copy code snippets from blogs or websites without thinking twice, the problem is exacerbated in this case. Good, secure code snippets were and are rare and might be statistically neglected by AI due to system constraints.
-
-
-### How to prevent.
-We urge all people who write code to consider the following when using AI:
-
-* You should be able to read and fully understand all code you submit, even if it is written by an AI or copied from an online forum. You are responsible for all code that you commit.
-* You should review all AI-assisted code thoroughly for vulnerabilities, ideally with your own eyes and also with security tooling made for this purpose (such as static analysis). Consider using classic code review techniques as described in [OWASP Cheat Sheet Series: Secure Code Review](https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html).
-* Ideally, write your own code, let the AI suggest improvements, check the AI's code, and let the AI make corrections until you are satisfied with the result.
-* Consider using a Retrieval Augmented Generation (RAG) server with your own collected  and reviewed secure code samples and documentation, such as your organization’s security coding guideline, standard, or policy, and have the RAG server enforce any policies or standards.
-* Consider purchasing tooling that implements guardrails for privacy and security for use with your AI(s) of choice.
-* Consider purchasing a private AI, ideally with a contract agreement (including a privacy agreement) that the AI is not to be trained on your organization’s data, queries, code or any other sensitive information.
-* Consider implementing an Model Context Protocol (MCP) server in-between your IDE and AI, then set it up to enforce the use of your security tooling of choice.
-* Implement policies and processes as part of your SDLC to inform developers (and all employees) of how they should and should not use AI within your organization.
-* Create a list of good and effective prompts, that take IT security best practices into account. Ideally they should also consider your internal secure coding guidelines. Developers can use this prompts as a starting point for their programs.
-* AI is likely to become part of each phase of your system development life cycle, both how to use it effectively and safely. Use it wisely.
-* Actually it is **<u>not</u>** recommended to use vibe coding for complex functions, business critical programs, or programs that are used for a long time.
-* Implement technical checks and safeguards against the use of Shadow AI.
-* Train your developers on your policies, as well as safe AI usage and best practices for using AI in software development.
+Wir beobachten, dass sich die Softwareentwicklungspraxis dahingehend verändert, dass nicht nur Code mit Unterstützung von KI geschrieben wird, sondern Code nahezu vollständig ohne menschliche Aufsicht erstellt und eingereicht wird (oft als „Vibe Coding" bezeichnet). So wie es noch nie eine gute Idee war, Codeausschnitte aus Blogs oder Webseiten gedankenlos zu kopieren, wird das Problem in diesem Fall noch verschärft. Gute, sichere Codeausschnitte waren und sind selten und werden von KI aufgrund systemischer Einschränkungen möglicherweise statistisch vernachlässigt.
 
 
-### References.
+### Prävention und Gegenmaßnahmen.
+Wir fordern alle Personen, die Code schreiben, auf, beim Einsatz von KI Folgendes zu berücksichtigen: 
+
+* Sie sollten in der Lage sein, den gesamten von Ihnen eingereichten Code zu lesen und vollständig zu verstehen, auch wenn er von einer KI geschrieben oder aus einem Online-Forum kopiert wurde. Sie sind für jeden Code verantwortlich, den Sie einreichen.
+* Sie sollten jeden KI-unterstützten Code gründlich auf Schwachstellen überprüfen, idealerweise mit eigenen Augen und zusätzlich mit Sicherheitswerkzeugen, die für diesen Zweck entwickelt wurden (z. B. statische Analyse). Ziehen Sie klassische Quellcode-Überprüfungstechniken in Betracht, wie sie in der [OWASP-Spickzettel-Reihe: Sichere Quellcode-Überprüfung](https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html) beschrieben werden.
+* Im Idealfall schreiben Sie Ihren eigenen Code, lassen die KI Verbesserungen vorschlagen, überprüfen den KI-Code und lassen die KI Korrekturen vornehmen, bis Sie mit dem Ergebnis zufrieden sind.
+* Erwägen Sie den Einsatz eines Retrieval Augmented Generation (RAG)-Servers mit Ihren eigenen gesammelten und geprüften sicheren Codebeispielen und Dokumentationen, wie z. B. den Richtlinien, Standards oder Vorgaben Ihrer Organisation für sicheres Programmieren, und lassen Sie den RAG-Server die Einhaltung dieser Richtlinien und Standards durchsetzen.
+* Erwägen Sie den Erwerb von Werkzeugen, die Schutzmaßnahmen für Datenschutz und Sicherheit für die Verwendung mit Ihrer/Ihren KI-Lösung(en) implementieren.
+* Erwägen Sie den Erwerb einer privaten KI-Lösung, idealerweise mit einer Vertragsvereinbarung (einschließlich einer Datenschutzvereinbarung), dass die KI nicht mit den Daten, Anfragen, dem Code oder anderen sensiblen Informationen Ihrer Organisation trainiert wird.
+* Erwägen Sie die Implementierung eines Model Context Protocol (MCP)-Servers zwischen Ihrer Entwicklungsumgebung und der KI und konfigurieren Sie diesen so, dass er den Einsatz Ihrer bevorzugten Sicherheitswerkzeuge erzwingt.
+* Implementieren Sie Richtlinien und Prozesse als Teil Ihres Softwareentwicklungslebenszyklus (SDLC), um Entwickler:innen (und alle Mitarbeiter:innen) darüber zu informieren, wie KI innerhalb Ihrer Organisation verwendet werden soll und wie nicht.
+* Erstellen Sie eine Liste guter und wirksamer Eingabeaufforderungen (Prompts), die bewährte IT-Sicherheitspraktiken berücksichtigen. Idealerweise sollten diese auch Ihre internen Richtlinien für sicheres Programmieren einbeziehen. Entwickler:innen können diese Eingabeaufforderungen als Ausgangspunkt für ihre Programme verwenden.
+* KI wird voraussichtlich Teil jeder Phase Ihres Softwareentwicklungslebenszyklus werden – sowohl hinsichtlich des effektiven als auch des sicheren Einsatzes. Verwenden Sie KI mit Bedacht.
+* Es wird ausdrücklich **<u>nicht</u>** empfohlen, Vibe Coding für komplexe Funktionen, geschäftskritische Programme oder Programme, die über einen langen Zeitraum genutzt werden, einzusetzen.
+* Implementieren Sie technische Prüfungen und Schutzmaßnahmen gegen die Verwendung von Schatten-KI (Shadow AI).
+* Schulen Sie Ihre Entwickler:innen in Bezug auf Ihre Richtlinien sowie den sicheren KI-Einsatz und bewährte Praktiken für die Verwendung von KI in der Softwareentwicklung.
+
+### Referenzen.
 
 * [OWASP Cheat Sheet: Secure Code Review](https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html)
 
 
-### List of Mapped CWEs
--none-
+### Liste der zugeordneten CWEs 
+- keine
