@@ -75,14 +75,14 @@ Ohne einen abgestimmten und reproduzierbaren Prozess zur sicheren Konfiguration 
 
 Es sollten sichere Installationsprozesse implementiert werden, darunter:
 
-* Ein wiederholbarer Härtungsprozess, welcher die schnelle und einfache Bereitstellung zusätzlicher Umgebungen, die entsprechend abgesichert sind, ermöglicht. Entwicklungs-, Qualitätssicherungs- und Produktionsumgebungen sollten alle identisch konfiguriert sein, wobei in jeder Umgebung unterschiedliche Anmeldeinformationen verwendet werden sollten. Dieser Prozess sollte automatisiert werden, um den Aufwand für die Einrichtung einer neuen sicheren Umgebung zu minimieren.
+* Ein wiederholbarer Härtungsprozess, welcher die schnelle und einfache Bereitstellung zusätzlicher Umgebungen, die entsprechend abgesichert sind, ermöglicht. Entwicklungs-, Qualitätssicherungs- und Produktionsumgebungen sollten alle identisch konfiguriert sein, wobei in jeder Umgebung unterschiedliche Zugangsdaten verwendet werden sollten. Dieser Prozess sollte automatisiert werden, um den Aufwand für die Einrichtung einer neuen sicheren Umgebung zu minimieren.
 * Eine minimale Plattform ohne unnötige Funktionen, Komponenten, Dokumentation oder Beispiele: Entfernen Sie Funktionen und Frameworks die Sie nicht verwenden oder installieren Sie diese erst gar nicht.
 * Überprüfen und Aktualisieren der Konfigurationen, die für alle Sicherheitshinweise, Updates und Patches im Rahmen des Patch-Verwaltungsprozesses geeignet sind (siehe [A03:2025 – Schwachstellen in der Software-Lieferkette](A03_2025-Software_Supply_Chain_Failures.md)). Überprüfen Sie die Cloud-Speicherberechtigungen (z. B. S3-Bucket-Berechtigungen).
 
 
 ## Beispielhafte Angriffsszenarien.
 
-**Szenario Nr. 1:** Der Anwendungsserver wird mit Beispielanwendungen geliefert, die nicht vom Produktionsserver entfernt wurden. Diese Beispielanwendungen weisen bekannte Sicherheitslücken auf, die Angreifer:innen nutzen, um den Server zu gefährden. Angenommen, eine dieser Anwendungen ist die Admin-Konsole und die Standardkonten wurden nicht geändert. In diesem Fall meldet sich die/der Angreifer:in mit einem Standardkennwort an und übernimmt die Kontrolle.
+**Szenario Nr. 1:** Der Anwendungsserver wird mit Beispielanwendungen geliefert, die nicht vom Produktionsserver entfernt wurden. Diese Beispielanwendungen weisen bekannte Schwachstellen auf, die Angreifer:innen nutzen, um den Server zu gefährden. Angenommen, eine dieser Anwendungen ist die Admin-Konsole und die Standardkonten wurden nicht geändert. In diesem Fall meldet sich die/der Angreifer:in mit einem Standardkennwort an und übernimmt die Kontrolle.
 
 **Szenario Nr. 2:** Die Directory Listings wurden nicht auf dem Server deaktiviert. Angreifer:innen entdecken, dass Verzeichnisse einfach aufgelistet werden können. Die/Der Angreifer:in findet die kompilierten Java-Klassen und lädt sie herunter, dekompiliert sie und betreibt Reverse Engineering, um den Code anzuzeigen. Dies ermöglicht das Findet eines schwerwiegenden Fehlers in der Zugriffskontrolle in der Anwendung.
 

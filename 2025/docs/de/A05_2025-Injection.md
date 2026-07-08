@@ -55,7 +55,7 @@
 
 ## Beschreibung. 
 
-Eine Injection-Sicherheitslücke ist ein Anwendungsfehler, der es ermöglicht, dass nicht vertrauenswürdige Benutzereingaben an einen Interpreter (z. B. einen Browser, eine Datenbank oder die Befehlszeile) gesendet werden und dazu führt, dass der Interpreter Teile dieser Eingaben als Befehle ausführt.  
+Eine Injection-Schwachstelle ist ein Anwendungsfehler, der es ermöglicht, dass nicht vertrauenswürdige Benutzereingaben an einen Interpreter (z. B. einen Browser, eine Datenbank oder die Befehlszeile) gesendet werden und dazu führt, dass der Interpreter Teile dieser Eingaben als Befehle ausführt.  
 
 Eine Anwendung ist für diesen Angriff anfällig, wenn:
 
@@ -93,7 +93,7 @@ Wenn es nicht möglich ist, die Daten von den Befehlen zu trennen, können Sie d
 String query = "SELECT * FROM accounts WHERE custID='" + request.getParameter("id") + "'";
 ```
 
-Angreifer:innen manipulieren den Wert des id-Parameters im Browser und senden `' OR '1'='1`. z.B.:
+Angreifer:innen manipulieren den Wert des id-Parameters im Browser und senden `' OR '1'='1`. z. B.:
 
 ```
 http://example.com/app/accountView?id=' OR '1'='1

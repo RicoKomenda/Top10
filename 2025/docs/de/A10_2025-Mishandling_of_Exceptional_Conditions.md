@@ -58,7 +58,7 @@ Bemerkenswerte CWEs in dieser Kategorie: *CWE-209 Generation of Error Message Co
 
 ## Beschreibung.
 
-Fehlerhafte Behandlung von Ausnahmezuständen in Software tritt auf, wenn Programme außergewöhnliche und unvorhersehbare Situationen weder verhindern, erkennen noch darauf reagieren – was zu Abstürzen, unerwartetem Verhalten und mitunter zu Sicherheitslücken führt. Dies kann einen oder mehrere der folgenden drei Mängel umfassen: Die Anwendung verhindert eine ungewöhnliche Situation nicht, sie erkennt sie nicht, während sie eintritt, und/oder sie reagiert anschließend unzureichend oder gar nicht darauf.
+Fehlerhafte Behandlung von Ausnahmezuständen in Software tritt auf, wenn Programme außergewöhnliche und unvorhersehbare Situationen weder verhindern, erkennen noch darauf reagieren – was zu Abstürzen, unerwartetem Verhalten und mitunter zu Schwachstellen führt. Dies kann einen oder mehrere der folgenden drei Mängel umfassen: Die Anwendung verhindert eine ungewöhnliche Situation nicht, sie erkennt sie nicht, während sie eintritt, und/oder sie reagiert anschließend unzureichend oder gar nicht darauf.
 
  
 
@@ -66,7 +66,7 @@ Ausnahmezustände können durch fehlende, mangelhafte oder unvollständige Einga
 
  
 
-Bei fehlerhafter Behandlung von Ausnahmezuständen können vielfältige Sicherheitslücken entstehen, wie logische Fehler, Überläufe, Race Conditions, betrügerische Transaktionen oder Probleme mit Speicher, Zustand, Ressourcen, Timing, Authentifizierung und Autorisierung. Diese Schwachstellen können die Vertraulichkeit, Verfügbarkeit und/oder Integrität eines Systems oder seiner Daten beeinträchtigen. Angreifer:innen nutzen die fehlerhafte Fehlerbehandlung einer Anwendung aus, um diese Schwachstelle auszunutzen.
+Bei fehlerhafter Behandlung von Ausnahmezuständen können vielfältige Schwachstellen entstehen, wie logische Fehler, Überläufe, Race Conditions, betrügerische Transaktionen oder Probleme mit Speicher, Zustand, Ressourcen, Timing, Authentifizierung und Autorisierung. Diese Schwachstellen können die Vertraulichkeit, Verfügbarkeit und/oder Integrität eines Systems oder seiner Daten beeinträchtigen. Angreifer:innen nutzen die fehlerhafte Fehlerbehandlung einer Anwendung aus, um diese Schwachstelle auszunutzen.
 
 
 ## Prävention und Gegenmaßnahmen.
@@ -92,11 +92,11 @@ Wenn möglich, sollte die gesamte Organisation Ausnahmezustände einheitlich beh
 
 ## Beispielhafte Angriffsszenarien.
 
-**Szenario #1:** Ressourcenerschöpfung durch fehlerhafte Behandlung von Ausnahmezuständen (Denial of Service) kann auftreten, wenn die Anwendung beim Datei-Upload Ausnahmen abfängt, die Ressourcen danach jedoch nicht ordnungsgemäß freigibt. Jede neue Ausnahme hinterlässt gesperrte oder anderweitig nicht verfügbare Ressourcen, bis alle Ressourcen verbraucht sind.
+**Szenario Nr. 1:** Ressourcenerschöpfung durch fehlerhafte Behandlung von Ausnahmezuständen (Denial of Service) kann auftreten, wenn die Anwendung beim Datei-Upload Ausnahmen abfängt, die Ressourcen danach jedoch nicht ordnungsgemäß freigibt. Jede neue Ausnahme hinterlässt gesperrte oder anderweitig nicht verfügbare Ressourcen, bis alle Ressourcen verbraucht sind.
 
-**Szenario #2:** Offenlegung sensibler Daten durch fehlerhafte Behandlung von Datenbankfehlern, die den vollständigen Systemfehler an die/den Benutzer:in weitergeben. Die/Der Angreifer:in erzwingt weiterhin Fehler, um die sensiblen Systeminformationen für einen gezielteren SQL-Injection-Angriff zu nutzen. Die sensiblen Daten in den Fehlermeldungen dienen dabei als Aufklärung.
+**Szenario Nr. 2:** Offenlegung sensibler Daten durch fehlerhafte Behandlung von Datenbankfehlern, die den vollständigen Systemfehler an die/den Benutzer:in weitergeben. Die/Der Angreifer:in erzwingt weiterhin Fehler, um die sensiblen Systeminformationen für einen gezielteren SQL-Injection-Angriff zu nutzen. Die sensiblen Daten in den Fehlermeldungen dienen dabei als Aufklärung.
 
-**Szenario #3:** Zustandskorruption bei Finanztransaktionen kann durch eine:n Angreifer:in verursacht werden, der eine mehrstufige Transaktion durch Netzwerkunterbrechungen stört. Angenommen, die Transaktionsreihenfolge lautet: Nutzerkonto belasten, Zielkonto gutschreiben, Transaktion protokollieren. Wenn das System bei einem Fehler mittendrin die gesamte Transaktion nicht ordnungsgemäß zurücksetzt (Failing Closed), könnte die/der Angreifer:in das Konto der/des Nutzer:in leeren oder über eine Race Condition Geld mehrfach an das Zielkonto senden.
+**Szenario Nr. 3:** Zustandskorruption bei Finanztransaktionen kann durch ein:e Angreifer:in verursacht werden, der eine mehrstufige Transaktion durch Netzwerkunterbrechungen stört. Angenommen, die Transaktionsreihenfolge lautet: Nutzerkonto belasten, Zielkonto gutschreiben, Transaktion protokollieren. Wenn das System bei einem Fehler mittendrin die gesamte Transaktion nicht ordnungsgemäß zurücksetzt (Failing Closed), könnte die/der Angreifer:in das Konto der/des Nutzer:in leeren oder über eine Race Condition Geld mehrfach an das Zielkonto senden.
 
 
 ## Referenzen.

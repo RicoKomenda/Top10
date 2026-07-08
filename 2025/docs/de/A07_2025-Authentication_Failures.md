@@ -66,7 +66,7 @@ Wenn ein:e Angreifer:in ein System dazu bringen kann, eine:n ungültige:n oder n
 
 * die Erstellung neuer Konten mit bereits als kompromittiert bekannten Zugangsdaten zulässt.
 
-* schwache oder ineffektive Verfahren zur Wiederherstellung von Anmeldeinformationen und Verfahren für vergessene Passwörter, wie z. B. „wissensbasierte Antworten", die nicht sicher gestaltet werden können.
+* schwache oder ineffektive Verfahren zur Wiederherstellung von Zugangsdaten und Verfahren für vergessene Passwörter, wie z. B. „wissensbasierte Antworten", die nicht sicher gestaltet werden können.
 
 * Klartext-, verschlüsselte oder schwach gehashte Kennwortdatenspeicher (siehe [A04:2025 – Fehlerhafter Einsatz von Kryptographie](https://owasp.org/Top10/2025/A04_2025-Cryptographic_Failures/)) verwendet.
 
@@ -74,9 +74,9 @@ Wenn ein:e Angreifer:in ein System dazu bringen kann, eine:n ungültige:n oder n
 
 * schwache oder ineffektive Ausweichmechanismen zulässt, falls keine Multi-Faktor-Authentifizierung verfügbar ist.
 
-* die Session-ID in der URL, einem versteckten Feld oder einer anderen unsicheren, für den Client zugänglichen Stelle offenlegt.
+* die Sitzungs-ID in der URL, einem versteckten Feld oder einer anderen unsicheren, für den Client zugänglichen Stelle offenlegt.
 
-* dieselbe Session-ID nach erfolgreichem Login wiederverwendet.
+* dieselbe Sitzungs-ID nach erfolgreichem Login wiederverwendet.
 
 * Benutzersitzungen oder Authentifizierungs-Tokens (hauptsächlich SSO-Tokens) beim Abmelden oder bei Inaktivität nicht korrekt invalidiert.
 
